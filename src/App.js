@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
@@ -84,6 +85,7 @@ function App() {
         </div>
       </div>
       <SpeedInsights />
+      <Analytics />
     </BrowserRouter>
   );
 }
