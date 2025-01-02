@@ -5,7 +5,9 @@ import { Analytics } from "@vercel/analytics/react"
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
+// Pages
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 // Components
 import Navbar from "./components/Navbar";
@@ -79,7 +81,7 @@ function App() {
             />
 
             {/* Contact & Projects Pages */}
-            <Route path="/contact" element={<ContactForm />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/projects" element={<Projects />} />
           </Routes>
         </div>

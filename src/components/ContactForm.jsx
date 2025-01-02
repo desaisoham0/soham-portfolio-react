@@ -103,7 +103,7 @@ const ContactForm = () => {
               group-hover:translate-x-1
             "
           ></i>
-          Send
+          Send message
         </button>
       </form>
     </div>
