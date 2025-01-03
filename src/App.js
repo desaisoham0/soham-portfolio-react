@@ -2,8 +2,12 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
+import { Helmet } from 'react-helmet';
 import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+
+// Images
+import icon from './assets/soham_icon.svg';
 
 // Pages
 import Projects from "./pages/Projects";
@@ -18,6 +22,10 @@ import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
+    <>
+    <Helmet>
+        <link rel="icon" href={icon} />
+      </Helmet>
     <BrowserRouter>
       {/* Full-page gradient background */}
       <div className="min-h-screen bg-gradient-to-b from-teal-700 to-teal-900">
@@ -89,6 +97,7 @@ function App() {
       <SpeedInsights />
       <Analytics />
     </BrowserRouter>
+    </>
   );
 }
 
