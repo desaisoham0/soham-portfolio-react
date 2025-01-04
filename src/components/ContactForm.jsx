@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ email: "", message: "" });
@@ -15,27 +15,20 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        "service_847nyle",       // Replace with your EmailJS service ID
-        "template_1hezq2a",      // Replace with your EmailJS template ID
-        {
-          from_email: formData.email,
-          message: formData.message,
-        },
-        "fOEwgwyb3yVDfQZwy"      // Replace with your EmailJS public key
-      )
-      .then(
-        () => {
+    axios
+      .post("/api/send_email", formData)
+      .then((response) => {
+        if (response.data.success) {
           setSuccess(true);
           setError(false);
           setFormData({ email: "", message: "" });
-        },
-        () => {
-          setSuccess(false);
-          setError(true);
         }
-      );
+      })
+      .catch((err) => {
+        console.error('Error:', err);
+        setSuccess(false);
+        setError(true);
+      });
   };
 
   return (
