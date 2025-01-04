@@ -7,7 +7,7 @@ import "./App.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // Images
-import icon from './assets/soham_icon.svg';
+import icon from './assets/soham_icon.png';
 
 // Pages
 import Projects from "./pages/Projects";
