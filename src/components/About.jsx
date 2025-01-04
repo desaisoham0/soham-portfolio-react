@@ -133,7 +133,7 @@ const About = () => {
                      text-gray-800 
                        p-1.5 sm:p-2.5 rounded-full 
                        opacity-0 group-hover:opacity-100 
-                       transition-opacity hover:bg-white/90 hover:text-yellow-500
+                       transition-opacity hover:bg-white/90 hover:text-yellow-600
                        shadow-sm hidden sm:block
                        ring-1 ring-white/10"
           >
@@ -145,7 +145,7 @@ const About = () => {
                        text-gray-800 
                        p-1.5 sm:p-2.5 rounded-full 
                        opacity-0 group-hover:opacity-100 
-                       transition-opacity hover:bg-white/90 hover:text-yellow-500
+                       transition-opacity hover:bg-white/90 hover:text-yellow-600
                        shadow-sm hidden sm:block
                        ring-1 ring-white/10"
           >

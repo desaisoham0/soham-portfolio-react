@@ -22,18 +22,20 @@ function Contact() {
         {/* Right side (Contact form and images) */}
         <div className="md:w-1/2 p-8 space-y-6">
           {/* Image gallery */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 group">
             <img
               src={sohamSki}
               alt="Soham skiing"
               loading="lazy"
-              className="aspect-square rotate-3 rounded-2xl shadow-xl bg-zinc-100 object-cover transition-all duration-300 hover:shadow-2xl"
+              className="aspect-square rotate-3 rounded-2xl shadow-xl bg-zinc-100 object-cover
+                         transition-transform duration-300 group-hover:scale-105"
             />
             <img
               src={sohamTheMet}
               alt="Soham at The Met"
               loading="lazy"
-              className="aspect-square -rotate-3 rounded-2xl shadow-xl bg-zinc-100 object-cover transition-all duration-300 hover:shadow-2xl"
+              className="aspect-square -rotate-3 rounded-2xl shadow-xl bg-zinc-100 object-cover
+                         transition-transform duration-300 group-hover:scale-105"
             />
           </div>
 
@@ -46,7 +48,9 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-github text-xl sm:text-2xl"></i>
+                <i className="fab fa-github text-xl sm:text-2xl
+                              transition-transform duration-300 
+                              group-hover:translate-x-1"></i>
                 <span className="ml-4">Follow on GitHub</span>
               </a>
             </li>
@@ -57,7 +61,9 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-linkedin text-xl sm:text-2xl"></i>
+                <i className="fab fa-linkedin text-xl sm:text-2xl
+                              transition-transform duration-300 
+                              group-hover:translate-x-1"></i>
                 <span className="ml-4">Follow on LinkedIn</span>
               </a>
             </li>
@@ -68,7 +74,9 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-instagram text-xl sm:text-2xl"></i>
+                <i className="fab fa-instagram text-xl sm:text-2xl
+                              transition-transform duration-300 
+                              group-hover:translate-x-1"></i>
                 <span className="ml-4">Follow on Instagram</span>
               </a>
             </li>
@@ -79,7 +87,9 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="fab fa-twitter text-xl sm:text-2xl"></i>
+                <i className="fab fa-twitter text-xl sm:text-2xl
+                              transition-transform duration-300 
+                              group-hover:translate-x-1"></i>
                 <span className="ml-4">Follow on X</span>
               </a>
             </li>
@@ -88,7 +98,9 @@ function Contact() {
                 className="group flex text-sm font-medium text-zinc-800 transition hover:text-yellow-600"
                 href="mailto:desaisoham98@gmail.com"
               >
-                <i className="fas fa-envelope text-xl sm:text-2xl"></i>
+                <i className="fas fa-envelope text-xl sm:text-2xl
+                              transition-transform duration-300 
+                              group-hover:translate-x-1"></i>
                 <span className="ml-4">desaisoham98@gmail.com</span>
               </a>
             </li>
