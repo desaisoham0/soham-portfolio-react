@@ -99,7 +99,7 @@ const Navbar = () => {
                 to="/about"
                 className="block px-4 py-3 text-zinc-200 hover:text-yellow-500"
               >
-                CONTACT
+                ABOUT
               </Link>
             </li>
           </ul>
