@@ -96,7 +96,7 @@ const Navbar = () => {
             <li>
               <Link
                 onClick={handleLinkClick}
-                to="/contact"
+                to="/about"
                 className="block px-4 py-3 text-zinc-200 hover:text-yellow-500"
               >
                 CONTACT
@@ -134,10 +134,10 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/contact"
+              to="/about"
               className="relative block px-3 py-2 transition hover:text-yellow-500"
             >
-              CONTACT
+              ABOUT
             </Link>
           </li>
         </ul>

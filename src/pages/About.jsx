@@ -3,7 +3,7 @@ import ContactForm from "../components/ContactForm";
 import sohamSki from "../assets/soham_ski.jpg";
 import sohamTheMet from "../assets/soham_the_met.jpg";
 
-function Contact() {
+function About() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
       <div className="flex flex-col md:flex-row bg-white/90 shadow-lg rounded-lg overflow-hidden">
@@ -93,17 +93,6 @@ function Contact() {
                 <span className="ml-4">Follow on X</span>
               </a>
             </li>
-            <li className="mt-8 border-t border-zinc-100 pt-8 flex">
-              <a
-                className="group flex text-sm font-medium text-zinc-800 transition hover:text-yellow-600"
-                href="mailto:desaisoham98@gmail.com"
-              >
-                <i className="fas fa-envelope text-xl sm:text-2xl
-                              transition-transform duration-300 
-                              group-hover:translate-x-1"></i>
-                <span className="ml-4">desaisoham98@gmail.com</span>
-              </a>
-            </li>
           </ul>
 
           {/* Contact form */}
@@ -118,4 +107,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default About;

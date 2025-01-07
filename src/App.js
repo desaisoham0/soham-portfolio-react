@@ -7,14 +7,15 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 // Pages
 import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 // Components
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
-import About from "./components/About";
+import Home from "./components/Home";
 import Work from "./components/Work";
 import ContactForm from "./components/ContactForm";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
                 <>
                   <Header />
                   <main className="py-8">
-                    {/* Container for about, work, and contact */}
+                    {/* Container for home, work, and contact */}
                     <div
                       className="
                         bg-white/85
@@ -46,7 +47,7 @@ function App() {
                       <div className="flex flex-col md:flex-row gap-8">
                         {/* About Section */}
                         <div className="md:w-2/3">
-                          <About />
+                          <Home />
                         </div>
 
                         {/* Work + Contact */}
@@ -82,9 +83,12 @@ function App() {
             />
 
             {/* Contact & Projects Pages */}
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
           </Routes>
+          <div>
+            <Footer />
+          </div>
         </div>
       </div>
       <SpeedInsights />

@@ -40,7 +40,7 @@ const projectsList = [
 
 const Projects = () => {
   return (
-    <div className="flex-auto min-h-screen bg-gradient-to-b from-teal-700 to-teal-900">
+    <div className="from-teal-700 to-teal-900">
       <div className="max-w-7xl mx-auto px-4">
         <main className="py-8">
           {/* Header Section */}

@@ -3,7 +3,7 @@ import jasfelLogo from '../assets/jasfel_logo.png';
 import h4Logo from '../assets/hfour_logo.png';
 import codepathLogo from '../assets/codepath_logo.png';
 import tThreeLogo from '../assets/tThree_logo.png';
-import resumePDF from '../assets/Soham-Resume-2025.pdf';
+import resumePDF from '../assets/Site-Soham-Resume-2025.pdf';
 
 const workHistory = [
   {
