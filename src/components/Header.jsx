@@ -36,7 +36,7 @@ const Header = () => {
           
           {/* Subtitle */}
           <p className="text-yellow-500 font-mono text-sm sm:text-base md:text-lg lg:text-xl mb-4">
-            Software Engineer | Full Stack Developer | Web Developer
+            Software Engineer | Full Stack Developer 
           </p>
           
           {/* Social Links */}
