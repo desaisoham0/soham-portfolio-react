@@ -13,16 +13,26 @@ const projectsList = [
     url: "https://github.com/desaisoham0/ecommerce-website",
   },
   {
+    title: "Blog Web App",
+    image: fullstack,
+    description: "A full-stack with React, Node.js, Express, and MongoDB",
+    url: "https://github.com/desaisoham0/fullstack",
+  },
+  {
+    title: "Task Manager Web App",
+    description: "A full-stack with React, Node.js, Express, JWT and PostgreSQL",
+    url: "https://github.com/desaisoham0/lumaa-spring-2025-swe",
+  },
+  {
+    title: "AI-ML: Movie Recommendation System",
+    description: "A simple content-based movie recommendation system using ML.",
+    url: "https://github.com/desaisoham0/lumaa-spring-2025-ai-ml",
+  },
+  {
     title: "SQL Data Optimization",
     image: sql,
     description: "Optimized SQL Server for faster data retrieval and real-time analysis.",
     url: "",
-  },
-  {
-    title: "Blog Web App",
-    image: fullstack,
-    description: "A full-stack with React, Node.js, and MongoDB",
-    url: "https://github.com/desaisoham0/fullstack",
   },
   {
     title: "Pomodoro Timer",
