@@ -33,12 +33,6 @@ Welcome to my portfolio website! This project is a showcase of my skills, projec
 
 ---
 
-## 📸 Screenshots
-
-*(Add screenshots of your project here to show users what to expect.)*
-
----
-
 ## 🛠️ Tech Stack
 
 - **React**: Frontend framework
