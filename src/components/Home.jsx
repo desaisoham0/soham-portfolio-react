@@ -7,8 +7,22 @@ import athletic from '../assets/athletic.jpg';
 import fullstack from '../assets/fullstack.jpg';
 import IOS from '../assets/IOS.jpg';
 import sql from '../assets/sql.jpg';
+import AI from '../assets/AI.jpg';
+import Task from '../assets/task.jpg';
 
 const projectsList = [
+  {
+    title: "Task Manager Web App",
+    image: Task,
+    description: "A full-stack with React, Node.js, Express, JWT and PostgreSQL",
+    url: "https://github.com/desaisoham0/lumaa-spring-2025-swe",
+  },
+  {
+    title: "AI-ML: Movie Recommendation System",
+    image: AI,
+    description: "A simple content-based movie recommendation system using ML.",
+    url: "https://github.com/desaisoham0/lumaa-spring-2025-ai-ml",
+  },
   {
     title: "E-Commerce Platform",
     image: athletic,
