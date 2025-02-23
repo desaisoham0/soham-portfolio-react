@@ -4,7 +4,7 @@ import athletic from '../assets/athletic.jpg';
 import fullstack from '../assets/fullstack.jpg';
 import IOS from '../assets/IOS.jpg';
 import sql from '../assets/sql.jpg';
-import AI from '../assets/Ai.jpg';
+import AI from '../assets/AI.jpg';
 import Task from '../assets/task.jpg';
 
 const projectsList = [
