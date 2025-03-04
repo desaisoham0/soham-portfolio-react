@@ -13,9 +13,7 @@ function About() {
             I'm Soham Desai. I live around New York Metropolitan area, where I design the future.
           </h1>
           <p className="mt-4 text-base leading-relaxed text-zinc-600">
-            Software engineering captivates me because it combines creativity, logic, and problem-solving to create impactful solutions...
-            <br />
-            Over the years, I have worked on several projects that reflect my enthusiasm for creating impactful software...
+          Software engineering captivates me because it combines creativity, logic, and problem-solving to create impactful solutions that enhance efficiency, optimize performance, and deliver seamless user experiences. Whether it's building a professional analytic dashboard, designing a full-stack application, or developing AI-driven tools, I thrive on crafting software that blends data structures, mathematics, and innovation to solve real-world challenges.
           </p>
         </div>
 
