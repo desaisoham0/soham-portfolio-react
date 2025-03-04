@@ -13,6 +13,12 @@ const workHistory = [
     duration: "Sep 2024 - Present"
   },
   {
+    company: "T3 Creators Collective",
+    logo: tThreeLogo,
+    role: "AI/AR Instructor",
+    duration: "June 2024 - Present"
+  },
+  {
     company: "Jasfel Analytics",
     logo: jasfelLogo,
     role: "Software Engineer, Intern",
@@ -23,12 +29,6 @@ const workHistory = [
     logo: codepathLogo,
     role: "Tech Fellow",
     duration: "June 2024 - December 2024"
-  },
-  {
-    company: "T3 Creators Collective",
-    logo: tThreeLogo,
-    role: "AI/AR Instructor",
-    duration: "June 2024 - July 2024"
   }
 ];
 
