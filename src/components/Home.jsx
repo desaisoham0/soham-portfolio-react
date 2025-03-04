@@ -77,6 +77,8 @@ const Home = () => {
           Hi, I'm Soham — a NYC-based Software Engineer and Entrepreneur crafting powerful
           full-stack websites to elevate local businesses and empower people to thrive on
           their own terms.
+          <br /><br />
+          If you want to build an interactive, high-performance website for your business, send me a message!
         </p>
       </div>
 
