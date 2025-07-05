@@ -6,8 +6,22 @@ import IOS from '../assets/IOS.jpg';
 import sql from '../assets/sql.jpg';
 import AI from '../assets/AI.jpg';
 import Task from '../assets/task.jpg';
+import Kailani from '../assets/kilani.jpg';
+import Scrapper from '../assets/scrapper.jpg'
 
 const projectsList = [
+  {
+    title: "Restaurant Fullstack Application",
+    image: Kailani,
+    description: "Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions",
+    url: "https://github.com/desaisoham0/kailani",
+  },
+  {
+    title: "AI Alumni Scraper",
+    image: Scrapper,
+    description: "Sold to KailProject-managed a 4-member capstone combining Flask API, Tailwind UI, and fuzzy-matching pipeline. Parallelized searches with ThreadPoolExecutor reducing lookup time by 50%+.",
+    url: "https://github.com/desaisoham0/cssproto1",
+  },
   {
     title: "E-Commerce Platform",
     image: athletic,
@@ -61,13 +75,10 @@ const Projects = () => {
           <div className="bg-white/85 rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 mb-8">
             <header className="max-w-2xl lg:max-w-3xl">
               <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl">
-                Things I've made trying to put my dent in the universe.
+                My Projects
               </h1>
               <p className="mt-6 text-base text-zinc-600">
-                I've worked on tons of little projects over the years, but these are the ones 
-                that I'm most proud of. Many of them are open-source, so if something piques 
-                your interest, check out the code and contribute if you have ideas for 
-                improvements.
+                A comprehensive collection of my work across full-stack Development, AI/ML, and data engineering
               </p>
             </header>
 

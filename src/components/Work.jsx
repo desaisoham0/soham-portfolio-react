@@ -4,19 +4,26 @@ import h4Logo from '../assets/hfour_logo.png';
 import codepathLogo from '../assets/codepath_logo.png';
 import tThreeLogo from '../assets/tThree_logo.png';
 import resumePDF from '../assets/Site-Soham-Resume-2025.pdf';
+import sohamLogo from '../assets/soham_icon.png';
 
 const workHistory = [
+  {
+    company: "Self-Employed",
+    logo: sohamLogo,
+    role: "Freelance Full-Stack Developer",
+    duration: "Jan 2025 - Present"
+  },
   {
     company: "4-H Youth Development",
     logo: h4Logo,
     role: "Educator",
-    duration: "Sep 2024 - Present"
+    duration: "Sep 2024 - May 2025"
   },
   {
     company: "T3 Creators Collective",
     logo: tThreeLogo,
     role: "AI/AR Instructor",
-    duration: "June 2024 - Present"
+    duration: "June 2024 - May 2025"
   },
   {
     company: "Jasfel Analytics",

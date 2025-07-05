@@ -10,11 +10,34 @@ function About() {
         {/* Left side (Contact details) */}
         <div className="md:w-1/2 p-8 space-y-6">
           <h1 className="font-bold text-4xl md:text-5xl text-zinc-800 tracking-tight">
-            I'm Soham Desai. I live around New York Metropolitan area, where I design the future.
+            My Journey
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-zinc-600">
-          Software engineering captivates me because it combines creativity, logic, and problem-solving to create impactful solutions that enhance efficiency, optimize performance, and deliver seamless user experiences. Whether it's building a professional analytic dashboard, designing a full-stack application, or developing AI-driven tools, I thrive on crafting software that blends data structures, mathematics, and innovation to solve real-world challenges.
-          </p>
+          <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">The Beginning</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  My journey in technology started with a simple question: "How do websites work?" 
+                  This curiosity led me to explore programming, and I quickly fell in love with 
+                  the power of code to solve real-world problems.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Professional Growth</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Through internships, freelance projects, and academic pursuits, I've developed 
+                  expertise in full-stack development, AI/ML, and data engineering. My experience 
+                  ranges from optimizing database performance to building user-friendly interfaces.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Giving Back</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  I'm passionate about education and mentorship. Teaching programming to students 
+                  and helping fellow developers grow their skills has been one of the most 
+                  rewarding aspects of my career.
+                </p>
+              </div>
         </div>
 
         {/* Right side (Contact form and images) */}
