@@ -5,7 +5,6 @@ const Header = () => {
   return (
     <header className="container mx-auto px-4 py-8 sm:py-12 md:py-16">
       <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8">
-        
         {/* Profile Image */}
         <div className="w-32 sm:w-40 md:w-48 lg:w-56 group">
           <img
@@ -19,7 +18,7 @@ const Header = () => {
             "
           />
         </div>
-        
+
         {/* Name & Socials */}
         <div className="text-center sm:text-left">
           {/* Name */}
@@ -31,14 +30,16 @@ const Header = () => {
               mb-2 sm:mb-4
             "
           >
-            SOHAM<br />DESAI
+            SOHAM
+            <br />
+            DESAI
           </h1>
-          
+
           {/* Subtitle */}
           <p className="text-yellow-500 font-mono text-sm sm:text-base md:text-lg lg:text-xl mb-4">
-            Software Engineer | Full Stack Developer 
+            Software Engineer | Full Stack Developer
           </p>
-          
+
           {/* Social Links */}
           <div className="flex gap-4 justify-center sm:justify-start">
             <a

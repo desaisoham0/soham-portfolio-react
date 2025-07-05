@@ -7,62 +7,66 @@ import sql from '../assets/sql.jpg';
 import AI from '../assets/AI.jpg';
 import Task from '../assets/task.jpg';
 import Kailani from '../assets/kilani.jpg';
-import Scrapper from '../assets/scrapper.jpg'
+import Scrapper from '../assets/scrapper.jpg';
 
 const projectsList = [
   {
-    title: "Restaurant Fullstack Application",
+    title: 'Restaurant Fullstack Application',
     image: Kailani,
-    description: "Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions",
-    url: "https://github.com/desaisoham0/kailani",
+    description:
+      'Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions',
+    url: 'https://github.com/desaisoham0/kailani',
   },
   {
-    title: "AI Alumni Scraper",
+    title: 'AI Alumni Scraper',
     image: Scrapper,
-    description: "Sold to KailProject-managed a 4-member capstone combining Flask API, Tailwind UI, and fuzzy-matching pipeline. Parallelized searches with ThreadPoolExecutor reducing lookup time by 50%+.",
-    url: "https://github.com/desaisoham0/cssproto1",
+    description:
+      'Sold to KailProject-managed a 4-member capstone combining Flask API, Tailwind UI, and fuzzy-matching pipeline. Parallelized searches with ThreadPoolExecutor reducing lookup time by 50%+.',
+    url: 'https://github.com/desaisoham0/cssproto1',
   },
   {
-    title: "E-Commerce Platform",
+    title: 'E-Commerce Platform',
     image: athletic,
-    description: "A PHP-based fullstack e-commerce site",
-    url: "https://github.com/desaisoham0/ecommerce-website",
+    description: 'A PHP-based fullstack e-commerce site',
+    url: 'https://github.com/desaisoham0/ecommerce-website',
   },
   {
-    title: "Blog Web App",
+    title: 'Blog Web App',
     image: fullstack,
-    description: "A full-stack with React, Node.js, Express, and MongoDB",
-    url: "https://github.com/desaisoham0/fullstack",
+    description: 'A full-stack with React, Node.js, Express, and MongoDB',
+    url: 'https://github.com/desaisoham0/fullstack',
   },
   {
-    title: "Task Manager Web App",
+    title: 'Task Manager Web App',
     image: Task,
-    description: "A full-stack with React, Node.js, Express, JWT and PostgreSQL",
-    url: "https://github.com/desaisoham0/lumaa-spring-2025-swe",
+    description:
+      'A full-stack with React, Node.js, Express, JWT and PostgreSQL',
+    url: 'https://github.com/desaisoham0/lumaa-spring-2025-swe',
   },
   {
-    title: "AI-ML: Movie Recommendation System",
+    title: 'AI-ML: Movie Recommendation System',
     image: AI,
-    description: "A simple content-based movie recommendation system using ML.",
-    url: "https://github.com/desaisoham0/lumaa-spring-2025-ai-ml",
+    description: 'A simple content-based movie recommendation system using ML.',
+    url: 'https://github.com/desaisoham0/lumaa-spring-2025-ai-ml',
   },
   {
-    title: "SQL Data Optimization",
+    title: 'SQL Data Optimization',
     image: sql,
-    description: "Optimized SQL Server for faster data retrieval and real-time analysis.",
-    url: "",
+    description:
+      'Optimized SQL Server for faster data retrieval and real-time analysis.',
+    url: '',
   },
   {
-    title: "Pomodoro Timer",
+    title: 'Pomodoro Timer',
     image: pomodorotimer,
-    description: "Pomodoro timer with customizable work and break intervals",
-    url: "https://github.com/desaisoham0/FocusFlow",
+    description: 'Pomodoro timer with customizable work and break intervals',
+    url: 'https://github.com/desaisoham0/FocusFlow',
   },
   {
-    title: "Personality Quiz App",
+    title: 'Personality Quiz App',
     image: IOS,
-    description: "An iOS quiz app built with Swift and UIKit",
-    url: "https://github.com/desaisoham0/PersonalityQuiz_Desai",
+    description: 'An iOS quiz app built with Swift and UIKit',
+    url: 'https://github.com/desaisoham0/PersonalityQuiz_Desai',
   },
 ];
 
@@ -78,7 +82,8 @@ const Projects = () => {
                 My Projects
               </h1>
               <p className="mt-6 text-base text-zinc-600">
-                A comprehensive collection of my work across full-stack Development, AI/ML, and data engineering
+                A comprehensive collection of my work across full-stack
+                Development, AI/ML, and data engineering
               </p>
             </header>
 
@@ -96,7 +101,7 @@ const Projects = () => {
                   "
                 >
                   {/* Project Image */}
-                  <div 
+                  <div
                     className="
                       relative z-10 flex h-12 w-12 items-center justify-center 
                       rounded-full bg-white shadow-sm 
@@ -113,7 +118,7 @@ const Projects = () => {
                   </div>
 
                   {/* Project Title */}
-                  <h2 
+                  <h2
                     className="
                       mt-6 text-lg font-semibold text-zinc-900 
                       group-hover:text-zinc-600
@@ -123,7 +128,7 @@ const Projects = () => {
                   </h2>
 
                   {/* Project Description */}
-                  <p 
+                  <p
                     className="
                       relative z-10 mt-2 text-sm text-zinc-700 
                       group-hover:text-zinc-500

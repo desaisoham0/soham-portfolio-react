@@ -12,42 +12,44 @@ import Task from '../assets/task.jpg';
 
 const projectsList = [
   {
-    title: "Task Manager Web App",
+    title: 'Task Manager Web App',
     image: Task,
-    description: "A full-stack with React, Node.js, Express, JWT and PostgreSQL",
-    url: "https://github.com/desaisoham0/lumaa-spring-2025-swe",
+    description:
+      'A full-stack with React, Node.js, Express, JWT and PostgreSQL',
+    url: 'https://github.com/desaisoham0/lumaa-spring-2025-swe',
   },
   {
-    title: "AI-ML: Movie Recommendation System",
+    title: 'AI-ML: Movie Recommendation System',
     image: AI,
-    description: "A simple content-based movie recommendation system using ML.",
-    url: "https://github.com/desaisoham0/lumaa-spring-2025-ai-ml",
+    description: 'A simple content-based movie recommendation system using ML.',
+    url: 'https://github.com/desaisoham0/lumaa-spring-2025-ai-ml',
   },
   {
-    title: "E-Commerce Platform",
+    title: 'E-Commerce Platform',
     image: athletic,
-    description: "A PHP-based fullstack e-commerce site"
+    description: 'A PHP-based fullstack e-commerce site',
   },
   {
-    title: "SQL Data Optimization",
+    title: 'SQL Data Optimization',
     image: sql,
-    description: "Optimized SQL Server for faster data retrieval and real-time analysis."
+    description:
+      'Optimized SQL Server for faster data retrieval and real-time analysis.',
   },
   {
-    title: "Blog Web App",
+    title: 'Blog Web App',
     image: fullstack,
-    description: "A full-stack with React, Node.js, and MongoDB"
+    description: 'A full-stack with React, Node.js, and MongoDB',
   },
   {
-    title: "Pomodoro timer",
+    title: 'Pomodoro timer',
     image: pomodorotimer,
-    description: "Pomodoro timer with customizable work and break intervals"
+    description: 'Pomodoro timer with customizable work and break intervals',
   },
   {
-    title: "Personality Quiz App",
+    title: 'Personality Quiz App',
     image: IOS,
-    description: "An iOS quiz app built with Swift and UIKit"
-  }
+    description: 'An iOS quiz app built with Swift and UIKit',
+  },
 ];
 
 const Home = () => {
@@ -55,18 +57,25 @@ const Home = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentProject((prev) => (prev === projectsList.length - 1 ? 0 : prev + 1));
+      setCurrentProject(prev =>
+        prev === projectsList.length - 1 ? 0 : prev + 1
+      );
     }, 6000);
     return () => clearInterval(timer);
   }, []);
 
   const nextProject = () =>
-    setCurrentProject((prev) => (prev === projectsList.length - 1 ? 0 : prev + 1));
+    setCurrentProject(prev =>
+      prev === projectsList.length - 1 ? 0 : prev + 1
+    );
   const prevProject = () =>
-    setCurrentProject((prev) => (prev === 0 ? projectsList.length - 1 : prev - 1));
+    setCurrentProject(prev =>
+      prev === 0 ? projectsList.length - 1 : prev - 1
+    );
 
   // Figure out which are prev/current/next
-  const prevIndex = (currentProject - 1 + projectsList.length) % projectsList.length;
+  const prevIndex =
+    (currentProject - 1 + projectsList.length) % projectsList.length;
   const nextIndex = (currentProject + 1) % projectsList.length;
 
   return (
@@ -74,17 +83,21 @@ const Home = () => {
       {/* Intro */}
       <div className="flex justify-center item-center sm:text-left">
         <p className="text-basic text-zinc-700 text-sm sm:text-base md:text-lg lg:text-xl mb-4">
-          Hi, I'm Soham — a NYC-based Software Engineer and Entrepreneur crafting powerful
-          full-stack websites to elevate local businesses and empower people to thrive on
-          their own terms.
-          <br /><br />
-          If you want to build an interactive, high-performance website for your business, send me a message!
+          Hi, I'm Soham — a NYC-based Software Engineer and Entrepreneur
+          crafting powerful full-stack websites to elevate local businesses and
+          empower people to thrive on their own terms.
+          <br />
+          <br />
+          If you want to build an interactive, high-performance website for your
+          business, send me a message!
         </p>
       </div>
 
       {/* School */}
-      <div className="rounded-2xl shadow-md border border-zinc-100 p-3 sm:p-4 md:p-6 mb-6 
-                      hover:shadow-md transition-all duration-300 sm:hover:scale-[1.02]">
+      <div
+        className="rounded-2xl shadow-md border border-zinc-100 p-3 sm:p-4 md:p-6 mb-6 
+                      hover:shadow-md transition-all duration-300 sm:hover:scale-[1.02]"
+      >
         <h2 className="text-md text-black font-medium mb-3 sm:mb-4 flex items-center gap-2">
           <i className="fa-solid fa-school"></i> School
         </h2>
@@ -118,7 +131,7 @@ const Home = () => {
           />
           {/* Current Image */}
           <img
-            key={currentProject} 
+            key={currentProject}
             src={projectsList[currentProject].image}
             alt="current"
             className="

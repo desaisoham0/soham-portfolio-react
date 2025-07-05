@@ -1,0 +1,58 @@
+name: Check Vercel Configuration
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/**'
+      - 'vercel.json'
+      - 'package.json'
+
+jobs:
+  check-vercel-config:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check Vercel secrets
+        run: |
+          echo "Checking if Vercel secrets are configured..."
+          
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "❌ VERCEL_TOKEN is not configured"
+            exit 1
+          else
+            echo "✅ VERCEL_TOKEN is configured"
+          fi
+          
+          if [ -z "${{ secrets.VERCEL_ORG_ID }}" ]; then
+            echo "❌ VERCEL_ORG_ID is not configured"
+            exit 1
+          else
+            echo "✅ VERCEL_ORG_ID is configured"
+          fi
+          
+          if [ -z "${{ secrets.VERCEL_PROJECT_ID }}" ]; then
+            echo "❌ VERCEL_PROJECT_ID is not configured"
+            exit 1
+          else
+            echo "✅ VERCEL_PROJECT_ID is configured"
+          fi
+          
+          echo "🎉 All Vercel secrets are properly configured!"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Verify Vercel configuration
+        run: |
+          echo "Verifying Vercel CLI installation..."
+          vercel --version
+          echo "✅ Vercel CLI is ready"

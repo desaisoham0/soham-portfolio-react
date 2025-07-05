@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,7 +8,7 @@ const Navbar = () => {
 
   // Close menu if clicking outside
   useEffect(() => {
-    const handleClickOutside = (e) => {
+    const handleClickOutside = e => {
       if (
         isMenuOpen &&
         menuRef.current &&
@@ -20,8 +20,8 @@ const Navbar = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMenuOpen]);
 
   const handleLinkClick = () => {
@@ -47,11 +47,11 @@ const Navbar = () => {
             transform transition-all duration-200 active:scale-95
           "
         >
-          Menu{" "}
+          Menu{' '}
           <i
             className={`
               fa-solid fa-angle-down ml-2 transition-transform duration-200 
-              ${isMenuOpen ? "rotate-180" : ""}
+              ${isMenuOpen ? 'rotate-180' : ''}
             `}
           ></i>
         </button>
@@ -120,7 +120,10 @@ const Navbar = () => {
           "
         >
           <li>
-            <Link to="/" className="relative block px-3 py-2 transition hover:text-yellow-500">
+            <Link
+              to="/"
+              className="relative block px-3 py-2 transition hover:text-yellow-500"
+            >
               Home
             </Link>
           </li>

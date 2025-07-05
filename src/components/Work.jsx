@@ -8,35 +8,35 @@ import sohamLogo from '../assets/soham_icon.png';
 
 const workHistory = [
   {
-    company: "Self-Employed",
+    company: 'Self-Employed',
     logo: sohamLogo,
-    role: "Freelance Full-Stack Developer",
-    duration: "Jan 2025 - Present"
+    role: 'Freelance Full-Stack Developer',
+    duration: 'Jan 2025 - Present',
   },
   {
-    company: "4-H Youth Development",
+    company: '4-H Youth Development',
     logo: h4Logo,
-    role: "Educator",
-    duration: "Sep 2024 - May 2025"
+    role: 'Educator',
+    duration: 'Sep 2024 - May 2025',
   },
   {
-    company: "T3 Creators Collective",
+    company: 'T3 Creators Collective',
     logo: tThreeLogo,
-    role: "AI/AR Instructor",
-    duration: "June 2024 - May 2025"
+    role: 'AI/AR Instructor',
+    duration: 'June 2024 - May 2025',
   },
   {
-    company: "Jasfel Analytics",
+    company: 'Jasfel Analytics',
     logo: jasfelLogo,
-    role: "Software Engineer, Intern",
-    duration: "July 2024 - October 2024"
+    role: 'Software Engineer, Intern',
+    duration: 'July 2024 - October 2024',
   },
   {
-    company: "CodePath",
+    company: 'CodePath',
     logo: codepathLogo,
-    role: "Tech Fellow",
-    duration: "June 2024 - December 2024"
-  }
+    role: 'Tech Fellow',
+    duration: 'June 2024 - December 2024',
+  },
 ];
 
 const Work = () => {
@@ -68,7 +68,7 @@ const Work = () => {
                 "
               />
             </div>
-            
+
             {/* Company Info */}
             <div className="flex flex-col flex-1 min-w-0">
               <h3 className="text-sm sm:text-md font-medium text-gray-900 mb-1 truncate">

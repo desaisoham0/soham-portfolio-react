@@ -1,30 +1,30 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ email: "", message: "" });
+  const [formData, setFormData] = useState({ email: '', message: '' });
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
   // Update form data
-  const handleChange = (e) => {
+  const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   // Handle submit
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
     axios
-      .post("/api/send_email", formData)
-      .then((response) => {
+      .post('/api/send_email', formData)
+      .then(response => {
         if (response.data.success) {
           setSuccess(true);
           setError(false);
-          setFormData({ email: "", message: "" });
+          setFormData({ email: '', message: '' });
         }
       })
-      .catch((err) => {
+      .catch(err => {
         console.error('Error:', err);
         setSuccess(false);
         setError(true);
@@ -38,8 +38,12 @@ const ContactForm = () => {
       </h2>
 
       {/* Success/Error Messages */}
-      {success && <p className="text-green-600 mb-2">Message sent successfully!</p>}
-      {error && <p className="text-red-600 mb-2">Something went wrong. Try again!</p>}
+      {success && (
+        <p className="text-green-600 mb-2">Message sent successfully!</p>
+      )}
+      {error && (
+        <p className="text-red-600 mb-2">Something went wrong. Try again!</p>
+      )}
 
       {/* Form */}
       <form onSubmit={handleSubmit} className="space-y-4">

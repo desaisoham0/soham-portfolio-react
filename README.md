@@ -35,7 +35,7 @@ Welcome to my portfolio website! This project is a showcase of my skills, projec
 
 ## 🛠️ Tech Stack
 
-- **React**: Frontend framework
+- **Vite React**: Frontend framework
 - **Tailwind CSS**: Utility-first CSS framework for styling
 - **Vercel**: Hosting and deployment
 - **GitHub**: Version control and repository
