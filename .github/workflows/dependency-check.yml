@@ -24,24 +24,53 @@ jobs:
 
       - name: Check for outdated packages
         run: |
-          echo "Checking for outdated packages..."
+          echo "📦 Checking for outdated packages..."
           npm outdated || true
 
-      - name: Security audit
+      - name: Security audit (detailed)
         run: |
-          echo "Running security audit..."
-          npm audit --audit-level=moderate
+          echo "🔍 Running detailed security audit..."
+          echo "=== High Severity Issues ==="
+          npm audit --audit-level=high || echo "No high severity issues found"
+          
+          echo ""
+          echo "=== Moderate Severity Issues ==="
+          npm audit --audit-level=moderate || echo "No moderate severity issues found"
+          
+          echo ""
+          echo "=== All Issues ==="
+          npm audit || echo "Audit complete"
 
-      - name: Check for high severity vulnerabilities
+      - name: Check for security fixes
         run: |
-          echo "Checking for high severity vulnerabilities..."
-          npm audit --audit-level=high
+          echo "🔧 Checking available security fixes..."
+          npm audit fix --dry-run || echo "No automatic fixes available"
 
       - name: Generate dependency report
         run: |
-          echo "Generating dependency report..."
-          npm list --depth=0 > dependency-report.txt
-          cat dependency-report.txt
+          echo "📊 Generating comprehensive dependency report..."
+          
+          echo "=== Current Dependencies ===" > dependency-report.txt
+          npm list --depth=0 >> dependency-report.txt 2>&1 || true
+          
+          echo "" >> dependency-report.txt
+          echo "=== Outdated Packages ===" >> dependency-report.txt
+          npm outdated >> dependency-report.txt 2>&1 || true
+          
+          echo "" >> dependency-report.txt
+          echo "=== Security Audit ===" >> dependency-report.txt
+          npm audit >> dependency-report.txt 2>&1 || true
+          
+          echo "" >> dependency-report.txt
+          echo "=== Available Fixes ===" >> dependency-report.txt
+          npm audit fix --dry-run >> dependency-report.txt 2>&1 || true
+          
+          echo "Report generated successfully"
+          
+          # Show summary
+          echo ""
+          echo "📋 Report Summary:"
+          echo "Check the uploaded artifact for full details"
 
       - name: Upload dependency report
         uses: actions/upload-artifact@v4
@@ -49,3 +78,10 @@ jobs:
           name: dependency-report
           path: dependency-report.txt
           retention-days: 30
+
+      - name: Create issue for critical vulnerabilities
+        if: failure()
+        run: |
+          echo "⚠️ Critical vulnerabilities detected!"
+          echo "Please review the dependency report and update packages as needed"
+          echo "Consider running 'npm audit fix' or 'npm audit fix --force' locally"

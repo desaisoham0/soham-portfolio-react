@@ -24,8 +24,8 @@ const ContactForm = () => {
           setFormData({ email: '', message: '' });
         }
       })
-      .catch(err => {
-        console.error('Error:', err);
+      .catch(() => {
+        // Handle error by showing user-friendly message
         setSuccess(false);
         setError(true);
       });

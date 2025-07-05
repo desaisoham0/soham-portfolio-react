@@ -13,8 +13,7 @@ Main workflow that runs on every push and pull request:
 - **Build**: Creates production build
 - **Bundle Analysis**: Monitors bundle size
 - **Lighthouse CI**: Performance testing
-- **Deploy Preview**: Vercel preview for PRs
-- **Deploy Production**: Vercel production deployment for main branch
+- **Notification**: Reports build status
 
 ### 2. Dependency Check (`dependency-check.yml`)
 Weekly dependency audit:
@@ -34,16 +33,8 @@ Automatically formats code:
 npm install
 ```
 
-### 2. Vercel Integration
-For deployment to work, add these secrets to your GitHub repository:
-- `VERCEL_TOKEN`: Your Vercel token
-- `VERCEL_ORG_ID`: Your Vercel organization ID
-- `VERCEL_PROJECT_ID`: Your Vercel project ID
-
-To get these values:
-1. Go to [Vercel Dashboard](https://vercel.com/dashboard)
-2. Go to Settings > Tokens and create a new token
-3. Use `vercel link` command in your project to get org and project IDs
+### 2. Deployment
+This project uses Vercel's built-in GitHub integration for deployment. No additional setup required - Vercel will automatically deploy when you push to your main branch.
 
 ### 3. Available Scripts
 
@@ -69,8 +60,11 @@ npm run type-check   # Run TypeScript type checking
 - **TypeScript**: Type checking for better code quality
 
 ### Security
-- **npm audit**: Checks for known vulnerabilities
-- **audit-ci**: Fails build on moderate+ vulnerabilities
+- **High Priority**: Fails build on high severity vulnerabilities
+- **Moderate Priority**: Warns about moderate vulnerabilities but continues build
+- **Security Reports**: Generates detailed security reports for review
+- **Automated Checks**: Weekly dependency audits and security scans
+- **Fix Script**: Run `./fix-security.sh` to help resolve security issues locally
 
 ### Performance
 - **Bundle Size Analysis**: Monitors JavaScript/CSS bundle sizes
@@ -78,9 +72,9 @@ npm run type-check   # Run TypeScript type checking
 - **Build Optimization**: Ensures efficient builds
 
 ### Deployment
-- **Preview Deployments**: Automatic preview for pull requests
+- **Automatic Deployment**: Vercel handles deployment automatically via GitHub integration
+- **Preview Deployments**: Vercel creates preview URLs for pull requests
 - **Production Deployment**: Automatic deployment to production on main branch merge
-- **Vercel Integration**: Seamless deployment with Vercel
 
 ## Customization
 
