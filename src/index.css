@@ -23,11 +23,26 @@
   /* Global styling */
   html {
     scroll-behavior: smooth;
+    height: 100%;
   }
 
   body {
     @apply bg-background-light dark:bg-background-dark text-[#000437] dark:text-[#dce6ec] transition-colors duration-300;
     font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+    margin: 0;
+    padding: 0;
+    background-color: #f1f7fb; /* Fallback */
+  }
+
+  .dark body {
+    background-color: #131f24; /* Fallback for dark mode */
+  }
+
+  #root {
+    min-height: 100vh;
+    @apply bg-[#f1f7fb] dark:bg-[#131f24];
   }
 
   /* Custom scrollbar */
@@ -67,6 +82,9 @@
   /* Solid background */
   .gradient-bg {
     background: #f1f7fb;
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+    width: 100%;
   }
 
   .dark .gradient-bg {

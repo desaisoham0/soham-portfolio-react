@@ -38,13 +38,13 @@ function App() {
 
   return (
     <ThemeProvider>
-      {/* Full-page gradient background */}
-      <div className="min-h-screen gradient-bg">
+      {/* Full-page gradient background with proper viewport coverage */}
+      <div className="min-h-screen w-full bg-[#f1f7fb] dark:bg-[#131f24] gradient-bg">
         {/* Fixed Navbar */}
         <Navbar />
 
         {/* Main Content with padding for fixed navbar */}
-        <div className="pt-16 sm:pt-20">
+        <div className="pt-16 sm:pt-20 pb-0 min-h-screen w-full">
           <div className="max-w-7xl mx-auto px-4">
             {/* Hero Section */}
             <section id="home" className="min-h-screen flex items-center">
@@ -78,7 +78,7 @@ function App() {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24">
+            <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 pb-0">
               <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                 <ContactForm />
               </div>
