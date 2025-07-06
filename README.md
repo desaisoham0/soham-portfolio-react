@@ -4,56 +4,25 @@ A sleek, modern single-page portfolio website built with React and Tailwind CSS.
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](https://your-portfolio-url.vercel.app)
+[View Live Portfolio](https://sohamdesai.dev/)
 
 ## ✨ Features
 
 ### Modern Single-Page Design
 - **Smooth scrolling navigation** with active section highlighting
-- **Fixed navigation bar** with responsive mobile menu
+- **Navigation bar** with responsive mobile menu
 - **Gradient backgrounds** and glassmorphism effects
 - **Responsive design** that works on all device sizes
 
-### Interactive Components
-- **Animated project carousel** with touch/click navigation
-- **Hover effects** and smooth transitions throughout
-- **Contact form** with real-time validation and feedback
-- **Social media integration** with consistent styling
-
-### Performance Optimized
-- **Lazy loading** for images and components
-- **Optimized bundle size** with code splitting
-- **Fast loading times** with efficient asset management
-- **SEO friendly** with proper meta tags and structure
-
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 18 with functional components and hooks
+- **Frontend**: React with functional components and hooks
 - **Styling**: Tailwind CSS for utility-first styling
 - **Build Tool**: Vite for fast development and optimized builds
 - **Deployment**: Vercel with automatic GitHub integration
 - **Analytics**: Vercel Analytics and Speed Insights
 - **Icons**: Font Awesome for consistent iconography
 - **Email**: Custom API endpoint for contact form functionality
-
-## 📁 Project Structure
-
-```
-src/
-├── components/
-│   ├── About.jsx          # About section with personal story
-│   ├── ContactForm.jsx    # Contact form with validation
-│   ├── Footer.jsx         # Footer with social links
-│   ├── Header.jsx         # Hero section with profile
-│   ├── Home.jsx           # Introduction and featured projects
-│   ├── Navbar.jsx         # Fixed navigation with smooth scrolling
-│   ├── Projects.jsx       # Project showcase with tech stacks
-│   └── Work.jsx           # Work experience and skills
-├── assets/                # Images and static files
-├── App.jsx               # Main application component
-├── index.css             # Global styles and Tailwind imports
-└── main.jsx              # React DOM rendering
-```
 
 ## 🎨 Design Principles
 
@@ -112,13 +81,6 @@ Set up the following environment variables in your Vercel dashboard:
 - `EMAIL_OWNER`: Your email address for contact form
 - `EMAIL_PASSWORD`: App password for email service
 
-## 📊 Performance Features
-
-- **Lighthouse Score**: 95+ performance rating
-- **Core Web Vitals**: Optimized for LCP, FID, and CLS
-- **Bundle Analysis**: Monitored and optimized asset sizes
-- **Lazy Loading**: Images and components loaded on demand
-
 ## 🎯 Key Sections
 
 ### 1. Hero Section
@@ -140,7 +102,6 @@ Set up the following environment variables in your Vercel dashboard:
 ### 4. Work Experience
 - **Professional timeline** with company details
 - **Technical skills** in an organized grid
-- **Resume download** with clear call-to-action
 
 ### 5. Contact Section
 - **Contact form** with real-time validation
@@ -149,9 +110,7 @@ Set up the following environment variables in your Vercel dashboard:
 
 ## � Future Enhancements
 
-- [ ] **Blog integration** for sharing technical insights
 - [ ] **Dark/Light theme** toggle for user preference
-- [ ] **Animations** with Framer Motion or similar library
 - [ ] **Multi-language support** for international audience
 - [ ] **Project filtering** by technology or category
 
@@ -166,13 +125,6 @@ Feel free to contribute to this project by:
 2. **Creating a feature branch**
 3. **Making your changes**
 4. **Submitting a pull request**
-
-## 📧 Contact
-
-**Soham Desai**
-- GitHub: [@desaisoham0](https://github.com/desaisoham0)
-- LinkedIn: [Soham Desai](https://www.linkedin.com/in/soham-desai-068952212/)
-- Email: sohamdesai@example.com
 
 ---
 
