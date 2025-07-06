@@ -1,3 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Global pastel theme variables */
+  :root {
+    --background: #f1f7fb;
+    --surface: #f8fafc;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+  }
+
+  .dark {
+    --background: #131f24;
+    --surface: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+  }
+
+  /* Global styling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background-light dark:bg-background-dark text-[#000437] dark:text-[#dce6ec] transition-colors duration-300;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-light dark:bg-surface-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-pastelBlue/50 dark:bg-pastelBlue-dark/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-pastelBlue/70 dark:bg-pastelBlue-dark/70;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-pastelLavender/30 dark:bg-pastelLavender-dark/30 text-text-primary-light dark:text-text-primary-dark;
+  }
+
+  /* Focus styles */
+  .focus-visible {
+    @apply outline-none ring-2 ring-pastelBlue/50 dark:ring-pastelBlue-dark/50 ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark;
+  }
+}
+
+@layer components {
+  /* Gradient text utility */
+  .gradient-text {
+    @apply bg-gradient-to-r from-pastelPink-dark via-pastelLavender-dark to-pastelBlue-dark dark:from-pastelPink dark:via-pastelLavender dark:to-pastelBlue bg-clip-text text-transparent;
+  }
+
+  /* Solid background */
+  .gradient-bg {
+    background: #f1f7fb;
+  }
+
+  .dark .gradient-bg {
+    background: #131f24;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 dark:border-white/10;
+  }
+}

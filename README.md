@@ -111,7 +111,6 @@ Set up the following environment variables in your Vercel dashboard:
 ## � Future Enhancements
 
 - [ ] **Dark/Light theme** toggle for user preference
-- [ ] **Multi-language support** for international audience
 - [ ] **Project filtering** by technology or category
 
 ## 📝 License

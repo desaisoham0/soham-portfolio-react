@@ -39,11 +39,11 @@ const ContactForm = () => {
     <div className="space-y-6">
       {/* Section Header */}
       <div>
-        <h2 className="text-2xl font-semibold text-yellow-400 mb-4 flex items-center">
+        <h2 className="text-2xl font-semibold text-[#1899d6] mb-4 flex items-center">
           <i className="fa-solid fa-envelope mr-2"></i>
           Get In Touch
         </h2>
-        <p className="text-white/80 text-sm">
+        <p className="text-[#000437] dark:text-[#dce6ec] text-sm">
           Ready to start your next project? Let's discuss how I can help bring
           your ideas to life.
         </p>
@@ -76,7 +76,7 @@ const ContactForm = () => {
         <div>
           <label
             htmlFor="email"
-            className="block text-white/90 text-sm font-medium mb-2"
+            className="block text-[#000437] dark:text-[#dce6ec] text-sm font-medium mb-2"
           >
             Your Email
           </label>
@@ -89,9 +89,9 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             className="
-              w-full p-4 bg-white/10 border border-white/20 rounded-xl
-              text-white placeholder-white/60
-              focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50
+              w-full p-4 bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 border-2 border-[#b5d2e6] dark:border-[#37464f] rounded-xl
+              text-[#000437] dark:text-[#dce6ec] placeholder-[#000437]/50 dark:placeholder-[#dce6ec]/50
+              focus:outline-none focus:ring-2 focus:ring-[#1899d6]/50 focus:border-[#1899d6]/50
               transition-all duration-300
             "
           />
@@ -100,7 +100,7 @@ const ContactForm = () => {
         <div>
           <label
             htmlFor="message"
-            className="block text-white/90 text-sm font-medium mb-2"
+            className="block text-[#000437] dark:text-[#dce6ec] text-sm font-medium mb-2"
           >
             Your Message
           </label>
@@ -113,9 +113,9 @@ const ContactForm = () => {
             onChange={handleChange}
             rows="5"
             className="
-              w-full p-4 bg-white/10 border border-white/20 rounded-xl
-              text-white placeholder-white/60 resize-none
-              focus:outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-400/50
+              w-full p-4 bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 border-2 border-[#b5d2e6] dark:border-[#37464f] rounded-xl
+              text-[#000437] dark:text-[#dce6ec] placeholder-[#000437]/50 dark:placeholder-[#dce6ec]/50 resize-none
+              focus:outline-none focus:ring-2 focus:ring-[#1899d6]/50 focus:border-[#1899d6]/50
               transition-all duration-300
             "
           />
@@ -127,8 +127,8 @@ const ContactForm = () => {
           disabled={loading}
           className="
             group w-full inline-flex items-center justify-center px-6 py-4
-            bg-yellow-400 text-slate-900 rounded-xl font-semibold
-            transition-all duration-300 hover:bg-yellow-300 hover:scale-105
+            bg-[#3c4dff] text-[#dce6ec] rounded-xl font-semibold border-1 border-b-4 border-[#3f22ec]
+            transition-all duration-300 hover:bg-[#4353fa] hover:scale-105
             shadow-lg hover:shadow-xl
             disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
           "
@@ -146,40 +146,6 @@ const ContactForm = () => {
           )}
         </button>
       </form>
-
-      {/* Alternative Contact */}
-      <div className="text-center pt-4 border-t border-white/20">
-        <p className="text-white/80 text-sm mb-4">
-          Prefer to reach out directly?
-        </p>
-        <div className="flex justify-center gap-6">
-          <a
-            href="https://www.linkedin.com/in/soham-desai-068952212/"
-            className="text-white/70 hover:text-yellow-400 transition-colors duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-          >
-            <i className="fab fa-linkedin text-2xl"></i>
-          </a>
-          <a
-            href="https://github.com/desaisoham0"
-            className="text-white/70 hover:text-yellow-400 transition-colors duration-300"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <i className="fab fa-github text-2xl"></i>
-          </a>
-          <a
-            href="mailto:sohamdesai@example.com"
-            className="text-white/70 hover:text-yellow-400 transition-colors duration-300"
-            aria-label="Email"
-          >
-            <i className="fas fa-envelope text-2xl"></i>
-          </a>
-        </div>
-      </div>
     </div>
   );
 };

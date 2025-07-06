@@ -12,6 +12,7 @@ import Projects from './components/Projects';
 import About from './components/About';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import { ThemeProvider } from './context/ThemeProvider';
 
 function App() {
   // Smooth scrolling functionality
@@ -36,9 +37,9 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ThemeProvider>
       {/* Full-page gradient background */}
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <div className="min-h-screen gradient-bg">
         {/* Fixed Navbar */}
         <Navbar />
 
@@ -49,7 +50,7 @@ function App() {
             <section id="home" className="min-h-screen flex items-center">
               <div className="w-full">
                 <Header />
-                <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 mt-8">
+                <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 mt-8 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                   <Home />
                 </div>
               </div>
@@ -57,26 +58,26 @@ function App() {
 
             {/* About Section */}
             <section id="about" className="py-16 md:py-24">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10">
+              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                 <About />
               </div>
             </section>
 
             {/* Projects Section */}
             <section id="projects" className="py-16 md:py-24">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10">
+              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                 <Projects />
               </div>
             </section>
 
             {/* Work & Contact Section */}
             <section id="contact" className="py-16 md:py-24">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10">
+              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8">
+                  <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-sm rounded-xl p-6 md:p-8 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                     <Work />
                   </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8">
+                  <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-sm rounded-xl p-6 md:p-8 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                     <ContactForm />
                   </div>
                 </div>
@@ -90,7 +91,7 @@ function App() {
       </div>
       <SpeedInsights />
       <Analytics />
-    </>
+    </ThemeProvider>
   );
 }
 

@@ -1,43 +1,27 @@
-import { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
-  const menuRef = useRef(null);
-  const buttonRef = useRef(null);
 
-  // Close menu if clicking outside
-  useEffect(() => {
-    const handleClickOutside = e => {
-      if (
-        isMenuOpen &&
-        menuRef.current &&
-        buttonRef.current &&
-        !menuRef.current.contains(e.target) &&
-        !buttonRef.current.contains(e.target)
-      ) {
-        setIsMenuOpen(false);
-      }
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isMenuOpen]);
-
-  // Handle active section highlighting
+  // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'about', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
 
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (
-            scrollPosition >= offsetTop &&
-            scrollPosition < offsetTop + offsetHeight
-          ) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
             setActiveSection(section);
             break;
           }
@@ -46,122 +30,95 @@ const Navbar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial position
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-  };
-
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
+  const navLinks = [
+    { href: '#home', label: 'Home' },
+    { href: '#about', label: 'About' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' },
   ];
 
+  const getActiveClass = href => {
+    const section = href.substring(1); // Remove '#' from href
+    return activeSection === section;
+  };
+
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-white/10">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md border-b-2 border-[#b5d2e6] dark:border-[#37464f]">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Mobile Menu Button */}
-        <div className="flex justify-between items-center py-4 md:hidden">
-          <div className="text-white font-bold text-xl">SD</div>
-          <button
-            ref={buttonRef}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-expanded={isMenuOpen}
-            className="
-              z-50 flex items-center 
-              rounded-full bg-white/10 px-4 py-2 
-              text-sm font-medium text-white 
-              shadow-lg
-              ring-1 ring-white/10 
-              backdrop-blur 
-              hover:bg-white/20 active:bg-white/30
-              transform transition-all duration-200 active:scale-95
-            "
-          >
-            Menu{' '}
-            <i
-              className={`
-                fa-solid fa-angle-down ml-2 transition-transform duration-200 
-                ${isMenuOpen ? 'rotate-180' : ''}
-              `}
-            ></i>
-          </button>
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <a href="#home" className="text-3xl font-black font-montserrat">
+              <span className=" text-[#000437] dark:text-[#dce6ec] font-montserrat">
+                SOHAM
+              </span>
+              <span className="ml-2 bg-gradient-to-r from-[#1e40af] to-[#0ea5e9] dark:from-[#3b82f6] dark:to-[#38bdf8] bg-clip-text text-transparent font-montserrat">
+                DESAI
+              </span>
+            </a>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navLinks.map(link => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`font-medium transition-all duration-300 px-3 py-3 rounded-lg ${
+                  getActiveClass(link.href)
+                    ? 'text-[#000437] dark:text-[#dce6ec] bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 scale-105'
+                    : 'text-[#000437] dark:text-[#dce6ec] hover:bg-[#b5d2e6]/40 dark:hover:bg-[#37464f]/40'
+                }`}
+              >
+                {link.label}
+              </a>
+            ))}
+            <ThemeToggle />
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center space-x-4">
+            <ThemeToggle />
+            <button
+              onClick={toggleMenu}
+              className="text-[#000437] dark:text-[#dce6ec] "
+              aria-label="Toggle menu"
+            >
+              <i
+                className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}
+              ></i>
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Menu Content */}
+        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div
-            ref={menuRef}
-            className="
-              absolute right-4 top-16 
-              w-64 
-              bg-slate-800/95
-              backdrop-blur-md 
-              rounded-lg 
-              shadow-lg
-              ring-1 ring-white/10 
-              md:hidden 
-              transition-all duration-200 ease-in-out 
-              z-40
-            "
-          >
-            <ul className="py-2 flex flex-col divide-y divide-white/10">
-              {navItems.map(item => (
-                <li key={item.id}>
-                  <a
-                    onClick={handleLinkClick}
-                    href={`#${item.id}`}
-                    className={`
-                      block px-4 py-3 text-white hover:text-yellow-400 transition-colors duration-200
-                      ${activeSection === item.id ? 'text-yellow-400 bg-white/5' : ''}
-                    `}
-                  >
-                    {item.label}
-                  </a>
-                </li>
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-xl mt-2 border-2 border-[#b5d2e6] dark:border-[#37464f]">
+              {navLinks.map(link => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`block px-3 py-2 transition-colors duration-300 rounded-lg font-medium ${
+                    getActiveClass(link.href)
+                      ? 'text-[#000437] dark:text-[#dce6ec] bg-[#b5d2e6]/40 dark:bg-[#37464f]/40'
+                      : 'text-[#000437] dark:text-[#dce6ec] hover:bg-[#b5d2e6]/40 dark:hover:bg-[#37464f]/40'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
         )}
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex justify-between items-center py-4">
-          <div className="text-white font-bold text-2xl">Soham Desai</div>
-          <ul
-            className="
-              inline-flex 
-              rounded-full bg-white/10
-              px-3 py-2 
-              text-sm font-medium text-white
-              shadow-lg
-              ring-1 ring-white/10 
-              backdrop-blur
-            "
-          >
-            {navItems.map(item => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  className={`
-                    relative block px-4 py-2 transition-colors duration-200 rounded-full
-                    ${
-                      activeSection === item.id
-                        ? 'text-yellow-400 bg-white/10'
-                        : 'hover:text-yellow-400'
-                    }
-                  `}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
-    </div>
+    </nav>
   );
 };
 

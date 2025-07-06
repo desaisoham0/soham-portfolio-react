@@ -53,11 +53,11 @@ const Work = () => {
     <div className="space-y-8">
       {/* Section Header */}
       <div className="text-center">
-        <h2 className="text-3xl font-bold text-white mb-3 flex items-center justify-center">
-          <i className="fas fa-briefcase mr-3 text-yellow-400"></i>
+        <h2 className="text-3xl font-bold mb-3 text-[#58a700] flex items-center justify-center">
+          <i className="fas fa-briefcase mr-3 text-[#58a700]"></i>
           Work Experience
         </h2>
-        <p className="text-white/70 text-lg max-w-2xl mx-auto">
+        <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-lg max-w-2xl mx-auto">
           My professional journey in software engineering and education
         </p>
       </div>
@@ -68,25 +68,14 @@ const Work = () => {
           <div
             key={index}
             className={`
-              relative overflow-hidden rounded-2xl transition-all duration-300 
-              hover:scale-[1.02] hover:shadow-2xl
+              relative overflow-hidden rounded-2xl
               ${
                 job.current
-                  ? 'bg-gradient-to-r from-yellow-400/10 to-yellow-400/5 border-2 border-yellow-400/30 shadow-lg'
-                  : 'bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20'
+                  ? 'bg-gradient-to-br from-[#58a700]/20 via-[#7bc142]/15 to-[#8bc34a]/10 border-2 border-[#58a700] shadow-lg'
+                  : 'bg-[#b5d2e6]/40 dark:bg-[#37464f]/40'
               }
             `}
           >
-            {/* Current Badge */}
-            {job.current && (
-              <div className="absolute top-4 right-4 z-10">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-yellow-400 text-slate-900 text-sm rounded-full font-semibold shadow-lg">
-                  <div className="w-2 h-2 bg-slate-900 rounded-full animate-pulse"></div>
-                  Current
-                </div>
-              </div>
-            )}
-
             <div className="p-6 md:p-8">
               <div className="flex flex-col md:flex-row gap-6">
                 {/* Company Logo */}
@@ -95,7 +84,7 @@ const Work = () => {
                     <img
                       src={job.logo}
                       alt={`${job.company} logo`}
-                      className="w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-xl object-cover border-2 border-white/20"
+                      className="w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-xl object-cover border-2 border-[#b5d2e6] dark:border-[#37464f]d"
                     />
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent"></div>
                   </div>
@@ -104,13 +93,13 @@ const Work = () => {
                 {/* Job Details */}
                 <div className="flex-1 text-center md:text-left">
                   <div className="mb-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-[#000437] dark:text-[#dce6ec] mb-2">
                       {job.company}
                     </h3>
-                    <p className="text-yellow-400 text-lg font-semibold mb-2">
+                    <p className="text-[#cd7900] text-lg font-semibold mb-2">
                       {job.role}
                     </p>
-                    <div className="flex items-center justify-center md:justify-start gap-2 text-white/60">
+                    <div className="flex items-center justify-center md:justify-start gap-2 text-[#000437]/80 dark:text-[#dce6ec]/80">
                       <i className="fas fa-calendar-alt text-sm"></i>
                       <span className="text-sm font-medium">
                         {job.duration}
@@ -118,7 +107,7 @@ const Work = () => {
                     </div>
                   </div>
 
-                  <p className="text-white/80 text-base leading-relaxed">
+                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-base leading-relaxed">
                     {job.description}
                   </p>
                 </div>
@@ -129,16 +118,18 @@ const Work = () => {
       </div>
 
       {/* Skills Section */}
-      <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
+      <div className="bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
         <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-white mb-3 flex items-center justify-center">
-            <i className="fas fa-code mr-3 text-yellow-400"></i>
+          <h3 className="text-2xl font-bold text-[#ea2b2b] mb-3 flex items-center justify-center">
+            <i className="fas fa-code mr-3 text-[#ea2b2b]"></i>
             Technical Skills
           </h3>
-          <p className="text-white/70">Technologies I work with</p>
+          <p className="text-[#000437]/80 dark:text-[#dce6ec]/80">
+            Technologies I work with
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
           {[
             'React',
             'Flask',
@@ -156,10 +147,10 @@ const Work = () => {
           ].map((skill, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden bg-white/10 hover:bg-white/20 rounded-xl p-4 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg border border-white/10 hover:border-white/20"
+              className="group relative rounded-xl px-8 py-6 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-[#b5d2e6] dark:border-[#37464f] hover:border-white/20 flex items-center justify-center min-h-[55px]"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative text-white/90 font-medium text-sm">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+              <span className="relative text-[#000437] dark:text-[#dce6ec] font-medium text-xs leading-tight text-center break-words hyphens-auto">
                 {skill}
               </span>
             </div>

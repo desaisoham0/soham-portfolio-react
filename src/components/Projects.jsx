@@ -102,10 +102,10 @@ const Projects = () => {
     <div className="space-y-12">
       {/* Section Header */}
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-[#000437] dark:text-[#dce6ec] mb-4">
           My Projects
         </h1>
-        <p className="text-xl text-white/80 max-w-2xl mx-auto">
+        <p className="text-xl text-[#000437]/80 dark:text-[#dce6ec]/80 max-w-2xl mx-auto">
           A comprehensive collection of my work across full-stack development,
           AI/ML, and data engineering
         </p>
@@ -113,7 +113,7 @@ const Projects = () => {
 
       {/* Featured Projects */}
       <div className="space-y-8">
-        <h2 className="text-2xl font-semibold text-yellow-400 mb-6 flex items-center">
+        <h2 className="text-2xl font-semibold text-[#ea2b2b] mb-6 flex items-center">
           <i className="fas fa-star mr-2"></i>
           Featured Projects
         </h2>
@@ -121,7 +121,7 @@ const Projects = () => {
           {featuredProjects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white/10 backdrop-blur-sm rounded-xl p-6 transition-all duration-300 hover:bg-white/20 hover:scale-105"
+              className="group bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-xl p-6 "
             >
               <div className="flex flex-col h-full">
                 {/* Project Image */}
@@ -136,10 +136,10 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-yellow-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-[#000437] dark:text-[#dce6ec] mb-2 ">
                     {project.title}
                   </h3>
-                  <p className="text-white/80 text-sm mb-4 flex-1">
+                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm mb-4 flex-1">
                     {project.description}
                   </p>
 
@@ -149,7 +149,7 @@ const Projects = () => {
                       {project.tech.map((tech, i) => (
                         <span
                           key={i}
-                          className="px-2 py-1 bg-yellow-400/20 text-yellow-400 text-xs rounded-full"
+                          className="px-2 py-1 text-[#000437] dark:text-[#dce6ec] border-2 border-[#b5d2e6] dark:border-[#37464f] text-xs rounded-full"
                         >
                           {tech}
                         </span>
@@ -163,11 +163,11 @@ const Projects = () => {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-white/80 hover:text-yellow-400 transition-colors duration-300"
+                      className="inline-flex items-center font-bold text-[#1899d6] hover:text-[#2EA44F] dark:hover:text-[#2EA44F] transition-colors duration-300"
                     >
-                      <i className="fab fa-github mr-2"></i>
-                      <span className="text-sm font-medium">View Code</span>
-                      <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                      <i className="fab fa-github mr-2 text-xl"></i>
+                      <span className="text-md">View Code</span>
+                      <i className="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
                   )}
                 </div>
@@ -179,7 +179,7 @@ const Projects = () => {
 
       {/* Other Projects */}
       <div className="space-y-8">
-        <h2 className="text-2xl font-semibold text-yellow-400 mb-6 flex items-center">
+        <h2 className="text-2xl font-semibold text-[#a568cc] mb-6 flex items-center">
           <i className="fas fa-code mr-2"></i>
           Other Projects
         </h2>
@@ -187,11 +187,11 @@ const Projects = () => {
           {otherProjects.map((project, index) => (
             <div
               key={index}
-              className="group bg-white/10 backdrop-blur-sm rounded-xl p-6 transition-all duration-300 hover:bg-white/20 hover:scale-105"
+              className="group bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-xl p-6"
             >
               <div className="flex flex-col h-full">
                 {/* Project Icon */}
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 group-hover:bg-yellow-400/20 transition-colors">
+                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -201,10 +201,10 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-yellow-400 transition-colors">
+                  <h3 className="text-lg font-semibold text-[#000437] dark:text-[#dce6ec] mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-white/80 text-sm mb-4 flex-1">
+                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm mb-4 flex-1">
                     {project.description}
                   </p>
 
@@ -214,13 +214,13 @@ const Projects = () => {
                       {project.tech.slice(0, 3).map((tech, i) => (
                         <span
                           key={i}
-                          className="px-2 py-1 bg-white/10 text-white/80 text-xs rounded-full"
+                          className="px-2 py-1 text-[#000437] dark:text-[#dce6ec] border-2 border-[#b5d2e6] dark:border-[#37464f] text-xs rounded-full"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.tech.length > 3 && (
-                        <span className="px-2 py-1 bg-white/10 text-white/80 text-xs rounded-full">
+                        <span className="px-2 py-1 text-[#000437] dark:text-[#dce6ec] border-2 border-[#b5d2e6] dark:border-[#37464f] text-xs rounded-full">
                           +{project.tech.length - 3}
                         </span>
                       )}
@@ -233,10 +233,11 @@ const Projects = () => {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center text-white/80 hover:text-yellow-400 transition-colors duration-300"
+                      className="inline-flex items-center font-bold text-[#1899d6] hover:text-[#2EA44F] dark:hover:text-[#2EA44F] transition-colors duration-300"
                     >
-                      <i className="fab fa-github mr-2"></i>
-                      <span className="text-sm font-medium">View Code</span>
+                      <i className="fab fa-github mr-2 text-xl"></i>
+                      <span className="text-md">View Code</span>
+                      <i className="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
                   )}
                 </div>
