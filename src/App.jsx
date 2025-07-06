@@ -44,43 +44,43 @@ function App() {
         <Navbar />
 
         {/* Main Content with padding for fixed navbar */}
-        <div className="pt-20">
+        <div className="pt-16 sm:pt-20">
           <div className="max-w-7xl mx-auto px-4">
             {/* Hero Section */}
             <section id="home" className="min-h-screen flex items-center">
               <div className="w-full">
                 <Header />
-                <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 mt-8 border-2 border-[#b5d2e6] dark:border-[#37464f]">
+                <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 mt-6 sm:mt-8 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                   <Home />
                 </div>
               </div>
             </section>
 
             {/* About Section */}
-            <section id="about" className="py-16 md:py-24">
-              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
+            <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-24">
+              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                 <About />
               </div>
             </section>
 
             {/* Projects Section */}
-            <section id="projects" className="py-16 md:py-24">
-              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
+            <section id="projects" className="py-12 sm:py-16 md:py-20 lg:py-24">
+              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                 <Projects />
               </div>
             </section>
 
-            {/* Work & Contact Section */}
-            <section id="contact" className="py-16 md:py-24">
-              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-sm rounded-xl p-6 md:p-8 border-2 border-[#b5d2e6] dark:border-[#37464f]">
-                    <Work />
-                  </div>
-                  <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-sm rounded-xl p-6 md:p-8 border-2 border-[#b5d2e6] dark:border-[#37464f]">
-                    <ContactForm />
-                  </div>
-                </div>
+            {/* Work Section */}
+            <section id="work" className="py-12 sm:py-16 md:py-20 lg:py-24">
+              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
+                <Work />
+              </div>
+            </section>
+
+            {/* Contact Section */}
+            <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24">
+              <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
+                <ContactForm />
               </div>
             </section>
 

@@ -12,8 +12,16 @@ const Navbar = () => {
   // Track active section based on scroll position
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'contact'];
+      const sections = ['home', 'about', 'projects', 'work', 'contact'];
       const scrollPosition = window.scrollY + 100; // Offset for navbar height
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      // Check if we're at the bottom of the page
+      if (scrollPosition + windowHeight >= documentHeight - 50) {
+        setActiveSection('contact');
+        return;
+      }
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -39,6 +47,7 @@ const Navbar = () => {
     { href: '#home', label: 'Home' },
     { href: '#about', label: 'About' },
     { href: '#projects', label: 'Projects' },
+    { href: '#work', label: 'Work' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -48,30 +57,33 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md border-b-2 border-[#b5d2e6] dark:border-[#37464f]">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-screen bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md border-b-2 border-[#b5d2e6] dark:border-[#37464f]">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#home" className="text-3xl font-black font-montserrat">
+            <a
+              href="#home"
+              className="text-2xl sm:text-3xl font-black font-montserrat"
+            >
               <span className=" text-[#000437] dark:text-[#dce6ec] font-montserrat">
                 SOHAM
               </span>
-              <span className="ml-2 bg-gradient-to-r from-[#1e40af] to-[#0ea5e9] dark:from-[#3b82f6] dark:to-[#38bdf8] bg-clip-text text-transparent font-montserrat">
+              <span className="ml-1 sm:ml-2 bg-gradient-to-r from-[#1e40af] to-[#0ea5e9] dark:from-[#3b82f6] dark:to-[#38bdf8] bg-clip-text text-transparent font-montserrat">
                 DESAI
               </span>
             </a>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map(link => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-all duration-300 px-3 py-3 rounded-lg ${
+                className={`font-medium transition-all duration-300 px-3 py-2 sm:py-3 rounded-lg text-sm lg:text-base ${
                   getActiveClass(link.href)
-                    ? 'text-[#000437] dark:text-[#dce6ec] bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 scale-105'
+                    ? 'text-[#000437] dark:text-[#dce6ec] bg-[#b5d2e6]/40 dark:bg-[#37464f]/80 scale-105'
                     : 'text-[#000437] dark:text-[#dce6ec] hover:bg-[#b5d2e6]/40 dark:hover:bg-[#37464f]/40'
                 }`}
               >
@@ -82,7 +94,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-3 sm:space-x-4">
             <ThemeToggle />
             <button
               onClick={toggleMenu}
@@ -90,7 +102,7 @@ const Navbar = () => {
               aria-label="Toggle menu"
             >
               <i
-                className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}
+                className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-lg sm:text-xl`}
               ></i>
             </button>
           </div>

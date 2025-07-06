@@ -31,31 +31,31 @@ const SocialMedia = ({ className = '', size = 'default', gap = 'gap-6' }) => {
   // Size configurations
   const sizeClasses = {
     small: {
-      text: 'text-lg',
+      text: 'text-base sm:text-lg',
       padding: 'px-2 py-1',
-      border: 'border-t-2 border-l-2 border-r-2 border-b-2',
+      border: 'border-2',
     },
     default: {
-      text: 'text-3xl',
-      padding: 'px-3 py-1',
-      border: 'border-t-2 border-l-2 border-r-2 border-b-4',
+      text: 'text-2xl sm:text-3xl',
+      padding: 'px-2 py-1 sm:px-3 sm:py-1',
+      border: 'border-2 border-b-4',
     },
     large: {
-      text: 'text-4xl',
-      padding: 'px-4 py-2',
-      border: 'border-t-3 border-l-3 border-r-3 border-b-6',
+      text: 'text-3xl sm:text-4xl',
+      padding: 'px-3 py-2 sm:px-4 sm:py-2',
+      border: 'border-2 border-b-4 sm:border-3 sm:border-b-6',
     },
     xl: {
-      text: 'text-5xl',
-      padding: 'px-5 py-3',
-      border: 'border-t-4 border-l-4 border-r-4 border-b-8',
+      text: 'text-4xl sm:text-5xl',
+      padding: 'px-4 py-2 sm:px-5 sm:py-3',
+      border: 'border-2 border-b-4 sm:border-4 sm:border-b-8',
     },
   };
 
   const currentSize = sizeClasses[size] || sizeClasses.default;
 
   return (
-    <div className={`flex ${gap} ${className}`}>
+    <div className={`flex flex-wrap justify-center ${gap} ${className}`}>
       {socialLinks.map((social, index) => (
         <a
           key={index}

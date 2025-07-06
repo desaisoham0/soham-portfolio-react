@@ -53,11 +53,11 @@ const Work = () => {
     <div className="space-y-8">
       {/* Section Header */}
       <div className="text-center">
-        <h2 className="text-3xl font-bold mb-3 text-[#58a700] flex items-center justify-center">
-          <i className="fas fa-briefcase mr-3 text-[#58a700]"></i>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-3 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent flex items-center justify-center">
+          <i className="fas fa-briefcase mr-2 sm:mr-3 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent"></i>
           Work Experience
         </h2>
-        <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-lg max-w-2xl mx-auto">
+        <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
           My professional journey in software engineering and education
         </p>
       </div>
@@ -76,30 +76,30 @@ const Work = () => {
               }
             `}
           >
-            <div className="p-6 md:p-8">
-              <div className="flex flex-col md:flex-row gap-6">
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                 {/* Company Logo */}
-                <div className="flex-shrink-0 mx-auto md:mx-0">
+                <div className="flex-shrink-0 mx-auto sm:mx-0">
                   <div className="relative">
                     <img
                       src={job.logo}
                       alt={`${job.company} logo`}
-                      className="w-16 h-16 md:w-20 md:h-20 rounded-2xl shadow-xl object-cover border-2 border-[#b5d2e6] dark:border-[#37464f]d"
+                      className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl shadow-xl object-cover border-2 border-[#b5d2e6] dark:border-[#37464f]"
                     />
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent"></div>
                   </div>
                 </div>
 
                 {/* Job Details */}
-                <div className="flex-1 text-center md:text-left">
+                <div className="flex-1 text-center sm:text-left">
                   <div className="mb-4">
-                    <h3 className="text-xl md:text-2xl font-bold text-[#000437] dark:text-[#dce6ec] mb-2">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#000437] dark:text-[#dce6ec] mb-2">
                       {job.company}
                     </h3>
-                    <p className="text-[#cd7900] text-lg font-semibold mb-2">
+                    <p className="text-[#cd7900] text-base sm:text-lg font-semibold mb-2">
                       {job.role}
                     </p>
-                    <div className="flex items-center justify-center md:justify-start gap-2 text-[#000437]/80 dark:text-[#dce6ec]/80">
+                    <div className="flex items-center justify-center sm:justify-start gap-2 text-[#000437]/80 dark:text-[#dce6ec]/80">
                       <i className="fas fa-calendar-alt text-sm"></i>
                       <span className="text-sm font-medium">
                         {job.duration}
@@ -107,7 +107,7 @@ const Work = () => {
                     </div>
                   </div>
 
-                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-base leading-relaxed">
+                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm sm:text-base leading-relaxed">
                     {job.description}
                   </p>
                 </div>
@@ -118,18 +118,18 @@ const Work = () => {
       </div>
 
       {/* Skills Section */}
-      <div className="bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
-        <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-[#ea2b2b] mb-3 flex items-center justify-center">
-            <i className="fas fa-code mr-3 text-[#ea2b2b]"></i>
+      <div className="bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10">
+        <div className="text-center mb-6 sm:mb-8">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#ea2b2b] mb-3 flex items-center justify-center">
+            <i className="fas fa-code mr-2 sm:mr-3 text-[#ea2b2b]"></i>
             Technical Skills
           </h3>
-          <p className="text-[#000437]/80 dark:text-[#dce6ec]/80">
+          <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm sm:text-base">
             Technologies I work with
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
           {[
             'React',
             'Flask',
@@ -147,10 +147,10 @@ const Work = () => {
           ].map((skill, index) => (
             <div
               key={index}
-              className="group relative rounded-xl px-8 py-6 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-[#b5d2e6] dark:border-[#37464f] hover:border-white/20 flex items-center justify-center min-h-[55px]"
+              className="group relative rounded-xl px-3 py-3 sm:px-4 sm:py-4 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-[#b5d2e6] dark:border-[#37464f] hover:border-white/20 flex items-center justify-center min-h-[50px] sm:min-h-[55px]"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              <span className="relative text-[#000437] dark:text-[#dce6ec] font-medium text-xs leading-tight text-center break-words hyphens-auto">
+              <span className="relative text-[#000437] dark:text-[#dce6ec] font-medium text-xs sm:text-sm leading-tight text-center break-words hyphens-auto">
                 {skill}
               </span>
             </div>

@@ -102,10 +102,10 @@ const Projects = () => {
     <div className="space-y-12">
       {/* Section Header */}
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#000437] dark:text-[#dce6ec] mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent">
           My Projects
         </h1>
-        <p className="text-xl text-[#000437]/80 dark:text-[#dce6ec]/80 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-[#000437]/80 dark:text-[#dce6ec]/80 max-w-2xl mx-auto leading-relaxed">
           A comprehensive collection of my work across full-stack development,
           AI/ML, and data engineering
         </p>
@@ -113,15 +113,15 @@ const Projects = () => {
 
       {/* Featured Projects */}
       <div className="space-y-8">
-        <h2 className="text-2xl font-semibold text-[#ea2b2b] mb-6 flex items-center">
+        <h2 className="text-xl sm:text-2xl font-semibold text-[#ea2b2b] mb-6 flex items-center">
           <i className="fas fa-star mr-2"></i>
           Featured Projects
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
           {featuredProjects.map((project, index) => (
             <div
               key={index}
-              className="group bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-xl p-6 "
+              className="group bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-xl p-4 sm:p-6 "
             >
               <div className="flex flex-col h-full">
                 {/* Project Image */}
@@ -129,17 +129,17 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                    className="w-full h-44 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
 
                 {/* Project Content */}
                 <div className="flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold text-[#000437] dark:text-[#dce6ec] mb-2 ">
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#000437] dark:text-[#dce6ec] mb-2 ">
                     {project.title}
                   </h3>
-                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm mb-4 flex-1">
+                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm leading-relaxed mb-4 flex-1">
                     {project.description}
                   </p>
 
@@ -165,9 +165,9 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center font-bold text-[#1899d6] hover:text-[#2EA44F] dark:hover:text-[#2EA44F] transition-colors duration-300"
                     >
-                      <i className="fab fa-github mr-2 text-xl"></i>
-                      <span className="text-md">View Code</span>
-                      <i className="fas fa-external-link-alt ml-2 text-sm"></i>
+                      <i className="fab fa-github mr-2 text-lg sm:text-xl"></i>
+                      <span className="text-sm sm:text-base">View Code</span>
+                      <i className="fas fa-external-link-alt ml-2 text-xs sm:text-sm"></i>
                     </a>
                   )}
                 </div>
@@ -179,38 +179,38 @@ const Projects = () => {
 
       {/* Other Projects */}
       <div className="space-y-8">
-        <h2 className="text-2xl font-semibold text-[#a568cc] mb-6 flex items-center">
+        <h2 className="text-xl sm:text-2xl font-semibold text-[#a568cc] mb-6 flex items-center">
           <i className="fas fa-code mr-2"></i>
           Other Projects
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {otherProjects.map((project, index) => (
             <div
               key={index}
-              className="group bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-xl p-6"
+              className="group bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-xl p-4 sm:p-6"
             >
               <div className="flex flex-col h-full">
                 {/* Project Icon */}
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto sm:mx-0">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-12 h-12 rounded-full object-cover"
+                    className="w-8 h-8 sm:w-12 sm:h-12 rounded-full object-cover"
                   />
                 </div>
 
                 {/* Project Content */}
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg font-semibold text-[#000437] dark:text-[#dce6ec] mb-2">
+                <div className="flex-1 flex flex-col text-center sm:text-left">
+                  <h3 className="text-base sm:text-lg font-semibold text-[#000437] dark:text-[#dce6ec] mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm mb-4 flex-1">
+                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm leading-relaxed mb-4 flex-1">
                     {project.description}
                   </p>
 
                   {/* Tech Stack */}
                   <div className="mb-4">
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-1 justify-center sm:justify-start">
                       {project.tech.slice(0, 3).map((tech, i) => (
                         <span
                           key={i}
@@ -233,11 +233,11 @@ const Projects = () => {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center font-bold text-[#1899d6] hover:text-[#2EA44F] dark:hover:text-[#2EA44F] transition-colors duration-300"
+                      className="inline-flex items-center justify-center sm:justify-start font-bold text-[#1899d6] hover:text-[#2EA44F] dark:hover:text-[#2EA44F] transition-colors duration-300"
                     >
-                      <i className="fab fa-github mr-2 text-xl"></i>
-                      <span className="text-md">View Code</span>
-                      <i className="fas fa-external-link-alt ml-2 text-sm"></i>
+                      <i className="fab fa-github mr-2 text-lg sm:text-xl"></i>
+                      <span className="text-sm sm:text-base">View Code</span>
+                      <i className="fas fa-external-link-alt ml-2 text-xs sm:text-sm"></i>
                     </a>
                   )}
                 </div>

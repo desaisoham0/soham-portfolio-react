@@ -9,10 +9,10 @@ function About() {
     <div className="space-y-8">
       {/* Section Header */}
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#000437] dark:text-[#dce6ec] mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-montserrat mb-4 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent">
           About Me
         </h1>
-        <p className="text-xl text-[#000437]/80 dark:text-[#dce6ec]/80 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-[#000437]/80 dark:text-[#dce6ec]/80 max-w-2xl mx-auto leading-relaxed">
           My journey in technology and passion for creating meaningful solutions
         </p>
       </div>
@@ -63,33 +63,33 @@ function About() {
         {/* Right side - Images & Social */}
         <div className="space-y-6">
           {/* Image gallery */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="space-y-4">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="space-y-3 sm:space-y-4">
               <img
                 src={sohamSki}
                 alt="Soham skiing"
                 loading="lazy"
-                className="w-full h-48 sm:h-52 md:h-56 rounded-xl shadow-lg bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 object-cover"
+                className="w-full h-40 sm:h-48 md:h-52 lg:h-56 rounded-xl shadow-lg bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 object-cover"
               />
               <img
                 src={T3}
                 alt="T3 Project"
                 loading="lazy"
-                className="w-full h-48 sm:h-52 md:h-56 rounded-xl shadow-lg bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 object-cover"
+                className="w-full h-40 sm:h-48 md:h-52 lg:h-56 rounded-xl shadow-lg bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 object-cover"
               />
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               <img
                 src={sohamTheMet}
                 alt="Soham at The Met"
                 loading="lazy"
-                className="w-full h-48 sm:h-52 md:h-56 rounded-xl shadow-lg bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 object-cover"
+                className="w-full h-40 sm:h-48 md:h-52 lg:h-56 rounded-xl shadow-lg bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 object-cover"
               />
               <img
                 src={netForge}
                 alt="NetForge Project"
                 loading="lazy"
-                className="w-full h-48 sm:h-52 md:h-56 rounded-xl shadow-lg bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 object-cover"
+                className="w-full h-40 sm:h-48 md:h-52 lg:h-56 rounded-xl shadow-lg bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 object-cover"
               />
             </div>
           </div>

@@ -39,11 +39,11 @@ const ContactForm = () => {
     <div className="space-y-6">
       {/* Section Header */}
       <div>
-        <h2 className="text-2xl font-semibold text-[#1899d6] mb-4 flex items-center">
-          <i className="fa-solid fa-envelope mr-2"></i>
+        <h2 className="text-xl sm:text-2xl font-semibold bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent mb-4 flex items-center">
+          <i className="fa-solid fa-envelope mr-2 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent"></i>
           Get In Touch
         </h2>
-        <p className="text-[#000437] dark:text-[#dce6ec] text-sm">
+        <p className="text-[#000437] dark:text-[#dce6ec] text-sm sm:text-base leading-relaxed">
           Ready to start your next project? Let's discuss how I can help bring
           your ideas to life.
         </p>
@@ -126,10 +126,10 @@ const ContactForm = () => {
           type="submit"
           disabled={loading}
           className="
-            group w-full inline-flex items-center justify-center px-6 py-4
-            bg-[#3c4dff] text-[#dce6ec] rounded-xl font-semibold border-1 border-b-4 border-[#3f22ec]
-            transition-all duration-300 hover:bg-[#4353fa] hover:scale-105
-            shadow-lg hover:shadow-xl
+            group w-full inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4
+            bg-[#1899d6] text-[#dce6ec] rounded-full font-semibold border-1 border-b-4 border-[#0a4f78]
+            transition-all duration-300 hover:bg-[#2daeeb] hover:scale-105
+            shadow-lg hover:shadow-xl text-sm sm:text-base
             disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
           "
         >
