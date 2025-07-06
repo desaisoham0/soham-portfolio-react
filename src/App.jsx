@@ -1,99 +1,95 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Analytics } from '@vercel/analytics/react';
 import './App.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
-// Pages
-import Projects from './pages/Projects';
-import About from './pages/About';
 
 // Components
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Home from './components/Home';
 import Work from './components/Work';
+import Projects from './components/Projects';
+import About from './components/About';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 
 function App() {
+  // Smooth scrolling functionality
+  useEffect(() => {
+    const handleSmoothScroll = e => {
+      const href = e.target.getAttribute('href');
+      if (href?.startsWith('#')) {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }
+      }
+    };
+
+    // Add event listeners to all hash links
+    document.addEventListener('click', handleSmoothScroll);
+    return () => document.removeEventListener('click', handleSmoothScroll);
+  }, []);
+
   return (
     <>
-      <BrowserRouter>
-        {/* Full-page gradient background */}
-        <div className="min-h-screen bg-gradient-to-b from-teal-700 to-teal-900">
+      {/* Full-page gradient background */}
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        {/* Fixed Navbar */}
+        <Navbar />
+
+        {/* Main Content with padding for fixed navbar */}
+        <div className="pt-20">
           <div className="max-w-7xl mx-auto px-4">
-            <Navbar />
-            <Routes>
-              <Route
-                path="/"
-                element={
-                  <>
-                    <Header />
-                    <main className="py-8">
-                      {/* Container for home, work, and contact */}
-                      <div
-                        className="
-                        bg-white/85
-                        backdrop-blur-md 
-                        rounded-2xl 
-                        shadow-xl 
-                        p-6 md:p-8 lg:p-10
-                        mb-8
-                        transition-all duration-300
-                      "
-                      >
-                        <div className="flex flex-col md:flex-row gap-8">
-                          {/* About Section */}
-                          <div className="md:w-2/3">
-                            <Home />
-                          </div>
+            {/* Hero Section */}
+            <section id="home" className="min-h-screen flex items-center">
+              <div className="w-full">
+                <Header />
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10 mt-8">
+                  <Home />
+                </div>
+              </div>
+            </section>
 
-                          {/* Work + Contact */}
-                          <div className="md:w-1/2 space-y-6">
-                            <div
-                              className="
-                              rounded-2xl 
-                              border border-zinc-100 
-                              p-4 md:p-6
-                              transition-all duration-300 
-                              hover:shadow-lg
-                            "
-                            >
-                              <Work />
-                            </div>
-                            <div
-                              className="
-                              rounded-2xl 
-                              border border-zinc-100 
-                              p-4 md:p-6
-                              transition-all duration-300 
-                              hover:shadow-lg
-                            "
-                            >
-                              <ContactForm />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </main>
-                  </>
-                }
-              />
+            {/* About Section */}
+            <section id="about" className="py-16 md:py-24">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10">
+                <About />
+              </div>
+            </section>
 
-              {/* Contact & Projects Pages */}
-              <Route path="/about" element={<About />} />
-              <Route path="/projects" element={<Projects />} />
-            </Routes>
-            <div>
-              <Footer />
-            </div>
+            {/* Projects Section */}
+            <section id="projects" className="py-16 md:py-24">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10">
+                <Projects />
+              </div>
+            </section>
+
+            {/* Work & Contact Section */}
+            <section id="contact" className="py-16 md:py-24">
+              <div className="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 md:p-8 lg:p-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8">
+                    <Work />
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8">
+                    <ContactForm />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Footer */}
+            <Footer />
           </div>
         </div>
-        <SpeedInsights />
-        <Analytics />
-      </BrowserRouter>
+      </div>
+      <SpeedInsights />
+      <Analytics />
     </>
   );
 }
