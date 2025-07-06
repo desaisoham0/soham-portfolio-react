@@ -78,7 +78,10 @@ function App() {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="py-12 sm:py-16 md:py-20 lg:py-24 pb-0">
+            <section
+              id="contact"
+              className="py-12 sm:py-16 md:py-20 lg:py-24 pb-0"
+            >
               <div className="bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-[#b5d2e6] dark:border-[#37464f]">
                 <ContactForm />
               </div>
