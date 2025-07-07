@@ -28,7 +28,7 @@ body {
 
 @font-face {
   font-family: 'DINRounded';
-  src: url('/font/DINRoundPro-Light.otf') format('opentype');
+  src: url('./assets/font/DINRoundPro-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -36,7 +36,7 @@ body {
 
 @font-face {
   font-family: 'DINRounded';
-  src: url('/font/DINRoundPro-Regular.otf') format('opentype');
+  src: url('./assets/font/DINRoundPro-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -44,7 +44,7 @@ body {
 
 @font-face {
   font-family: 'DINRounded';
-  src: url('/font/DINRoundPro-Medium.otf') format('opentype');
+  src: url('./assets/font/DINRoundPro-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -52,7 +52,7 @@ body {
 
 @font-face {
   font-family: 'DINRounded';
-  src: url('/font/DINRoundPro-Bold.otf') format('opentype');
+  src: url('./assets/font/DINRoundPro-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -60,7 +60,7 @@ body {
 
 @font-face {
   font-family: 'DINRounded';
-  src: url('/font/DINRoundPro-Black.otf') format('opentype');
+  src: url('./assets/font/DINRoundPro-Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
