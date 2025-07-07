@@ -6,25 +6,29 @@ const SocialMedia = ({ className = '', size = 'default', gap = 'gap-6' }) => {
       href: 'https://github.com/desaisoham0',
       icon: 'fab fa-github',
       label: 'GitHub',
-      hoverColor: '#2EA44F',
+      hoverColor: 'hover:text-green-600 dark:hover:text-green-400',
+      hoverBorder: 'hover:border-green-600 dark:hover:border-green-400',
     },
     {
       href: 'https://www.linkedin.com/in/soham-desai-068952212/',
       icon: 'fab fa-linkedin',
       label: 'LinkedIn',
-      hoverColor: '#0A66C2',
+      hoverColor: 'hover:text-blue-600 dark:hover:text-blue-400',
+      hoverBorder: 'hover:border-blue-600 dark:hover:border-blue-400',
     },
     {
       href: 'https://www.instagram.com/sohamdesaiiii/',
       icon: 'fab fa-instagram',
       label: 'Instagram',
-      hoverColor: '#E4405F',
+      hoverColor: 'hover:text-pink-600 dark:hover:text-pink-400',
+      hoverBorder: 'hover:border-pink-600 dark:hover:border-pink-400',
     },
     {
       href: 'https://x.com/desaisoham98',
       icon: 'fab fa-twitter',
       label: 'Twitter',
-      hoverColor: '#1DA1F2',
+      hoverColor: 'hover:text-sky-600 dark:hover:text-sky-400',
+      hoverBorder: 'hover:border-sky-600 dark:hover:border-sky-400',
     },
   ];
 
@@ -60,7 +64,22 @@ const SocialMedia = ({ className = '', size = 'default', gap = 'gap-6' }) => {
         <a
           key={index}
           href={social.href}
-          className={`text-[#000437] dark:text-[#dce6ec] hover:text-[${social.hoverColor}] dark:hover:text-[${social.hoverColor}] transition-all duration-500 ease-out ${currentSize.text} hover:scale-110 hover:shadow-xl hover:shadow-[${social.hoverColor}]/40 hover:-translate-y-1 transform rounded-xl ${currentSize.padding} ${currentSize.border} border-[#b5d2e6] dark:border-[#37464f] hover:border-[${social.hoverColor}] dark:hover:border-[${social.hoverColor}]`}
+          className={`
+            text-gray-700 dark:text-gray-300 
+            ${social.hoverColor}
+            transition-all duration-150
+            ${currentSize.text} 
+            hover:translate-y-0 active:translate-y-1 
+            shadow-lg hover:shadow-md active:shadow-sm 
+            transform rounded-xl 
+            ${currentSize.padding} 
+            ${currentSize.border} 
+            active:border-b-2
+            border-gray-300 dark:border-gray-600 
+            ${social.hoverBorder}
+            bg-white/80 dark:bg-gray-800/80
+            hover:bg-white dark:hover:bg-gray-700
+          `}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={social.label}

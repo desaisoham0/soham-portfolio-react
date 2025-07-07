@@ -57,7 +57,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-screen bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md border-b-2 border-[#b5d2e6] dark:border-[#37464f]">
+    <nav className="fixed top-0 left-0 right-0 z-50 w-screen  backdrop-blur-md border-b-2 border-gray-200 dark:border-gray-700 shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo */}
@@ -66,10 +66,10 @@ const Navbar = () => {
               href="#home"
               className="text-2xl sm:text-3xl font-black font-montserrat"
             >
-              <span className=" text-[#000437] dark:text-[#dce6ec] font-montserrat">
+              <span className="text-gray-900 dark:text-gray-100 font-montserrat">
                 SOHAM
               </span>
-              <span className="ml-1 sm:ml-2 bg-gradient-to-r from-[#1e40af] to-[#0ea5e9] dark:from-[#3b82f6] dark:to-[#38bdf8] bg-clip-text text-transparent font-montserrat">
+              <span className="ml-1 sm:ml-2 bg-gradient-to-br from-indigo-500 to-sky-500 bg-clip-text text-transparent font-montserrat">
                 DESAI
               </span>
             </a>
@@ -83,8 +83,8 @@ const Navbar = () => {
                 href={link.href}
                 className={`font-medium transition-all duration-300 px-3 py-2 sm:py-3 rounded-lg text-sm lg:text-base ${
                   getActiveClass(link.href)
-                    ? 'text-[#000437] dark:text-[#dce6ec] bg-[#b5d2e6]/40 dark:bg-[#37464f]/80 scale-105'
-                    : 'text-[#000437] dark:text-[#dce6ec] hover:bg-[#b5d2e6]/40 dark:hover:bg-[#37464f]/40'
+                    ? 'text-gray-900 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 scale-105'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100'
                 }`}
               >
                 {link.label}
@@ -98,7 +98,7 @@ const Navbar = () => {
             <ThemeToggle />
             <button
               onClick={toggleMenu}
-              className="text-[#000437] dark:text-[#dce6ec] "
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
               aria-label="Toggle menu"
             >
               <i
@@ -111,15 +111,15 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md rounded-xl mt-2 border-2 border-[#b5d2e6] dark:border-[#37464f]">
+            <div className="px-2 pt-2 pb-3 space-y-1d backdrop-blur-md rounded-xl mt-2 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
               {navLinks.map(link => (
                 <a
                   key={link.href}
                   href={link.href}
                   className={`block px-3 py-2 transition-colors duration-300 rounded-lg font-medium ${
                     getActiveClass(link.href)
-                      ? 'text-[#000437] dark:text-[#dce6ec] bg-[#b5d2e6]/40 dark:bg-[#37464f]/40'
-                      : 'text-[#000437] dark:text-[#dce6ec] hover:bg-[#b5d2e6]/40 dark:hover:bg-[#37464f]/40'
+                      ? 'text-gray-900 dark:text-gray-100 bg-gray-200 dark:bg-gray-700'
+                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >

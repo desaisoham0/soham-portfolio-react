@@ -105,7 +105,7 @@ const Projects = () => {
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent">
           My Projects
         </h1>
-        <p className="text-lg sm:text-xl text-[#000437]/80 dark:text-[#dce6ec]/80 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
           A comprehensive collection of my work across full-stack development,
           AI/ML, and data engineering
         </p>
@@ -113,7 +113,7 @@ const Projects = () => {
 
       {/* Featured Projects */}
       <div className="space-y-8">
-        <h2 className="text-xl sm:text-2xl font-semibold text-[#ea2b2b] mb-6 flex items-center">
+        <h2 className="text-xl sm:text-2xl font-semibold text-red-600 dark:text-red-400 mb-6 flex items-center">
           <i className="fas fa-star mr-2"></i>
           Featured Projects
         </h2>
@@ -121,7 +121,7 @@ const Projects = () => {
           {featuredProjects.map((project, index) => (
             <div
               key={index}
-              className="group bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-xl p-4 sm:p-6 "
+              className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-4 sm:p-6 shadow-sm"
             >
               <div className="flex flex-col h-full">
                 {/* Project Image */}
@@ -136,10 +136,10 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg sm:text-xl font-semibold text-[#000437] dark:text-[#dce6ec] mb-2 ">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2 ">
                     {project.title}
                   </h3>
-                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm leading-relaxed mb-4 flex-1">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
                     {project.description}
                   </p>
 
@@ -149,7 +149,7 @@ const Projects = () => {
                       {project.tech.map((tech, i) => (
                         <span
                           key={i}
-                          className="px-2 py-1 text-[#000437] dark:text-[#dce6ec] border-2 border-[#b5d2e6] dark:border-[#37464f] text-xs rounded-full"
+                          className="px-2 py-1 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700"
                         >
                           {tech}
                         </span>
@@ -163,7 +163,7 @@ const Projects = () => {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center font-bold text-[#1899d6] hover:text-[#2EA44F] dark:hover:text-[#2EA44F] transition-colors duration-300"
+                      className="inline-flex items-center font-bold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300"
                     >
                       <i className="fab fa-github mr-2 text-lg sm:text-xl"></i>
                       <span className="text-sm sm:text-base">View Code</span>
@@ -179,7 +179,7 @@ const Projects = () => {
 
       {/* Other Projects */}
       <div className="space-y-8">
-        <h2 className="text-xl sm:text-2xl font-semibold text-[#a568cc] mb-6 flex items-center">
+        <h2 className="text-xl sm:text-2xl font-semibold text-purple-600 dark:text-purple-400 mb-6 flex items-center">
           <i className="fas fa-code mr-2"></i>
           Other Projects
         </h2>
@@ -187,7 +187,7 @@ const Projects = () => {
           {otherProjects.map((project, index) => (
             <div
               key={index}
-              className="group bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-xl p-4 sm:p-6"
+              className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-4 sm:p-6 shadow-sm"
             >
               <div className="flex flex-col h-full">
                 {/* Project Icon */}
@@ -201,10 +201,10 @@ const Projects = () => {
 
                 {/* Project Content */}
                 <div className="flex-1 flex flex-col text-center sm:text-left">
-                  <h3 className="text-base sm:text-lg font-semibold text-[#000437] dark:text-[#dce6ec] mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm leading-relaxed mb-4 flex-1">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
                     {project.description}
                   </p>
 
@@ -214,13 +214,13 @@ const Projects = () => {
                       {project.tech.slice(0, 3).map((tech, i) => (
                         <span
                           key={i}
-                          className="px-2 py-1 text-[#000437] dark:text-[#dce6ec] border-2 border-[#b5d2e6] dark:border-[#37464f] text-xs rounded-full"
+                          className="px-2 py-1 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.tech.length > 3 && (
-                        <span className="px-2 py-1 text-[#000437] dark:text-[#dce6ec] border-2 border-[#b5d2e6] dark:border-[#37464f] text-xs rounded-full">
+                        <span className="px-2 py-1 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700">
                           +{project.tech.length - 3}
                         </span>
                       )}
@@ -233,7 +233,7 @@ const Projects = () => {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center sm:justify-start font-bold text-[#1899d6] hover:text-[#2EA44F] dark:hover:text-[#2EA44F] transition-colors duration-300"
+                      className="inline-flex items-center justify-center sm:justify-start font-bold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300"
                     >
                       <i className="fab fa-github mr-2 text-lg sm:text-xl"></i>
                       <span className="text-sm sm:text-base">View Code</span>

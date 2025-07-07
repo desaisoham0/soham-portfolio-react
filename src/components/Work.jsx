@@ -57,7 +57,7 @@ const Work = () => {
           <i className="fas fa-briefcase mr-2 sm:mr-3 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent"></i>
           Work Experience
         </h2>
-        <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
           My professional journey in software engineering and education
         </p>
       </div>
@@ -68,11 +68,11 @@ const Work = () => {
           <div
             key={index}
             className={`
-              relative overflow-hidden rounded-2xl
+              relative overflow-hidden rounded-2xl shadow-sm
               ${
                 job.current
-                  ? 'bg-gradient-to-br from-[#58a700]/20 via-[#7bc142]/15 to-[#8bc34a]/10 border-2 border-[#58a700] shadow-lg'
-                  : 'bg-[#b5d2e6]/40 dark:bg-[#37464f]/40'
+                  ? 'bg-green-50 dark:bg-green-900/20 border-2 border-green-500 dark:border-green-400'
+                  : 'bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600'
               }
             `}
           >
@@ -84,7 +84,7 @@ const Work = () => {
                     <img
                       src={job.logo}
                       alt={`${job.company} logo`}
-                      className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl shadow-xl object-cover border-2 border-[#b5d2e6] dark:border-[#37464f]"
+                      className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl shadow-xl object-cover border-2 border-gray-200 dark:border-gray-600"
                     />
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent"></div>
                   </div>
@@ -93,13 +93,13 @@ const Work = () => {
                 {/* Job Details */}
                 <div className="flex-1 text-center sm:text-left">
                   <div className="mb-4">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-[#000437] dark:text-[#dce6ec] mb-2">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
                       {job.company}
                     </h3>
-                    <p className="text-[#cd7900] text-base sm:text-lg font-semibold mb-2">
+                    <p className="text-orange-600 dark:text-orange-400 text-base sm:text-lg font-semibold mb-2">
                       {job.role}
                     </p>
-                    <div className="flex items-center justify-center sm:justify-start gap-2 text-[#000437]/80 dark:text-[#dce6ec]/80">
+                    <div className="flex items-center justify-center sm:justify-start gap-2 text-gray-600 dark:text-gray-400">
                       <i className="fas fa-calendar-alt text-sm"></i>
                       <span className="text-sm font-medium">
                         {job.duration}
@@ -107,7 +107,7 @@ const Work = () => {
                     </div>
                   </div>
 
-                  <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
                     {job.description}
                   </p>
                 </div>
@@ -118,13 +118,13 @@ const Work = () => {
       </div>
 
       {/* Skills Section */}
-      <div className="bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-white/10">
+      <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm">
         <div className="text-center mb-6 sm:mb-8">
-          <h3 className="text-xl sm:text-2xl font-bold text-[#ea2b2b] mb-3 flex items-center justify-center">
-            <i className="fas fa-code mr-2 sm:mr-3 text-[#ea2b2b]"></i>
+          <h3 className="text-xl sm:text-2xl font-bold text-red-600 dark:text-red-400 mb-3 flex items-center justify-center">
+            <i className="fas fa-code mr-2 sm:mr-3 text-red-600 dark:text-red-400"></i>
             Technical Skills
           </h3>
-          <p className="text-[#000437]/80 dark:text-[#dce6ec]/80 text-sm sm:text-base">
+          <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
             Technologies I work with
           </p>
         </div>
@@ -147,10 +147,9 @@ const Work = () => {
           ].map((skill, index) => (
             <div
               key={index}
-              className="group relative rounded-xl px-3 py-3 sm:px-4 sm:py-4 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-[#b5d2e6] dark:border-[#37464f] hover:border-white/20 flex items-center justify-center min-h-[50px] sm:min-h-[55px]"
+              className="group relative rounded-xl px-3 py-3 sm:px-4 sm:py-4 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-200 dark:border-gray-600 hover:border-yellow-400 dark:hover:border-yellow-500 bg-gray-50 dark:bg-gray-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 flex items-center justify-center min-h-[50px] sm:min-h-[55px]"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              <span className="relative text-[#000437] dark:text-[#dce6ec] font-medium text-xs sm:text-sm leading-tight text-center break-words hyphens-auto">
+              <span className="relative text-gray-900 dark:text-gray-100 font-medium text-xs sm:text-sm leading-tight text-center break-words hyphens-auto">
                 {skill}
               </span>
             </div>

@@ -43,7 +43,7 @@ const ContactForm = () => {
           <i className="fa-solid fa-envelope mr-2 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent"></i>
           Get In Touch
         </h2>
-        <p className="text-[#000437] dark:text-[#dce6ec] text-sm sm:text-base leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
           Ready to start your next project? Let's discuss how I can help bring
           your ideas to life.
         </p>
@@ -76,7 +76,7 @@ const ContactForm = () => {
         <div>
           <label
             htmlFor="email"
-            className="block text-[#000437] dark:text-[#dce6ec] text-sm font-medium mb-2"
+            className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
           >
             Your Email
           </label>
@@ -89,9 +89,9 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             className="
-              w-full p-4 bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 border-2 border-[#b5d2e6] dark:border-[#37464f] rounded-xl
-              text-[#000437] dark:text-[#dce6ec] placeholder-[#000437]/50 dark:placeholder-[#dce6ec]/50
-              focus:outline-none focus:ring-2 focus:ring-[#1899d6]/50 focus:border-[#1899d6]/50
+              w-full p-4 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl
+              text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
               transition-all duration-300
             "
           />
@@ -100,7 +100,7 @@ const ContactForm = () => {
         <div>
           <label
             htmlFor="message"
-            className="block text-[#000437] dark:text-[#dce6ec] text-sm font-medium mb-2"
+            className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
           >
             Your Message
           </label>
@@ -113,9 +113,9 @@ const ContactForm = () => {
             onChange={handleChange}
             rows="5"
             className="
-              w-full p-4 bg-[#b5d2e6]/40 dark:bg-[#37464f]/40 border-2 border-[#b5d2e6] dark:border-[#37464f] rounded-xl
-              text-[#000437] dark:text-[#dce6ec] placeholder-[#000437]/50 dark:placeholder-[#dce6ec]/50 resize-none
-              focus:outline-none focus:ring-2 focus:ring-[#1899d6]/50 focus:border-[#1899d6]/50
+              w-full p-4 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl
+              text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 resize-none
+              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
               transition-all duration-300
             "
           />
@@ -127,10 +127,11 @@ const ContactForm = () => {
           disabled={loading}
           className="
             group w-full inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4
-            bg-[#1899d6] text-[#dce6ec] rounded-full font-semibold border-1 border-b-4 border-[#0a4f78]
-            transition-all duration-300 hover:bg-[#2daeeb] hover:scale-105
-            shadow-lg hover:shadow-xl text-sm sm:text-base
-            disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
+            bg-sky-500 hover:bg-sky-400 text-white rounded-xl font-semibold
+            transition-all duration-150 hover:translate-y-0 active:translate-y-1
+            shadow-lg hover:shadow-md active:shadow-sm text-sm sm:text-base
+            disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0
+            border-b-4 border-sky-700 active:border-b-2
           "
         >
           {loading ? (
