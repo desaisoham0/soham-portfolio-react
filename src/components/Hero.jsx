@@ -22,7 +22,7 @@ const Hero = () => {
 
           {/* Name & Title */}
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-gray-100 font-montserrat tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-gray-100 font-dinrounded tracking-tight">
               <span className="block">SOHAM</span>
               <span className="block bg-gradient-to-br from-indigo-500 to-sky-500 bg-clip-text text-transparent">
                 DESAI
@@ -30,10 +30,10 @@ const Hero = () => {
             </h1>
 
             <div className="space-y-2">
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium font-dinrounded">
                 Software Engineer
               </p>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg font-montserrat text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
                 NYC-based engineer crafting powerful full-stack solutions to
                 elevate businesses and empower innovation
               </p>
@@ -44,7 +44,7 @@ const Hero = () => {
           <div className="pt-6 sm:pt-8">
             <a
               href="#contact"
-              className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-orange-700 hover:bg-orange-600/80 text-white rounded-full font-semibold text-base sm:text-lg transition-all duration-150 hover:translate-y-0 active:translate-y-1 shadow-lg hover:shadow-md active:shadow-sm border-b-4 border-orange-900 active:border-b-2"
+              className="group inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-orange-700 hover:bg-orange-600/80 text-white rounded-full font-semibold font-dinrounded text-base sm:text-lg transition-all duration-150 hover:translate-y-0 active:translate-y-1 shadow-lg hover:shadow-md active:shadow-sm border-b-4 border-orange-900 active:border-b-2"
             >
               <span>Let's Work Together</span>
               <i className="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
@@ -59,7 +59,7 @@ const Hero = () => {
       {/* Stats and Education Section */}
       <div className="backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 mt-6 sm:mt-8 border-2 border-[#b5d2e6] dark:border-[#37464f] space-y-8">
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 font-dinrounded">
           <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-4 sm:p-6 text-center shadow-sm">
             <div className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
               12+
@@ -88,20 +88,20 @@ const Hero = () => {
 
         {/* Education */}
         <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-4 sm:p-6 shadow-sm">
-          <h3 className="text-lg sm:text-xl font-semibold text-green-600 dark:text-green-400 mb-4 flex items-center">
+          <h3 className="text-lg sm:text-xl font-bold font-dinrounded text-green-600 dark:text-green-400 mb-4 flex items-center">
             <i className="fa-solid fa-graduation-cap mr-2"></i>
             Education
           </h3>
           <div className="flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-2 sm:gap-4">
             <div className="flex-1">
-              <p className="text-gray-900 dark:text-gray-100 font-medium text-sm sm:text-base">
+              <p className="text-gray-900 font-dinrounded font-regular dark:text-gray-100 font-medium text-sm sm:text-base">
                 Rutgers University, Newark, NJ
               </p>
-              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-400 text-xs sm:text-sm leading-relaxed font-dinrounded">
                 Bachelor of Arts in Computer Science with a Minor in Mathematics
               </p>
             </div>
-            <p className="text-gray-900 dark:text-gray-100 font-medium text-sm sm:text-base shrink-0">
+            <p className="text-gray-900 font-dinrounded font-regular dark:text-gray-100 font-medium text-sm sm:text-base shrink-0">
               May 2025
             </p>
           </div>

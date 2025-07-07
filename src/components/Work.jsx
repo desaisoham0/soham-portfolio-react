@@ -53,11 +53,11 @@ const Work = () => {
     <div className="space-y-8">
       {/* Section Header */}
       <div className="text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-3 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent flex items-center justify-center">
-          <i className="fas fa-briefcase mr-2 sm:mr-3 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent"></i>
+        <h2 className="text-2xl sm:text-3xl font-bold mb-3 text-purple-500 flex items-center justify-center font-dinrounded">
+          <i className="fas fa-briefcase mr-2 sm:mr-3 text-purple-500"></i>
           Work Experience
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed font-dinrounded">
           My professional journey in software engineering and education
         </p>
       </div>
@@ -93,21 +93,21 @@ const Work = () => {
                 {/* Job Details */}
                 <div className="flex-1 text-center sm:text-left">
                   <div className="mb-4">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold font-dinrounded text-gray-900 dark:text-gray-100 mb-2">
                       {job.company}
                     </h3>
-                    <p className="text-orange-600 dark:text-orange-400 text-base sm:text-lg font-semibold mb-2">
+                    <p className="text-orange-600 dark:text-orange-400 text-base sm:text-lg font-semibold mb-2 font-dinrounded">
                       {job.role}
                     </p>
                     <div className="flex items-center justify-center sm:justify-start gap-2 text-gray-600 dark:text-gray-400">
                       <i className="fas fa-calendar-alt text-sm"></i>
-                      <span className="text-sm font-medium">
+                      <span className="text-sm font-medium font-dinrounded">
                         {job.duration}
                       </span>
                     </div>
                   </div>
 
-                  <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-dinrounded">
                     {job.description}
                   </p>
                 </div>
@@ -120,11 +120,11 @@ const Work = () => {
       {/* Skills Section */}
       <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-4 sm:p-6 md:p-8 shadow-sm">
         <div className="text-center mb-6 sm:mb-8">
-          <h3 className="text-xl sm:text-2xl font-bold text-red-600 dark:text-red-400 mb-3 flex items-center justify-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-red-600 dark:text-red-400 mb-3 flex items-center justify-center font-dinrounded">
             <i className="fas fa-code mr-2 sm:mr-3 text-red-600 dark:text-red-400"></i>
             Technical Skills
           </h3>
-          <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base">
+          <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base font-dinrounded">
             Technologies I work with
           </p>
         </div>
@@ -149,7 +149,7 @@ const Work = () => {
               key={index}
               className="group relative rounded-xl px-3 py-3 sm:px-4 sm:py-4 text-center transition-all duration-300 hover:scale-105 hover:shadow-lg border-2 border-gray-200 dark:border-gray-600 hover:border-yellow-400 dark:hover:border-yellow-500 bg-gray-50 dark:bg-gray-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 flex items-center justify-center min-h-[50px] sm:min-h-[55px]"
             >
-              <span className="relative text-gray-900 dark:text-gray-100 font-medium text-xs sm:text-sm leading-tight text-center break-words hyphens-auto">
+              <span className="relative text-gray-900 dark:text-gray-100 font-medium text-xs sm:text-sm leading-tight text-center break-words hyphens-auto font-dinrounded">
                 {skill}
               </span>
             </div>

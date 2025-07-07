@@ -9,10 +9,10 @@ function About() {
     <div className="space-y-8">
       {/* Section Header */}
       <div className="text-center">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-montserrat mb-4 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-dinrounded mb-4 text-lime-500">
           About Me
         </h1>
-        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg sm:text-xl font-dinrounded text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
           My journey in technology and passion for creating meaningful solutions
         </p>
       </div>
@@ -22,11 +22,11 @@ function About() {
         {/* Left side - Story */}
         <div className="space-y-6">
           <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-6 shadow-sm">
-            <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3 flex items-center">
+            <h3 className="text-xl font-bold font-dinrounded text-blue-600 dark:text-blue-400 mb-3 flex items-center">
               <i className="fas fa-rocket mr-2"></i>
               The Beginning
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-gray-700 font-dinrounded dark:text-gray-300 leading-relaxed">
               My journey in technology started with a simple question: "How do
               websites work?" This curiosity led me to explore programming, and
               I quickly fell in love with the power of code to solve real-world
@@ -35,11 +35,11 @@ function About() {
           </div>
 
           <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-6 shadow-sm">
-            <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-400 mb-3 flex items-center">
+            <h3 className="text-xl font-bold font-dinrounded text-orange-600 dark:text-orange-400 mb-3 flex items-center">
               <i className="fas fa-chart-line mr-2"></i>
               Professional Growth
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-dinrounded">
               Through internships, freelance projects, and academic pursuits,
               I've developed expertise in full-stack development, AI/ML, and
               data engineering. My experience ranges from optimizing database
@@ -48,11 +48,11 @@ function About() {
           </div>
 
           <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-6 shadow-sm">
-            <h3 className="text-xl font-semibold text-purple-600 dark:text-purple-400 mb-3 flex items-center">
+            <h3 className="text-xl font-bold font-dinrounded text-purple-600 dark:text-purple-400 mb-3 flex items-center">
               <i className="fas fa-heart mr-2"></i>
               Giving Back
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-dinrounded">
               I'm passionate about education and mentorship. Teaching
               programming to students and helping fellow developers grow their
               skills has been one of the most rewarding aspects of my career.

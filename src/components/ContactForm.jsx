@@ -39,11 +39,11 @@ const ContactForm = () => {
     <div className="space-y-6">
       {/* Section Header */}
       <div>
-        <h2 className="text-xl sm:text-2xl font-semibold bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent mb-4 flex items-center">
-          <i className="fa-solid fa-envelope mr-2 bg-gradient-to-br from-lime-500 via-sky-400 to-violet-500 bg-clip-text text-transparent"></i>
+        <h2 className="text-xl sm:text-2xl font-semibold bg-gradient-to-br text-amber-500 mb-4 flex items-center font-dinrounded">
+          <i className="fa-solid fa-envelope mr-2 text-amber-500"></i>
           Get In Touch
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-dinrounded">
           Ready to start your next project? Let's discuss how I can help bring
           your ideas to life.
         </p>
@@ -76,7 +76,7 @@ const ContactForm = () => {
         <div>
           <label
             htmlFor="email"
-            className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
+            className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2 font-dinrounded"
           >
             Your Email
           </label>
@@ -89,9 +89,9 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             className="
-              w-full p-4 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl
+              w-full p-4 font-dinrounded bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl
               text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400
-              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+              focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500
               transition-all duration-300
             "
           />
@@ -100,7 +100,7 @@ const ContactForm = () => {
         <div>
           <label
             htmlFor="message"
-            className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
+            className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2 font-dinrounded"
           >
             Your Message
           </label>
@@ -113,9 +113,9 @@ const ContactForm = () => {
             onChange={handleChange}
             rows="5"
             className="
-              w-full p-4 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl
+              w-full p-4 font-dinrounded bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl
               text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 resize-none
-              focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+              focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-sky-500
               transition-all duration-300
             "
           />
@@ -127,7 +127,7 @@ const ContactForm = () => {
           disabled={loading}
           className="
             group w-full inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4
-            bg-sky-500 hover:bg-sky-400 text-white rounded-xl font-semibold
+            bg-sky-500 hover:bg-sky-400 text-white rounded-xl font-semibold font-dinrounded
             transition-all duration-150 hover:translate-y-0 active:translate-y-1
             shadow-lg hover:shadow-md active:shadow-sm text-sm sm:text-base
             disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0

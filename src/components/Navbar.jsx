@@ -66,10 +66,10 @@ const Navbar = () => {
               href="#home"
               className="text-2xl sm:text-3xl font-black font-montserrat"
             >
-              <span className="text-gray-900 dark:text-gray-100 font-montserrat">
+              <span className="text-gray-900 dark:text-gray-100 font-dinrounded">
                 SOHAM
               </span>
-              <span className="ml-1 sm:ml-2 bg-gradient-to-br from-indigo-500 to-sky-500 bg-clip-text text-transparent font-montserrat">
+              <span className="ml-1 sm:ml-2 bg-gradient-to-br from-indigo-500 to-sky-500 bg-clip-text text-transparent font-dinrounded">
                 DESAI
               </span>
             </a>
@@ -81,7 +81,7 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`font-medium transition-all duration-300 px-3 py-2 sm:py-3 rounded-lg text-sm lg:text-base ${
+                className={`font-medium font-dinrounded transition-all duration-300 px-3 py-2 sm:py-3 rounded-lg text-sm lg:text-base ${
                   getActiveClass(link.href)
                     ? 'text-gray-900 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 scale-105'
                     : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100'
@@ -94,7 +94,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-3 sm:space-x-4">
+          <div className="md:hidden flex items-center space-x-3 sm:space-x-4 font-dinrounded">
             <ThemeToggle />
             <button
               onClick={toggleMenu}
@@ -111,7 +111,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1d backdrop-blur-md rounded-xl mt-2 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
+            <div className="px-2 pt-2 pb-3 font-dinrounded font-medium space-y-1d backdrop-blur-md rounded-xl mt-2 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
               {navLinks.map(link => (
                 <a
                   key={link.href}
