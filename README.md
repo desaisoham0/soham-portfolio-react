@@ -108,11 +108,6 @@ Set up the following environment variables in your Vercel dashboard:
 - **Multiple contact methods** for user preference
 - **Professional contact information** clearly displayed
 
-## � Future Enhancements
-
-- [ ] **Dark/Light theme** toggle for user preference
-- [ ] **Project filtering** by technology or category
-
 ## 📝 License
 
 This project is open source and available under the [MIT License](LICENSE).

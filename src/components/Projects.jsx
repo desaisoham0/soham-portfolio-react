@@ -1,102 +1,195 @@
-import React from 'react';
-// Import images
-import pomodorotimer from '../assets/pomodorotimer.jpg';
-import athletic from '../assets/athletic.jpg';
-import fullstack from '../assets/fullstack.jpg';
-import IOS from '../assets/IOS.jpg';
-import sql from '../assets/sql.jpg';
-import AI from '../assets/AI.jpg';
-import Task from '../assets/task.jpg';
-import Kailani from '../assets/kilani.jpg';
-import Scrapper from '../assets/scrapper.jpg';
+import React, { useState, useMemo } from 'react';
 
 const projectsList = [
   {
     title: 'Restaurant Fullstack Application',
-    image: Kailani,
     description:
       'Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions',
     url: 'https://github.com/desaisoham0/kailani',
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Vercel'],
     featured: true,
+    icon: 'fas fa-utensils',
+    category: 'Full-Stack',
+    priority: 1,
+    year: 2025,
   },
   {
     title: 'AI Alumni Scraper',
-    image: Scrapper,
     description:
       'Project-managed a 4-member capstone combining Flask API, Tailwind UI, and fuzzy-matching pipeline. Parallelized searches with ThreadPoolExecutor reducing lookup time by 50%+.',
     url: 'https://github.com/desaisoham0/cssproto1',
     tech: ['Flask', 'Python', 'Tailwind CSS', 'Machine Learning'],
     featured: true,
+    icon: 'fas fa-robot',
+    category: 'AI/ML',
+    priority: 2,
+    year: 2025,
+  },
+  {
+    title: 'Interactive Data Dashboard',
+    description:
+      'At Jasfel as full-stack developer, I deployed an interactive data dashboard with Plotly and Python, effectively shipping a product feature that increased operational efficiency by 25%.',
+    url: '',
+    tech: ['Python', 'Plotly', 'Dash', 'Data Visualization', 'Analytics'],
+    featured: false,
+    icon: 'fas fa-chart-line',
+    category: 'Data Science',
+    priority: 3,
+    year: 2024,
   },
   {
     title: 'Task Manager Web App',
-    image: Task,
     description:
       'A full-stack task management application with real-time updates, user authentication, and responsive design.',
     url: 'https://github.com/desaisoham0/lumaa-spring-2025-swe',
     tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT'],
     featured: false,
+    icon: 'fas fa-tasks',
+    category: 'Full-Stack',
+    priority: 4,
+    year: 2024,
   },
   {
     title: 'AI-ML: Movie Recommendation System',
-    image: AI,
     description:
       'A sophisticated content-based movie recommendation system using machine learning algorithms and collaborative filtering.',
     url: 'https://github.com/desaisoham0/lumaa-spring-2025-ai-ml',
     tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy'],
     featured: false,
+    icon: 'fas fa-film',
+    category: 'AI/ML',
+    priority: 5,
+    year: 2025,
   },
   {
     title: 'E-Commerce Platform',
-    image: athletic,
     description:
       'A comprehensive e-commerce platform with product catalog, shopping cart, and payment integration.',
     url: 'https://github.com/desaisoham0/ecommerce-website',
     tech: ['PHP', 'MySQL', 'JavaScript', 'Bootstrap'],
     featured: false,
+    icon: 'fas fa-shopping-cart',
+    category: 'Full-Stack',
+    priority: 6,
+    year: 2024,
   },
   {
     title: 'Blog Web App',
-    image: fullstack,
     description:
       'A modern blog platform with user authentication, rich text editing, and comment system.',
     url: 'https://github.com/desaisoham0/fullstack',
     tech: ['React', 'Node.js', 'Express', 'MongoDB'],
     featured: false,
+    icon: 'fas fa-blog',
+    category: 'Full-Stack',
+    priority: 7,
+    year: 2023,
   },
   {
     title: 'SQL Data Optimization',
-    image: sql,
     description:
-      'Optimized SQL Server for faster data retrieval and real-time analysis, improving query performance by 40%.',
+      'At Jasfel as full-stack developer, I optimized SQL Server for faster data retrieval and real-time analysis, improving query performance by 40%.',
     url: '',
     tech: ['SQL Server', 'Database Design', 'Query Optimization'],
     featured: false,
+    icon: 'fas fa-database',
+    category: 'Data Science',
+    priority: 8,
+    year: 2024,
   },
   {
     title: 'Pomodoro Timer',
-    image: pomodorotimer,
     description:
       'A productivity-focused timer application with customizable work and break intervals, statistics tracking.',
     url: 'https://github.com/desaisoham0/FocusFlow',
     tech: ['JavaScript', 'HTML5', 'CSS3', 'Local Storage'],
     featured: false,
+    icon: 'fas fa-clock',
+    category: 'Frontend',
+    priority: 9,
+    year: 2023,
   },
   {
     title: 'Personality Quiz App',
-    image: IOS,
     description:
       'An interactive iOS quiz application with dynamic questions and personalized results.',
     url: 'https://github.com/desaisoham0/PersonalityQuiz_Desai',
     tech: ['Swift', 'UIKit', 'Core Data', 'iOS'],
     featured: false,
+    icon: 'fas fa-mobile-alt',
+    category: 'Mobile',
+    priority: 10,
+    year: 2024,
   },
 ];
 
 const Projects = () => {
-  const featuredProjects = projectsList.filter(project => project.featured);
-  const otherProjects = projectsList.filter(project => !project.featured);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [sortBy, setSortBy] = useState('Featured First');
+
+  // Define filter categories
+  const categories = [
+    'All',
+    'Full-Stack',
+    'AI/ML',
+    'Data Science',
+    'Frontend',
+    'Mobile',
+  ];
+
+  // Define sorting options
+  const sortOptions = [
+    'Featured First',
+    'Most Recent',
+    'Priority Order',
+    'Alphabetical',
+  ];
+
+  // Advanced sorting algorithm
+  const sortProjects = (projects, sortMethod) => {
+    const projectsCopy = [...projects];
+
+    switch (sortMethod) {
+      case 'Featured First':
+        return projectsCopy.sort((a, b) => {
+          if (a.featured && !b.featured) return -1;
+          if (!a.featured && b.featured) return 1;
+          return a.priority - b.priority;
+        });
+
+      case 'Most Recent':
+        return projectsCopy.sort((a, b) => {
+          if (a.year !== b.year) return b.year - a.year;
+          return a.priority - b.priority;
+        });
+
+      case 'Priority Order':
+        return projectsCopy.sort((a, b) => a.priority - b.priority);
+
+      case 'Alphabetical':
+        return projectsCopy.sort((a, b) => a.title.localeCompare(b.title));
+
+      default:
+        return projectsCopy;
+    }
+  };
+
+  // Filter and sort projects using useMemo for performance
+  const filteredAndSortedProjects = useMemo(() => {
+    const filtered =
+      selectedCategory === 'All'
+        ? projectsList
+        : projectsList.filter(project => project.category === selectedCategory);
+
+    return sortProjects(filtered, sortBy);
+  }, [selectedCategory, sortBy]);
+
+  const featuredProjects = filteredAndSortedProjects.filter(
+    project => project.featured
+  );
+  const otherProjects = filteredAndSortedProjects.filter(
+    project => !project.featured
+  );
 
   return (
     <div className="space-y-12">
@@ -111,141 +204,218 @@ const Projects = () => {
         </p>
       </div>
 
-      {/* Featured Projects */}
-      <div className="space-y-8">
-        <h2 className="text-xl sm:text-2xl font-bold font-dinrounded text-red-600 dark:text-red-400 mb-6 flex items-center">
-          <i className="fas fa-star mr-2"></i>
-          Featured Projects
-        </h2>
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
-          {featuredProjects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-4 sm:p-6 shadow-sm"
-            >
-              <div className="flex flex-col h-full">
-                {/* Project Image */}
-                <div className="relative mb-4 overflow-hidden rounded-lg">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-44 sm:h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                </div>
+      {/* Filter and Sort Controls */}
+      <div className="flex flex-col lg:flex-row gap-6 items-center justify-between bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-gray-600">
+        {/* Category Filters */}
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <span className="text-sm font-semibold font-dinrounded text-gray-700 dark:text-gray-300 whitespace-nowrap">
+            Filter by Category:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {categories.map(category => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium font-dinrounded transition-all duration-200 ${
+                  selectedCategory === category
+                    ? 'bg-sky-500 text-white shadow-md transform scale-105'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
 
-                {/* Project Content */}
-                <div className="flex-1 flex flex-col">
-                  <h3 className="text-lg sm:text-xl font-bold font-dinrounded text-gray-900 dark:text-gray-100 mb-2 ">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 font-dinrounded dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-1 text-gray-700 font-dinrounded dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* GitHub Link */}
-                  {project.url && (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center font-bold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300"
-                    >
-                      <i className="fab fa-github mr-2 text-lg sm:text-xl"></i>
-                      <span className="text-sm sm:text-base">View Code</span>
-                      <i className="fas fa-external-link-alt ml-2 text-xs sm:text-sm"></i>
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
+        {/* Sort Options */}
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <span className="text-sm font-semibold font-dinrounded text-gray-700 dark:text-gray-300 whitespace-nowrap">
+            Sort by:
+          </span>
+          <select
+            value={sortBy}
+            onChange={e => setSortBy(e.target.value)}
+            className="px-4 py-2 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-dinrounded focus:outline-none focus:border-sky-500 transition-colors duration-200"
+          >
+            {sortOptions.map(option => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
+
+      {/* Project Count Display */}
+      <div className="text-center">
+        <p className="text-sm font-dinrounded text-gray-600 dark:text-gray-400">
+          Showing{' '}
+          <span className="font-bold text-sky-500">
+            {filteredAndSortedProjects.length}
+          </span>{' '}
+          projects
+          {selectedCategory !== 'All' && (
+            <span>
+              {' '}
+              in{' '}
+              <span className="font-bold text-purple-500">
+                {selectedCategory}
+              </span>
+            </span>
+          )}
+        </p>
+      </div>
+
+      {/* Featured Projects */}
+      {featuredProjects.length > 0 && (
+        <div className="space-y-8">
+          <h2 className="text-xl sm:text-2xl font-bold font-dinrounded text-red-600 dark:text-red-400 mb-6 flex items-center">
+            <i className="fas fa-star mr-2"></i>
+            Featured Projects ({featuredProjects.length})
+          </h2>
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
+            {featuredProjects.map((project, index) => (
+              <div
+                key={index}
+                className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex flex-col h-full">
+                  {/* Project Icon */}
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 border-2 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 border-[#b5d2e6] dark:border-[#37464f]">
+                      <i
+                        className={`${project.icon} text-gray-600 dark:text-gray-300 text-2xl`}
+                      ></i>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold font-dinrounded text-gray-900 dark:text-gray-100">
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  {/* Project Content */}
+                  <div className="flex-1 flex flex-col">
+                    <p className="text-gray-600 font-dinrounded dark:text-gray-400 text-base leading-relaxed mb-6 flex-1">
+                      {project.description}
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="mb-6">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-2 text-gray-700 font-dinrounded dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-sm rounded-full bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* GitHub Link */}
+                    {project.url && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center font-bold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300 text-base"
+                      >
+                        <i className="fab fa-github mr-3 text-xl"></i>
+                        <span>View Code</span>
+                        <i className="fas fa-external-link-alt ml-3 text-sm"></i>
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Other Projects */}
-      <div className="space-y-8">
-        <h2 className="text-xl sm:text-2xl font-bold font-dinrounded text-purple-600 dark:text-purple-400 mb-6 flex items-center">
-          <i className="fas fa-code mr-2"></i>
-          Other Projects
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {otherProjects.map((project, index) => (
-            <div
-              key={index}
-              className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-4 sm:p-6 shadow-sm"
-            >
-              <div className="flex flex-col h-full">
-                {/* Project Icon */}
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto sm:mx-0">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-8 h-8 sm:w-12 sm:h-12 rounded-full object-cover"
-                  />
-                </div>
-
-                {/* Project Content */}
-                <div className="flex-1 flex flex-col text-center sm:text-left">
-                  <h3 className="text-base sm:text-lg font-bold font-dinrounded text-gray-900 dark:text-gray-100 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 font-dinrounded dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-1 justify-center sm:justify-start">
-                      {project.tech.slice(0, 3).map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-1 font-dinrounded text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.tech.length > 3 && (
-                        <span className="px-2 py-1 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700">
-                          +{project.tech.length - 3}
-                        </span>
-                      )}
-                    </div>
+      {otherProjects.length > 0 && (
+        <div className="space-y-8">
+          <h2 className="text-xl sm:text-2xl font-bold font-dinrounded text-purple-600 dark:text-purple-400 mb-6 flex items-center">
+            <i className="fas fa-code mr-2"></i>
+            Other Projects ({otherProjects.length})
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            {otherProjects.map((project, index) => (
+              <div
+                key={index}
+                className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex flex-col h-full">
+                  {/* Project Icon */}
+                  <div className="w-16 h-16 border-2 rounded-xl flex items-center justify-center mb-6 mx-auto border-[#b5d2e6] dark:border-[#37464f]">
+                    <i
+                      className={`${project.icon} text-gray-600 dark:text-gray-300 text-2xl`}
+                    ></i>
                   </div>
 
-                  {/* GitHub Link */}
-                  {project.url && (
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center font-dinrounded sm:justify-start font-bold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300"
-                    >
-                      <i className="fab fa-github mr-2 text-lg sm:text-xl"></i>
-                      <span className="text-sm sm:text-base">View Code</span>
-                      <i className="fas fa-external-link-alt ml-2 text-xs sm:text-sm"></i>
-                    </a>
-                  )}
+                  {/* Project Content */}
+                  <div className="flex-1 flex flex-col text-center">
+                    <h3 className="text-lg font-bold font-dinrounded text-gray-900 dark:text-gray-100 mb-4">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 font-dinrounded dark:text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+                      {project.description}
+                    </p>
+
+                    {/* Tech Stack */}
+                    <div className="mb-6">
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {project.tech.slice(0, 3).map((tech, i) => (
+                          <span
+                            key={i}
+                            className="px-3 py-1 font-dinrounded text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.tech.length > 3 && (
+                          <span className="px-3 py-1 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700">
+                            +{project.tech.length - 3}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* GitHub Link */}
+                    {project.url && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center font-dinrounded font-bold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300"
+                      >
+                        <i className="fab fa-github mr-2 text-lg"></i>
+                        <span className="text-sm">View Code</span>
+                        <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
+
+      {/* Empty State */}
+      {filteredAndSortedProjects.length === 0 && (
+        <div className="text-center py-12">
+          <i className="fas fa-search text-4xl text-gray-400 dark:text-gray-600 mb-4"></i>
+          <h3 className="text-xl font-bold font-dinrounded text-gray-600 dark:text-gray-400 mb-2">
+            No projects found
+          </h3>
+          <p className="text-gray-500 dark:text-gray-500 font-dinrounded">
+            Try adjusting your filters to see more projects.
+          </p>
+        </div>
+      )}
     </div>
   );
 };
