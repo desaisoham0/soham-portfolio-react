@@ -26,6 +26,27 @@ const projectsList = [
     year: 2025,
   },
   {
+    title: 'Raspberry Pi Real-Time System Monitor',
+    description:
+      'An interactive, web-based Raspberry Pi monitoring tool built with Python. This project showcases a robust object-oriented design, real-time system metrics visualization, and modular extensibility. The intuitive Streamlit dashboard provides insightful visualizations and dynamic tracking of CPU, RAM, disk usage, hardware details, and system events, ensuring seamless performance monitoring.',
+    url: 'https://github.com/desaisoham0/raspberry-pi-system-monitor',
+    tech: [
+      'Python',
+      'Raspberry Pi hardware interface',
+      'Streamlit',
+      'OOP',
+      'Plotly',
+      'Pandas',
+      'psutil',
+      'CI/CD',
+    ],
+    featured: true,
+    icon: 'fas fa-robot',
+    category: 'Full-Stack',
+    priority: 2,
+    year: 2025,
+  },
+  {
     title: 'Interactive Data Dashboard',
     description:
       'At Jasfel as full-stack developer, I deployed an interactive data dashboard with Plotly and Python, effectively shipping a product feature that increased operational efficiency by 25%.',
