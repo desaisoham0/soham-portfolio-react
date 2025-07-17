@@ -91,27 +91,15 @@ const projectsList = [
     year: 2025,
   },
   {
-    title: 'Task Manager Web App',
-    description:
-      'A full-stack task management application with real-time updates, user authentication, and responsive design.',
-    url: 'https://github.com/desaisoham0/lumaa-spring-2025-swe',
-    tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT'],
-    featured: false,
-    icon: 'fas fa-tasks',
-    category: 'Full-Stack',
-    priority: 7,
-    year: 2024,
-  },
-  {
     title: 'AI-ML: Movie Recommendation System',
     description:
       'A sophisticated content-based movie recommendation system using machine learning algorithms and collaborative filtering.',
-    url: 'https://github.com/desaisoham0/lumaa-spring-2025-ai-ml',
+    url: 'https://github.com/desaisoham0/ai-ml-movie-recommender-system',
     tech: ['Python', 'Scikit-learn', 'Pandas', 'NumPy'],
     featured: false,
     icon: 'fas fa-film',
     category: 'AI/ML',
-    priority: 8,
+    priority: 7,
     year: 2025,
   },
   {
@@ -123,7 +111,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-shopping-cart',
     category: 'Full-Stack',
-    priority: 9,
+    priority: 8,
     year: 2024,
   },
   {
@@ -135,7 +123,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-blog',
     category: 'Full-Stack',
-    priority: 10,
+    priority: 9,
     year: 2023,
   },
   {
@@ -147,6 +135,18 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-database',
     category: 'Data Science',
+    priority: 10,
+    year: 2024,
+  },
+  {
+    title: 'Task Manager Web App',
+    description:
+      'A full-stack task management application with real-time updates, user authentication, and responsive design.',
+    url: 'https://github.com/desaisoham0/lumaa-spring-2025-swe',
+    tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT'],
+    featured: false,
+    icon: 'fas fa-tasks',
+    category: 'Full-Stack',
     priority: 11,
     year: 2024,
   },
