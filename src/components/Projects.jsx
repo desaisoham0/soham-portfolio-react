@@ -28,11 +28,11 @@ const projectsList = [
   {
     title: 'Raspberry Pi Real-Time System Monitor',
     description:
-      'An interactive, web-based Raspberry Pi monitoring tool built with Python. This project showcases a robust object-oriented design, real-time system metrics visualization, and modular extensibility. The intuitive Streamlit dashboard provides insightful visualizations and dynamic tracking of CPU, RAM, disk usage, hardware details, and system events, ensuring seamless performance monitoring.',
+      'An object-oriented Raspberry Pi system monitor that provides real-time hardware metrics through a Streamlit dashboard. Features live visualizations, customizable logging, and a modular architecture, highlighting expertise in Python, system monitoring, and interactive web applications.',
     url: 'https://github.com/desaisoham0/raspberry-pi-system-monitor',
     tech: [
       'Python',
-      'Raspberry Pi hardware interface',
+      'Raspberry Pi',
       'Streamlit',
       'OOP',
       'Plotly',
@@ -41,9 +41,29 @@ const projectsList = [
       'CI/CD',
     ],
     featured: true,
-    icon: 'fas fa-robot',
+    icon: 'fas fa-tachometer-alt',
     category: 'Full-Stack',
-    priority: 2,
+    priority: 3,
+    year: 2025,
+  },
+  {
+    title: 'Recipe Vault',
+    description:
+      'A full-stack web app for sharing and discovering recipes, built in 7 hours. Features secure MFA login, smart ingredient-based search powered by machine learning, and a dashboard for trending recipes. Showcases skills in Flask, SQL, user authentication, and rapid prototyping.',
+    url: 'https://github.com/desaisoham0/netForge',
+    tech: [
+      'Python',
+      'Flask',
+      'SQLAlchemy',
+      'scikit-learn',
+      'pyotp',
+      'Pandas',
+      'Jinja2',
+    ],
+    featured: true,
+    icon: 'fas fa-utensils',
+    category: 'Full-Stack',
+    priority: 4,
     year: 2025,
   },
   {
@@ -55,8 +75,20 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-chart-line',
     category: 'Data Science',
-    priority: 3,
+    priority: 5,
     year: 2024,
+  },
+  {
+    title: 'Hacker News Web Scraper',
+    description:
+      'An automated web scraper built with Playwright that collects, validates, and analyzes Hacker News articles. Features dynamic pagination handling, precise time parsing, and data sorting, showcasing expertise in web automation, async programming, and algorithmic verification.',
+    url: 'https://github.com/desaisoham0/Hacker-News-Scraper',
+    tech: ['Node.js', 'JavaScript (ES6+)', 'Playwright', 'Web Scraping'],
+    featured: false,
+    icon: 'fas fa-robot',
+    category: 'Web Automation',
+    priority: 6,
+    year: 2025,
   },
   {
     title: 'Task Manager Web App',
@@ -67,7 +99,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-tasks',
     category: 'Full-Stack',
-    priority: 4,
+    priority: 7,
     year: 2024,
   },
   {
@@ -79,7 +111,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-film',
     category: 'AI/ML',
-    priority: 5,
+    priority: 8,
     year: 2025,
   },
   {
@@ -91,7 +123,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-shopping-cart',
     category: 'Full-Stack',
-    priority: 6,
+    priority: 9,
     year: 2024,
   },
   {
@@ -103,7 +135,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-blog',
     category: 'Full-Stack',
-    priority: 7,
+    priority: 10,
     year: 2023,
   },
   {
@@ -115,7 +147,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-database',
     category: 'Data Science',
-    priority: 8,
+    priority: 11,
     year: 2024,
   },
   {
@@ -127,7 +159,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-clock',
     category: 'Frontend',
-    priority: 9,
+    priority: 12,
     year: 2023,
   },
   {
@@ -139,7 +171,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-mobile-alt',
     category: 'Mobile',
-    priority: 10,
+    priority: 13,
     year: 2024,
   },
 ];
@@ -156,6 +188,7 @@ const Projects = () => {
     'Data Science',
     'Frontend',
     'Mobile',
+    'Web Automation',
   ];
 
   // Define sorting options
