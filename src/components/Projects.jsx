@@ -2,6 +2,25 @@ import React, { useState, useMemo } from 'react';
 
 const projectsList = [
   {
+    title: 'Gemma 3n Chat – talk to an LLM right in your browser',
+    description:
+      'Tiny web app that runs Google’s Gemma 3n LLM locally with Ollama and keeps all chat history in the browser via sql.js, fully offline.',
+    url: 'https://github.com/desaisoham0/Gemma3n',
+    tech: [
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'sql.js',
+      'Gemma 3n',
+      'Ollama',
+    ],
+    featured: true,
+    icon: 'fas fa-comment-dots',
+    category: 'AI/ML',
+    priority: 1,
+    year: 2025,
+  },
+  {
     title: 'Restaurant Fullstack Application',
     description:
       'Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions',
@@ -10,7 +29,7 @@ const projectsList = [
     featured: true,
     icon: 'fas fa-utensils',
     category: 'Full-Stack',
-    priority: 1,
+    priority: 2,
     year: 2025,
   },
   {
@@ -22,7 +41,7 @@ const projectsList = [
     featured: true,
     icon: 'fas fa-robot',
     category: 'AI/ML',
-    priority: 2,
+    priority: 3,
     year: 2025,
   },
   {
@@ -43,7 +62,7 @@ const projectsList = [
     featured: true,
     icon: 'fas fa-tachometer-alt',
     category: 'Full-Stack',
-    priority: 3,
+    priority: 4,
     year: 2025,
   },
   {
@@ -63,7 +82,7 @@ const projectsList = [
     featured: true,
     icon: 'fas fa-utensils',
     category: 'Full-Stack',
-    priority: 4,
+    priority: 5,
     year: 2025,
   },
   {
@@ -75,7 +94,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-chart-line',
     category: 'Data Science',
-    priority: 5,
+    priority: 6,
     year: 2024,
   },
   {
@@ -87,7 +106,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-robot',
     category: 'Web Automation',
-    priority: 6,
+    priority: 7,
     year: 2025,
   },
   {
@@ -99,7 +118,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-film',
     category: 'AI/ML',
-    priority: 7,
+    priority: 8,
     year: 2025,
   },
   {
@@ -111,7 +130,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-shopping-cart',
     category: 'Full-Stack',
-    priority: 8,
+    priority: 9,
     year: 2024,
   },
   {
@@ -123,7 +142,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-blog',
     category: 'Full-Stack',
-    priority: 9,
+    priority: 10,
     year: 2023,
   },
   {
@@ -135,7 +154,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-database',
     category: 'Data Science',
-    priority: 10,
+    priority: 11,
     year: 2024,
   },
   {
@@ -147,7 +166,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-tasks',
     category: 'Full-Stack',
-    priority: 11,
+    priority: 12,
     year: 2024,
   },
   {
@@ -159,7 +178,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-clock',
     category: 'Frontend',
-    priority: 12,
+    priority: 13,
     year: 2023,
   },
   {
@@ -171,7 +190,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-mobile-alt',
     category: 'Mobile',
-    priority: 13,
+    priority: 14,
     year: 2024,
   },
 ];
