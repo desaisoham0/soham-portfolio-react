@@ -4,7 +4,7 @@ const projectsList = [
   {
     title: 'Gemma 3n Chat – talk to an LLM right in your browser',
     description:
-      'Tiny web app that runs Google’s Gemma 3n LLM locally with Ollama and keeps all chat history in the browser via sql.js, fully offline.',
+      'LLM chat app that runs Google’s Gemma 3n or any Ollama model, fully offline on your machine. No internet, no accounts. Every conversation stays private, stored in your browser with sql.js and localStorage.',
     url: 'https://github.com/desaisoham0/Gemma3n',
     tech: [
       'React',
