@@ -81,13 +81,16 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className={`font-medium font-dinrounded transition-all duration-300 px-3 py-2 sm:py-3 rounded-lg text-sm lg:text-base ${
+                className={`relative inline-flex items-center rounded-xl px-3.5 py-2 text-sm lg:text-base font-medium font-dinrounded transition ${
                   getActiveClass(link.href)
                     ? 'text-gray-900 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 scale-105'
                     : 'text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100'
                 }`}
               >
                 {link.label}
+                {getActiveClass(link.href) && (
+                  <span className="pointer-events-none absolute -bottom-1 left-3 right-3 h-0.5 rounded-full bg-gradient-to-r from-indigo-500 to-sky-500" />
+                )}
               </a>
             ))}
             <ThemeToggle />
