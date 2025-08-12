@@ -2,6 +2,18 @@ import React, { useState, useMemo } from 'react';
 
 const projectsList = [
   {
+    title: 'Restaurant Fullstack Application',
+    description:
+      'Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions',
+    url: 'https://github.com/desaisoham0/kailani',
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Vercel'],
+    featured: true,
+    icon: 'fas fa-utensils',
+    category: 'Full-Stack',
+    priority: 1,
+    year: 2025,
+  },
+  {
     title: 'Gemma 3n Chat – talk to an LLM right in your browser',
     description:
       'LLM chat app that runs Google’s Gemma 3n or any Ollama model, fully offline on your machine. No internet, no accounts. Every conversation stays private, stored in your browser with sql.js and localStorage.',
@@ -17,18 +29,6 @@ const projectsList = [
     featured: true,
     icon: 'fas fa-comment-dots',
     category: 'AI/ML',
-    priority: 1,
-    year: 2025,
-  },
-  {
-    title: 'Restaurant Fullstack Application',
-    description:
-      'Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions',
-    url: 'https://github.com/desaisoham0/kailani',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Vercel'],
-    featured: true,
-    icon: 'fas fa-utensils',
-    category: 'Full-Stack',
     priority: 2,
     year: 2025,
   },
@@ -86,6 +86,18 @@ const projectsList = [
     year: 2025,
   },
   {
+    title: 'AI Web Search Assistant',
+    description:
+      'Small terminal app that answers questions with local LLM reasoning plus fresh web snippets. It uses Ollama to run Gemma 3 locally, Brave Search for context, and Rich to render Markdown in the console.',
+    url: 'https://github.com/desaisoham0/AI-Web-Search-Assistant-with-Ollama-and-Brave-Search',
+    tech: ['Python', 'Ollama', 'Gemma 3', 'Brave Search API'],
+    featured: false,
+    icon: 'fas fa-search',
+    category: 'AI/ML',
+    priority: 6,
+    year: 2025,
+  },
+  {
     title: 'Interactive Data Dashboard',
     description:
       'At Jasfel as full-stack developer, I deployed an interactive data dashboard with Plotly and Python, effectively shipping a product feature that increased operational efficiency by 25%.',
@@ -94,7 +106,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-chart-line',
     category: 'Data Science',
-    priority: 6,
+    priority: 7,
     year: 2024,
   },
   {
@@ -106,7 +118,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-robot',
     category: 'Web Automation',
-    priority: 7,
+    priority: 8,
     year: 2025,
   },
   {
@@ -118,7 +130,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-film',
     category: 'AI/ML',
-    priority: 8,
+    priority: 9,
     year: 2025,
   },
   {
@@ -130,7 +142,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-shopping-cart',
     category: 'Full-Stack',
-    priority: 9,
+    priority: 10,
     year: 2024,
   },
   {
@@ -142,7 +154,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-blog',
     category: 'Full-Stack',
-    priority: 10,
+    priority: 11,
     year: 2023,
   },
   {
@@ -154,7 +166,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-database',
     category: 'Data Science',
-    priority: 11,
+    priority: 12,
     year: 2024,
   },
   {
@@ -166,7 +178,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-tasks',
     category: 'Full-Stack',
-    priority: 12,
+    priority: 13,
     year: 2024,
   },
   {
@@ -178,7 +190,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-clock',
     category: 'Frontend',
-    priority: 13,
+    priority: 14,
     year: 2023,
   },
   {
@@ -190,7 +202,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-mobile-alt',
     category: 'Mobile',
-    priority: 14,
+    priority: 15,
     year: 2024,
   },
 ];
