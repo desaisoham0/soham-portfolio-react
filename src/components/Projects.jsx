@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { Fragment, useMemo, useState } from 'react';
+import { Listbox, Transition } from '@headlessui/react';
 
 const projectsList = [
   {
@@ -14,16 +15,16 @@ const projectsList = [
     year: 2025,
   },
   {
-    title: 'Gemma 3n Chat – talk to an LLM right in your browser',
+    title: 'Gemma 3n Chat – talk to an LLM right in your browser',
     description:
-      'LLM chat app that runs Google’s Gemma 3n or any Ollama model, fully offline on your machine. No internet, no accounts. Every conversation stays private, stored in your browser with sql.js and localStorage.',
+      'LLM chat app that runs Google’s Gemma 3n or any Ollama model, fully offline on your machine. No internet, no accounts. Every conversation stays private, stored in your browser with sql.js and localStorage.',
     url: 'https://github.com/desaisoham0/Gemma3n',
     tech: [
       'React',
       'TypeScript',
       'Tailwind CSS',
       'sql.js',
-      'Gemma 3n',
+      'Gemma 3n',
       'Ollama',
     ],
     featured: true,
@@ -211,7 +212,6 @@ const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [sortBy, setSortBy] = useState('Featured First');
 
-  // Define filter categories
   const categories = [
     'All',
     'Full-Stack',
@@ -222,7 +222,6 @@ const Projects = () => {
     'Web Automation',
   ];
 
-  // Define sorting options
   const sortOptions = [
     'Featured First',
     'Most Recent',
@@ -230,10 +229,8 @@ const Projects = () => {
     'Alphabetical',
   ];
 
-  // Advanced sorting algorithm
   const sortProjects = (projects, sortMethod) => {
     const projectsCopy = [...projects];
-
     switch (sortMethod) {
       case 'Featured First':
         return projectsCopy.sort((a, b) => {
@@ -241,45 +238,34 @@ const Projects = () => {
           if (!a.featured && b.featured) return 1;
           return a.priority - b.priority;
         });
-
       case 'Most Recent':
         return projectsCopy.sort((a, b) => {
           if (a.year !== b.year) return b.year - a.year;
           return a.priority - b.priority;
         });
-
       case 'Priority Order':
         return projectsCopy.sort((a, b) => a.priority - b.priority);
-
       case 'Alphabetical':
         return projectsCopy.sort((a, b) => a.title.localeCompare(b.title));
-
       default:
         return projectsCopy;
     }
   };
 
-  // Filter and sort projects using useMemo for performance
   const filteredAndSortedProjects = useMemo(() => {
     const filtered =
       selectedCategory === 'All'
         ? projectsList
         : projectsList.filter(project => project.category === selectedCategory);
-
     return sortProjects(filtered, sortBy);
   }, [selectedCategory, sortBy]);
 
-  const featuredProjects = filteredAndSortedProjects.filter(
-    project => project.featured
-  );
-  const otherProjects = filteredAndSortedProjects.filter(
-    project => !project.featured
-  );
+  const featuredProjects = filteredAndSortedProjects.filter(p => p.featured);
+  const otherProjects = filteredAndSortedProjects.filter(p => !p.featured);
 
   return (
-    <div className="space-y-12">
-      {/* Section Header */}
-      <div className="text-center">
+    <section className="space-y-12">
+      <header className="text-center px-4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-dinrounded mb-4 text-sky-500">
           My Projects
         </h1>
@@ -287,53 +273,112 @@ const Projects = () => {
           A comprehensive collection of my work across full-stack development,
           AI/ML, and data engineering
         </p>
-      </div>
+      </header>
 
-      {/* Filter and Sort Controls */}
-      <div className="flex flex-col lg:flex-row gap-6 items-center justify-between bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-gray-600">
-        {/* Category Filters */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <span className="text-sm font-semibold font-dinrounded text-gray-700 dark:text-gray-300 whitespace-nowrap">
-            Filter by Category:
-          </span>
-          <div className="flex flex-wrap gap-2">
-            {categories.map(category => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium font-dinrounded transition-all duration-200 ${
-                  selectedCategory === category
-                    ? 'bg-sky-500 text-white shadow-md transform scale-105'
-                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                }`}
+      <nav aria-label="Project filters and sorting" className="px-4">
+        <div className="mx-auto max-w-6xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-600">
+          <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
+            <div className="w-full">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm font-semibold font-dinrounded text-gray-700 dark:text-gray-300">
+                  Filter by category
+                </span>
+                <span className="sr-only" role="status" aria-live="polite">
+                  {selectedCategory}
+                </span>
+              </div>
+              <div
+                role="tablist"
+                aria-label="Categories"
+                className="flex flex-wrap gap-2"
               >
-                {category}
-              </button>
-            ))}
+                {categories.map(category => {
+                  const active = selectedCategory === category;
+                  return (
+                    <button
+                      key={category}
+                      type="button"
+                      role="tab"
+                      aria-selected={active}
+                      aria-pressed={active}
+                      onClick={() => setSelectedCategory(category)}
+                      className={`cursor-pointer rounded-2xl px-4 py-2 text-sm font-medium font-dinrounded transition-all duration-200 ring-1 ring-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800 ${
+                        active
+                          ? 'bg-sky-500 text-white shadow-md active:scale-95'
+                          : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 active:scale-95'
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="w-full lg:w-auto">
+              <label className="block text-sm font-semibold font-dinrounded text-gray-700 dark:text-gray-300 mb-2">
+                Sort by
+              </label>
+              <Listbox value={sortBy} onChange={setSortBy}>
+                <div className="relative w-full lg:w-64">
+                  <Listbox.Button className="cursor-pointer relative w-full rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-dinrounded px-4 py-2 text-sm text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800">
+                    <span className="block truncate">{sortBy}</span>
+                    <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                      <i
+                        className="fas fa-chevron-down text-xs opacity-70"
+                        aria-hidden="true"
+                      ></i>
+                    </span>
+                  </Listbox.Button>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Listbox.Options className="absolute z-10 mt-2 max-h-60 w-full overflow-auto rounded-2xl bg-white dark:bg-gray-800 py-2 text-sm shadow-lg ring-1 ring-black/5 focus:outline-none">
+                      {sortOptions.map(option => (
+                        <Listbox.Option
+                          key={option}
+                          value={option}
+                          className={({ active }) =>
+                            `cursor-pointer select-none px-4 py-2 font-dinrounded ${
+                              active
+                                ? 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100'
+                                : 'text-gray-700 dark:text-gray-300'
+                            }`
+                          }
+                        >
+                          {({ selected }) => (
+                            <div className="flex items-center justify-between">
+                              <span
+                                className={`truncate ${selected ? 'font-semibold' : 'font-normal'}`}
+                              >
+                                {option}
+                              </span>
+                              {selected && (
+                                <i
+                                  className="fas fa-check text-xs"
+                                  aria-hidden="true"
+                                ></i>
+                              )}
+                            </div>
+                          )}
+                        </Listbox.Option>
+                      ))}
+                    </Listbox.Options>
+                  </Transition>
+                </div>
+              </Listbox>
+            </div>
           </div>
         </div>
+      </nav>
 
-        {/* Sort Options */}
-        <div className="flex flex-col sm:flex-row items-center gap-4">
-          <span className="text-sm font-semibold font-dinrounded text-gray-700 dark:text-gray-300 whitespace-nowrap">
-            Sort by:
-          </span>
-          <select
-            value={sortBy}
-            onChange={e => setSortBy(e.target.value)}
-            className="px-4 py-2 rounded-lg border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-dinrounded focus:outline-none focus:border-sky-500 transition-colors duration-200"
-          >
-            {sortOptions.map(option => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      {/* Project Count Display */}
-      <div className="text-center">
+      <div className="text-center px-4">
         <p className="text-sm font-dinrounded text-gray-600 dark:text-gray-400">
           Showing{' '}
           <span className="font-bold text-sky-500">
@@ -352,156 +397,168 @@ const Projects = () => {
         </p>
       </div>
 
-      {/* Featured Projects */}
       {featuredProjects.length > 0 && (
-        <div className="space-y-8">
-          <h2 className="text-xl sm:text-2xl font-bold font-dinrounded text-red-600 dark:text-red-400 mb-6 flex items-center">
-            <i className="fas fa-star mr-2"></i>
-            Featured Projects ({featuredProjects.length})
-          </h2>
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
-            {featuredProjects.map((project, index) => (
-              <div
-                key={index}
-                className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex flex-col h-full">
-                  {/* Project Icon */}
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 border-2 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 border-[#b5d2e6] dark:border-[#37464f]">
-                      <i
-                        className={`${project.icon} text-gray-600 dark:text-gray-300 text-2xl`}
-                      ></i>
+        <section aria-labelledby="featured-heading" className="px-4">
+          <div className="mx-auto max-w-6xl space-y-8">
+            <h2
+              id="featured-heading"
+              className="text-xl sm:text-2xl font-bold font-dinrounded text-red-600 dark:text-red-400 mb-2 flex items-center"
+            >
+              <i className="fas fa-star mr-2" aria-hidden="true"></i>
+              Featured Projects ({featuredProjects.length})
+            </h2>
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
+              {featuredProjects.map((project, index) => (
+                <article
+                  key={index}
+                  className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-center mb-6">
+                      <div className="w-16 h-16 border-2 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 border-[#b5d2e6] dark:border-[#37464f]">
+                        <i
+                          className={`${project.icon} text-gray-600 dark:text-gray-300 text-2xl`}
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold font-dinrounded text-gray-900 dark:text-gray-100">
+                        {project.title}
+                      </h3>
                     </div>
-                    <h3 className="text-xl sm:text-2xl font-bold font-dinrounded text-gray-900 dark:text-gray-100">
-                      {project.title}
-                    </h3>
-                  </div>
-
-                  {/* Project Content */}
-                  <div className="flex-1 flex flex-col">
-                    <p className="text-gray-600 font-dinrounded dark:text-gray-400 text-base leading-relaxed mb-6 flex-1">
+                    <p className="text-gray-600 font-dinrounded dark:text-gray-400 text-base leading-relaxed mb-6">
                       {project.description}
                     </p>
-
-                    {/* Tech Stack */}
                     <div className="mb-6">
-                      <div className="flex flex-wrap gap-2">
+                      <ul className="flex flex-wrap gap-2">
                         {project.tech.map((tech, i) => (
-                          <span
+                          <li
                             key={i}
                             className="px-3 py-2 text-gray-700 font-dinrounded dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-sm rounded-full bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
                           >
                             {tech}
-                          </span>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </div>
-
-                    {/* GitHub Link */}
                     {project.url && (
                       <a
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center font-bold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300 text-base"
+                        role="button"
+                        aria-label={`View code for ${project.title}`}
+                        className="cursor-pointer inline-flex items-center justify-center rounded-2xl px-4 py-2 font-dinrounded font-semibold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 ring-1 ring-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800 transition-colors duration-200"
                       >
-                        <i className="fab fa-github mr-3 text-xl"></i>
+                        <i
+                          className="fab fa-github mr-2 text-lg"
+                          aria-hidden="true"
+                        ></i>
                         <span>View Code</span>
-                        <i className="fas fa-external-link-alt ml-3 text-sm"></i>
+                        <i
+                          className="fas fa-external-link-alt ml-2 text-xs"
+                          aria-hidden="true"
+                        ></i>
                       </a>
                     )}
                   </div>
-                </div>
-              </div>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       )}
 
-      {/* Other Projects */}
       {otherProjects.length > 0 && (
-        <div className="space-y-8">
-          <h2 className="text-xl sm:text-2xl font-bold font-dinrounded text-purple-600 dark:text-purple-400 mb-6 flex items-center">
-            <i className="fas fa-code mr-2"></i>
-            Other Projects ({otherProjects.length})
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {otherProjects.map((project, index) => (
-              <div
-                key={index}
-                className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
-              >
-                <div className="flex flex-col h-full">
-                  {/* Project Icon */}
-                  <div className="w-16 h-16 border-2 rounded-xl flex items-center justify-center mb-6 mx-auto border-[#b5d2e6] dark:border-[#37464f]">
-                    <i
-                      className={`${project.icon} text-gray-600 dark:text-gray-300 text-2xl`}
-                    ></i>
-                  </div>
-
-                  {/* Project Content */}
-                  <div className="flex-1 flex flex-col text-center">
-                    <h3 className="text-lg font-bold font-dinrounded text-gray-900 dark:text-gray-100 mb-4">
-                      {project.title}
-                    </h3>
-                    <p className="text-gray-600 font-dinrounded dark:text-gray-400 text-sm leading-relaxed mb-6 flex-1">
-                      {project.description}
-                    </p>
-
-                    {/* Tech Stack */}
-                    <div className="mb-6">
-                      <div className="flex flex-wrap gap-2 justify-center">
-                        {project.tech.slice(0, 3).map((tech, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1 font-dinrounded text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.tech.length > 3 && (
-                          <span className="px-3 py-1 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700">
-                            +{project.tech.length - 3}
-                          </span>
-                        )}
-                      </div>
+        <section aria-labelledby="other-heading" className="px-4">
+          <div className="mx-auto max-w-6xl space-y-8">
+            <h2
+              id="other-heading"
+              className="text-xl sm:text-2xl font-bold font-dinrounded text-purple-600 dark:text-purple-400 mb-2 flex items-center"
+            >
+              <i className="fas fa-code mr-2" aria-hidden="true"></i>
+              Other Projects ({otherProjects.length})
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {otherProjects.map((project, index) => (
+                <article
+                  key={index}
+                  className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex flex-col h-full">
+                    <div className="w-16 h-16 border-2 rounded-2xl flex items-center justify-center mb-6 mx-auto border-[#b5d2e6] dark:border-[#37464f]">
+                      <i
+                        className={`${project.icon} text-gray-600 dark:text-gray-300 text-2xl`}
+                        aria-hidden="true"
+                      ></i>
                     </div>
-
-                    {/* GitHub Link */}
-                    {project.url && (
-                      <a
-                        href={project.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center font-dinrounded font-bold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 transition-colors duration-300"
-                      >
-                        <i className="fab fa-github mr-2 text-lg"></i>
-                        <span className="text-sm">View Code</span>
-                        <i className="fas fa-external-link-alt ml-2 text-xs"></i>
-                      </a>
-                    )}
+                    <div className="flex-1 flex flex-col text-center">
+                      <h3 className="text-lg font-bold font-dinrounded text-gray-900 dark:text-gray-100 mb-4">
+                        {project.title}
+                      </h3>
+                      <p className="text-gray-600 font-dinrounded dark:text-gray-400 text-sm leading-relaxed mb-6">
+                        {project.description}
+                      </p>
+                      <div className="mb-6">
+                        <ul className="flex flex-wrap gap-2 justify-center">
+                          {project.tech.slice(0, 3).map((tech, i) => (
+                            <li
+                              key={i}
+                              className="px-3 py-1 font-dinrounded text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors duration-200"
+                            >
+                              {tech}
+                            </li>
+                          ))}
+                          {project.tech.length > 3 && (
+                            <span className="px-3 py-1 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 text-xs rounded-full bg-gray-50 dark:bg-gray-700">
+                              +{project.tech.length - 3}
+                            </span>
+                          )}
+                        </ul>
+                      </div>
+                      {project.url && (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          role="button"
+                          aria-label={`View code for ${project.title}`}
+                          className="cursor-pointer inline-flex items-center justify-center rounded-2xl px-3 py-2 font-dinrounded font-semibold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 ring-1 ring-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800 transition-colors duration-200"
+                        >
+                          <i
+                            className="fab fa-github mr-2 text-lg"
+                            aria-hidden="true"
+                          ></i>
+                          <span className="text-sm">View Code</span>
+                          <i
+                            className="fas fa-external-link-alt ml-2 text-xs"
+                            aria-hidden="true"
+                          ></i>
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       )}
 
-      {/* Empty State */}
       {filteredAndSortedProjects.length === 0 && (
-        <div className="text-center py-12">
-          <i className="fas fa-search text-4xl text-gray-400 dark:text-gray-600 mb-4"></i>
+        <section className="text-center py-12 px-4">
+          <i
+            className="fas fa-search text-4xl text-gray-400 dark:text-gray-600 mb-4"
+            aria-hidden="true"
+          ></i>
           <h3 className="text-xl font-bold font-dinrounded text-gray-600 dark:text-gray-400 mb-2">
             No projects found
           </h3>
           <p className="text-gray-500 dark:text-gray-500 font-dinrounded">
             Try adjusting your filters to see more projects.
           </p>
-        </div>
+        </section>
       )}
-    </div>
+    </section>
   );
 };
 

@@ -5,7 +5,7 @@ const Resume = () => {
   const resumeData = {
     name: 'SOHAM DESAI',
     contact: {
-      email: 'desaisoham98@gmail.com',
+      email: 'desaiso@gmail.com',
       linkedin: 'https://www.linkedin.com/in/soham-desai-068952212/',
       github: 'https://github.com/desaisoham0',
       portfolio: 'https://www.sohamdesai.dev/',
