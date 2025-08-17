@@ -222,12 +222,7 @@ const Projects = () => {
     'Web Automation',
   ];
 
-  const sortOptions = [
-    'Featured First',
-    'Most Recent',
-    'Priority Order',
-    'Alphabetical',
-  ];
+  const sortOptions = ['Featured First', 'Most Recent', 'Alphabetical'];
 
   const sortProjects = (projects, sortMethod) => {
     const projectsCopy = [...projects];
