@@ -3,15 +3,23 @@ import jasfelLogo from '../assets/jasfel_logo.png';
 import h4Logo from '../assets/hfour_logo.png';
 import codepathLogo from '../assets/codepath_logo.png';
 import tThreeLogo from '../assets/tThree_logo.png';
-import sohamLogo from '../assets/soham_icon.png';
+// import sohamLogo from '../assets/soham_icon.png';
 
 const workHistory = [
+  // {
+  //   company: 'Self-Employed',
+  //   logo: sohamLogo,
+  //   role: 'Freelance Full-Stack Developer',
+  //   duration: 'Jan 2025 - Present',
+  //   description: 'Building custom web solutions for local businesses',
+  //   current: true,
+  // },
   {
-    company: 'Self-Employed',
-    logo: sohamLogo,
-    role: 'Freelance Full-Stack Developer',
-    duration: 'Jan 2025 - Present',
-    description: 'Building custom web solutions for local businesses',
+    company: 'CodePath',
+    logo: codepathLogo,
+    role: 'Tech Fellow',
+    duration: 'May 2024 -  Present',
+    description: 'Mentoring students in software engineering fundamentals',
     current: true,
   },
   {
@@ -36,14 +44,6 @@ const workHistory = [
     role: 'Software Engineer, Intern',
     duration: 'July 2024 - October 2024',
     description: 'Developed data analysis tools and visualization dashboards',
-    current: false,
-  },
-  {
-    company: 'CodePath',
-    logo: codepathLogo,
-    role: 'Tech Fellow',
-    duration: 'June 2024 - December 2024',
-    description: 'Mentoring students in software engineering fundamentals',
     current: false,
   },
 ];

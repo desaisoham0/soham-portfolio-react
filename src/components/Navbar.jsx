@@ -39,9 +39,9 @@ const Navbar = () => {
 
   const navLinks = [
     { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
     { href: '#projects', label: 'Projects' },
     { href: '#work', label: 'Work' },
+    { href: '#about', label: 'About' },
     { href: '#contact', label: 'Contact' },
   ];
 
@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 w-screen bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md border-b-2 border-gray-200 dark:border-gray-700 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 w-screen bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md border-b-2 border-gray-300 dark:border-gray-700 shadow-sm"
       aria-label="Primary"
     >
       <a
@@ -130,7 +130,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <div
               id="mobile-nav"
-              className="px-2 pt-2 pb-3 font-dinrounded font-medium space-y-1.5 backdrop-blur-md rounded-2xl mt-2 border-2 border-gray-200 dark:border-gray-700 shadow-lg"
+              className="px-2 pt-2 pb-3 font-dinrounded font-medium space-y-1.5 backdrop-blur-md rounded-2xl mt-2 border-2 border-gray-300 dark:border-gray-700 shadow-lg"
             >
               {navLinks.map(link => {
                 const active = getActiveClass(link.href);

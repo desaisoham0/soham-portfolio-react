@@ -92,7 +92,7 @@ const Hero = () => {
       </header>
 
       <section className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-        <div className="backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 mt-6 sm:mt-8 border-2 border-[#b5d2e6] dark:border-[#37464f] space-y-8">
+        <div className="backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 mt-6 sm:mt-8 border-2 border-gray-300 dark:border-[#37464f] space-y-8">
           <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 font-dinrounded">
             <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 text-center shadow-sm">
               <dd className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
