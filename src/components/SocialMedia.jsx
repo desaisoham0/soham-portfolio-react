@@ -17,18 +17,11 @@ const SocialMedia = ({ className = '', size = 'default', gap = 'gap-6' }) => {
       hoverBorder: 'hover:border-blue-600 dark:hover:border-blue-400',
     },
     {
-      href: 'https://www.instagram.com/sohamdesaiiii/',
-      icon: 'fab fa-instagram',
-      label: 'Instagram',
-      hoverColor: 'hover:text-pink-600 dark:hover:text-pink-400',
-      hoverBorder: 'hover:border-pink-600 dark:hover:border-pink-400',
-    },
-    {
       href: 'https://x.com/desaisoham98',
       icon: 'fab fa-twitter',
       label: 'Twitter',
-      hoverColor: 'hover:text-sky-600 dark:hover:text-sky-400',
-      hoverBorder: 'hover:border-sky-600 dark:hover:border-sky-400',
+      hoverColor: 'hover:text-purple-600 dark:hover:text-purple-400',
+      hoverBorder: 'hover:border-purple-600 dark:hover:border-purple-400',
     },
   ];
 
