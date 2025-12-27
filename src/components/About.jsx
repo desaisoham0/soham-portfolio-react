@@ -24,8 +24,9 @@ function About() {
             </h3>
             <p className="text-gray-700 font-dinrounded dark:text-gray-300 leading-relaxed">
               My journey in technology started with a simple question: How do
-              websites work? This curiosity led me to learn programming, 
-              where I discovered how powerful code can be for solving real-world problems.
+              websites work? This curiosity led me to learn programming, where I
+              discovered how powerful code can be for solving real-world
+              problems.
             </p>
           </article>
 
@@ -35,9 +36,9 @@ function About() {
               <span>Professional Growth</span>
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-dinrounded">
-              Through my internships, freelance work, and studies, 
-              I have gained strong skills in full-stack development, AI, and Mathematics. 
-              My experience includes training AI models, improving database speed, 
+              Through my internships, freelance work, and studies, I have gained
+              strong skills in full-stack development, AI, and Mathematics. My
+              experience includes training AI models, improving database speed,
               and building complete web applications from scratch.
             </p>
           </article>
@@ -48,9 +49,11 @@ function About() {
               <span>Giving Back</span>
             </h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed font-dinrounded">
-              I’m passionate about building software that works and helping people succeed in tech.
-              My experience ranges from automating tasks with AI to building full-stack apps.
-              I truly enjoy mentoring students and sharing knowledge with the developer community to help everyone grow.
+              I’m passionate about building software that works and helping
+              people succeed in tech. My experience ranges from automating tasks
+              with AI to building full-stack apps. I truly enjoy mentoring
+              students and sharing knowledge with the developer community to
+              help everyone grow.
             </p>
           </article>
         </div>

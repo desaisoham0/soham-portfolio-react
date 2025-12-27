@@ -53,8 +53,8 @@ const ContactForm = () => {
           Get In Touch
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-sm sm:text-base leading-relaxed font-dinrounded max-w-2xl">
-          Let’s build something together! Whether you have a question about my projects or just want to say hi, 
-          feel free to drop me a message.
+          Let’s build something together! Whether you have a question about my
+          projects or just want to say hi, feel free to drop me a message.
         </p>
       </header>
 
