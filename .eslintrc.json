@@ -31,10 +31,13 @@
       "warn",
       { "allowConstantExport": true }
     ],
-    "no-unused-vars": ["error", { 
-      "varsIgnorePattern": "^_|^React$", 
-      "argsIgnorePattern": "^_" 
-    }],
+    "no-unused-vars": [
+      "error",
+      {
+        "varsIgnorePattern": "^_|^React$",
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "no-console": "warn",
     "prefer-const": "error",
     "no-var": "error"

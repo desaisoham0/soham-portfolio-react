@@ -3,14 +3,21 @@ import { Listbox, Transition } from '@headlessui/react';
 
 const projectsList = [
   {
-    title: 'Restaurant Fullstack Application',
+    title: 'DPO Training Pipeline',
     description:
       'Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions',
-    url: 'https://github.com/desaisoham0/kailani',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Vercel'],
+    url: 'https://github.com/desaisoham0/DPO-Training-Pipeline',
+    tech: [
+      'Python',
+      'PyTorch',
+      'Hugging Face (TRL, PEFT)',
+      'Unsloth',
+      'DPO',
+      'QLoRA',
+    ],
     featured: true,
-    icon: 'fas fa-utensils',
-    category: 'Full-Stack',
+    icon: 'fa-solid fa-square-binary',
+    category: 'AI/ML',
     priority: 1,
     year: 2025,
   },
@@ -135,6 +142,18 @@ const projectsList = [
     year: 2025,
   },
   {
+    title: 'Restaurant Fullstack Application',
+    description:
+      'Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions',
+    url: 'https://github.com/desaisoham0/kailani',
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase', 'Vercel'],
+    featured: false,
+    icon: 'fas fa-utensils',
+    category: 'Full-Stack',
+    priority: 10,
+    year: 2025,
+  },
+  {
     title: 'E-Commerce Platform',
     description:
       'A comprehensive e-commerce platform with product catalog, shopping cart, and payment integration.',
@@ -143,7 +162,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-shopping-cart',
     category: 'Full-Stack',
-    priority: 10,
+    priority: 11,
     year: 2024,
   },
   {
@@ -155,7 +174,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-blog',
     category: 'Full-Stack',
-    priority: 11,
+    priority: 12,
     year: 2023,
   },
   {
@@ -167,7 +186,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-database',
     category: 'Data Science',
-    priority: 12,
+    priority: 13,
     year: 2024,
   },
   {
@@ -179,7 +198,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-tasks',
     category: 'Full-Stack',
-    priority: 13,
+    priority: 14,
     year: 2024,
   },
   {
@@ -191,7 +210,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-clock',
     category: 'Frontend',
-    priority: 14,
+    priority: 15,
     year: 2023,
   },
   {
@@ -203,7 +222,7 @@ const projectsList = [
     featured: false,
     icon: 'fas fa-mobile-alt',
     category: 'Mobile',
-    priority: 15,
+    priority: 16,
     year: 2024,
   },
 ];

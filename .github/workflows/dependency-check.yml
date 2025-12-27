@@ -32,11 +32,11 @@ jobs:
           echo "🔍 Running detailed security audit..."
           echo "=== High Severity Issues ==="
           npm audit --audit-level=high || echo "No high severity issues found"
-          
+
           echo ""
           echo "=== Moderate Severity Issues ==="
           npm audit --audit-level=moderate || echo "No moderate severity issues found"
-          
+
           echo ""
           echo "=== All Issues ==="
           npm audit || echo "Audit complete"
@@ -49,24 +49,24 @@ jobs:
       - name: Generate dependency report
         run: |
           echo "📊 Generating comprehensive dependency report..."
-          
+
           echo "=== Current Dependencies ===" > dependency-report.txt
           npm list --depth=0 >> dependency-report.txt 2>&1 || true
-          
+
           echo "" >> dependency-report.txt
           echo "=== Outdated Packages ===" >> dependency-report.txt
           npm outdated >> dependency-report.txt 2>&1 || true
-          
+
           echo "" >> dependency-report.txt
           echo "=== Security Audit ===" >> dependency-report.txt
           npm audit >> dependency-report.txt 2>&1 || true
-          
+
           echo "" >> dependency-report.txt
           echo "=== Available Fixes ===" >> dependency-report.txt
           npm audit fix --dry-run >> dependency-report.txt 2>&1 || true
-          
+
           echo "Report generated successfully"
-          
+
           # Show summary
           echo ""
           echo "📋 Report Summary:"

@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main, develop ]
+    branches: [main, develop]
 
 jobs:
   # Job 1: Install dependencies and cache
@@ -122,7 +122,7 @@ jobs:
         run: |
           echo "🔍 Running security audit..."
           echo "Checking for high severity vulnerabilities..."
-          
+
           # Check for high severity issues (these should fail the build)
           if npm audit --audit-level=high > /dev/null 2>&1; then
             echo "✅ No high severity vulnerabilities found"
@@ -131,7 +131,7 @@ jobs:
             npm audit --audit-level=high
             exit 1
           fi
-          
+
           # Check for moderate issues (warn but don't fail)
           echo ""
           echo "Checking for moderate severity vulnerabilities..."
@@ -150,11 +150,11 @@ jobs:
           echo "📊 Generating security report..."
           echo "Current audit status:" > security-report.txt
           npm audit >> security-report.txt 2>&1 || true
-          
+
           echo "" >> security-report.txt
           echo "Dependencies overview:" >> security-report.txt
           npm list --depth=0 >> security-report.txt 2>&1 || true
-          
+
           echo "Security report generated"
         continue-on-error: true
 
@@ -246,10 +246,10 @@ jobs:
         run: |
           MAIN_JS_SIZE=$(find build -name "*.js" -not -path "*/node_modules/*" | xargs du -c | tail -1 | cut -f1)
           MAIN_CSS_SIZE=$(find build -name "*.css" -not -path "*/node_modules/*" | xargs du -c | tail -1 | cut -f1)
-          
+
           echo "Main JS size: ${MAIN_JS_SIZE}KB"
           echo "Main CSS size: ${MAIN_CSS_SIZE}KB"
-          
+
           # Set reasonable limits (adjust as needed)
           if [ "$MAIN_JS_SIZE" -gt 1000 ]; then
             echo "Warning: JS bundle size exceeds 1MB"
@@ -271,7 +271,7 @@ jobs:
         with:
           node-version: '18'
           cache: 'npm'
-      
+
       - name: Install Chrome
         uses: browser-actions/setup-chrome@v2
         with:
@@ -291,7 +291,7 @@ jobs:
           npx serve -s build -l 3000 &
           sleep 5
           npx lighthouse http://localhost:3000 --output=json --output-path=lighthouse-report.json --chrome-flags="--headless --no-sandbox"
-          
+
       - name: Upload Lighthouse report
         uses: actions/upload-artifact@v4
         with:
@@ -309,7 +309,7 @@ jobs:
         run: |
           echo "✅ All checks passed successfully!"
           echo "🚀 Vercel will automatically deploy your changes"
-        
+
       - name: Notify failure
         if: ${{ failure() }}
         run: echo "❌ Some checks failed. Please review the logs."

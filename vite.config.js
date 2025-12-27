@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -7,22 +7,22 @@ export default defineConfig({
   esbuild: {
     loader: 'jsx',
     include: /src\/.*\.[jt]sx?$/,
-    exclude: []
+    exclude: [],
   },
   server: {
     port: 3000,
-    open: true
+    open: true,
   },
   build: {
     outDir: 'build',
-    sourcemap: true
+    sourcemap: true,
   },
   optimizeDeps: {
     esbuildOptions: {
       loader: {
         '.js': 'jsx',
-        '.jsx': 'jsx'
-      }
-    }
-  }
-})
+        '.jsx': 'jsx',
+      },
+    },
+  },
+});
