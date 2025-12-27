@@ -155,19 +155,23 @@ const Work = () => {
 
           <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4">
             {[
-              'React',
+              'Python',
               'Flask',
+              'React',
               'AI/ML',
               'Node.js',
-              'Python',
               'JavaScript',
               'TypeScript',
-              'SQL',
+              'Restful APIs',
+              'CI/CD',
+              'Docker',
+              'Linux',
+              'PostgreSQL',
+              'SQLite',
               'Firebase',
               'MongoDB',
               'Express',
               'Tailwind CSS',
-              'Git',
             ].map((skill, index) => (
               <li
                 key={index}
