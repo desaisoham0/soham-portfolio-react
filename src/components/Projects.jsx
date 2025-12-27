@@ -5,7 +5,7 @@ const projectsList = [
   {
     title: 'DPO Training Pipeline',
     description:
-      'Developed and successfully sold a responsive full-stack web application to Kailani Shave & Ice. Built with React 19, TypeScript, Tailwind CSS, and Firebase with optimized serverless backend using Vercel Functions',
+      'This project is a streamlined AI training pipeline that uses Direct Preference Optimization (DPO) to teach the Qwen 2.5 model how to follow instructions more accurately by comparing "good" and "bad" answers.',
     url: 'https://github.com/desaisoham0/DPO-Training-Pipeline',
     tech: [
       'Python',
