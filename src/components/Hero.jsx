@@ -51,10 +51,13 @@ const Hero = () => {
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 font-medium font-dinrounded">
                   Software Engineer
                 </p>
-                <p className="text-sm sm:text-base md:text-lg font-montserrat text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                  NYC-based engineer crafting powerful full-stack solutions to
-                  elevate businesses and empower innovation
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-gray-400 font-medium font-dinrounded">
+                  New York City Metropolitan Area
                 </p>
+                {/* <p className="text-sm sm:text-base md:text-lg font-montserrat text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                  Passionate about building efficient software, optimizing AI models, 
+                  and helping the developer community grow.
+                </p> */}
               </div>
             </div>
           </Transition>
@@ -96,7 +99,7 @@ const Hero = () => {
           <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 font-dinrounded">
             <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 text-center shadow-sm">
               <dd className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
-                12+
+                15+
               </dd>
               <dt className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                 Projects Completed
@@ -112,7 +115,7 @@ const Hero = () => {
             </div>
             <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 text-center shadow-sm">
               <dd className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
-                2+
+                1+
               </dd>
               <dt className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
                 Years Experience
