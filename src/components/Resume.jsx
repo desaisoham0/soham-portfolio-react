@@ -247,9 +247,9 @@ const Resume = () => {
             EXPERIENCE
           </h2>
           <div className="space-y-6">
-            {resumeData.experience.map((job, index) => (
+            {resumeData.experience.map(job => (
               <div
-                key={index}
+                key={job.company}
                 className="border-l-4 border-purple-500 dark:border-purple-400 pl-6 print:border-gray-400"
               >
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
@@ -269,8 +269,8 @@ const Resume = () => {
                   </span>
                 </div>
                 <ul className="space-y-2">
-                  {job.achievements.map((achievement, achIndex) => (
-                    <li key={achIndex} className="flex items-start gap-3">
+                  {job.achievements.map(achievement => (
+                    <li key={achievement} className="flex items-start gap-3">
                       <span className="text-purple-500 dark:text-purple-400 mt-1 print:text-black">
                         •
                       </span>
@@ -292,9 +292,9 @@ const Resume = () => {
             PERSONAL PROJECTS
           </h2>
           <div className="space-y-6">
-            {resumeData.projects.map((project, index) => (
+            {resumeData.projects.map(project => (
               <div
-                key={index}
+                key={project.title}
                 className="border-l-4 border-orange-500 dark:border-orange-400 pl-6 print:border-gray-400"
               >
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
@@ -347,9 +347,9 @@ const Resume = () => {
               Technical Skills
             </h3>
             <div className="flex flex-wrap gap-2">
-              {resumeData.skills.map((skill, index) => (
+              {resumeData.skills.map(skill => (
                 <span
-                  key={index}
+                  key={skill}
                   className="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-full text-sm font-dinrounded print:bg-gray-100 print:text-black print:border print:border-gray-300"
                 >
                   {skill}
@@ -364,8 +364,8 @@ const Resume = () => {
               Certifications
             </h3>
             <ul className="space-y-2">
-              {resumeData.certifications.map((cert, index) => (
-                <li key={index} className="flex items-start gap-3">
+              {resumeData.certifications.map(cert => (
+                <li key={cert.title} className="flex items-start gap-3">
                   <span className="text-red-500 dark:text-red-400 mt-1 print:text-black">
                     •
                   </span>

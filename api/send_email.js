@@ -36,7 +36,8 @@ export default async function handler(req, res) {
   }
 
   // Rate limiting
-  const ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown';
+  const forwardedFor = req.headers['x-forwarded-for'];
+  const ip = (forwardedFor ? forwardedFor.split(',')[0].trim() : null) || req.socket?.remoteAddress || 'unknown';
   if (isRateLimited(ip)) {
     return res.status(429).json({ success: false, error: 'Too many requests. Please try again later.' });
   }
