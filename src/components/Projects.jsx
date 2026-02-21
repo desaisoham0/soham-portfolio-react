@@ -290,7 +290,7 @@ const Projects = () => {
       </header>
 
       <nav aria-label="Project filters and sorting" className="px-4">
-        <div className="mx-auto max-w-6xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-600">
+        <div className="mx-auto max-w-6xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-xs rounded-2xl p-6 border border-gray-200 dark:border-gray-600">
           <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
             <div className="w-full">
               <div className="flex items-center justify-between mb-3">
@@ -316,7 +316,7 @@ const Projects = () => {
                       aria-selected={active}
                       aria-pressed={active}
                       onClick={() => setSelectedCategory(category)}
-                      className={`cursor-pointer rounded-2xl px-4 py-2 text-sm font-medium font-dinrounded transition-all duration-200 ring-1 ring-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800 ${
+                      className={`cursor-pointer rounded-2xl px-4 py-2 text-sm font-medium font-dinrounded transition-all duration-200 ring-1 ring-transparent focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800 ${
                         active
                           ? 'bg-sky-500 text-white shadow-md active:scale-95'
                           : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 active:scale-95'
@@ -335,7 +335,7 @@ const Projects = () => {
               </label>
               <Listbox value={sortBy} onChange={setSortBy}>
                 <div className="relative w-full lg:w-64">
-                  <Listbox.Button className="cursor-pointer relative w-full rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-dinrounded px-4 py-2 text-sm text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800">
+                  <Listbox.Button className="cursor-pointer relative w-full rounded-2xl border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-dinrounded px-4 py-2 text-sm text-left focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800">
                     <span className="block truncate">{sortBy}</span>
                     <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
                       <i
@@ -353,7 +353,7 @@ const Projects = () => {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Listbox.Options className="absolute z-10 mt-2 max-h-60 w-full overflow-auto rounded-2xl bg-white dark:bg-gray-800 py-2 text-sm shadow-lg ring-1 ring-black/5 focus:outline-none">
+                    <Listbox.Options className="absolute z-10 mt-2 max-h-60 w-full overflow-auto rounded-2xl bg-white dark:bg-gray-800 py-2 text-sm shadow-lg ring-1 ring-black/5 focus:outline-hidden">
                       {sortOptions.map(option => (
                         <Listbox.Option
                           key={option}
@@ -425,11 +425,11 @@ const Projects = () => {
               {featuredProjects.map((project, index) => (
                 <article
                   key={index}
-                  className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg transition-all duration-300"
+                  className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-xs hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex flex-col h-full">
                     <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 border-2 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 border-[#b5d2e6] dark:border-[#37464f]">
+                      <div className="w-16 h-16 border-2 rounded-2xl flex items-center justify-center mr-4 shrink-0 border-[#b5d2e6] dark:border-[#37464f]">
                         <i
                           className={`${project.icon} text-gray-600 dark:text-gray-300 text-2xl`}
                           aria-hidden="true"
@@ -461,7 +461,7 @@ const Projects = () => {
                         rel="noopener noreferrer"
                         role="button"
                         aria-label={`View code for ${project.title}`}
-                        className="cursor-pointer inline-flex items-center justify-center rounded-2xl px-4 py-2 font-dinrounded font-semibold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 ring-1 ring-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800 transition-colors duration-200"
+                        className="cursor-pointer inline-flex items-center justify-center rounded-2xl px-4 py-2 font-dinrounded font-semibold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 ring-1 ring-transparent focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800 transition-colors duration-200"
                       >
                         <i
                           className="fab fa-github mr-2 text-lg"
@@ -496,7 +496,7 @@ const Projects = () => {
               {otherProjects.map((project, index) => (
                 <article
                   key={index}
-                  className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+                  className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-xs hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex flex-col h-full">
                     <div className="w-16 h-16 border-2 rounded-2xl flex items-center justify-center mb-6 mx-auto border-[#b5d2e6] dark:border-[#37464f]">
@@ -536,7 +536,7 @@ const Projects = () => {
                           rel="noopener noreferrer"
                           role="button"
                           aria-label={`View code for ${project.title}`}
-                          className="cursor-pointer inline-flex items-center justify-center rounded-2xl px-3 py-2 font-dinrounded font-semibold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 ring-1 ring-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800 transition-colors duration-200"
+                          className="cursor-pointer inline-flex items-center justify-center rounded-2xl px-3 py-2 font-dinrounded font-semibold text-blue-600 dark:text-blue-400 hover:text-green-600 dark:hover:text-green-400 ring-1 ring-transparent focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800 transition-colors duration-200"
                         >
                           <i
                             className="fab fa-github mr-2 text-lg"

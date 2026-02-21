@@ -6,7 +6,7 @@ import SocialMedia from './SocialMedia';
 const Hero = () => {
   return (
     <div className="w-full">
-      <header className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
+      <header className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8">
           <Transition
             appear
@@ -24,7 +24,7 @@ const Hero = () => {
                 />
               </div>
               <div
-                className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 rounded-full bg-linear-to-br from-blue-500/10 via-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 aria-hidden="true"
               />
               <figcaption className="sr-only">
@@ -43,7 +43,7 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-gray-100 font-dinrounded tracking-tight">
                 <span className="block">SOHAM</span>
-                <span className="block bg-gradient-to-br from-indigo-500 to-sky-500 bg-clip-text text-transparent">
+                <span className="block bg-linear-to-br from-indigo-500 to-sky-500 bg-clip-text text-transparent">
                   DESAI
                 </span>
               </h1>
@@ -74,7 +74,7 @@ const Hero = () => {
                 href="#contact"
                 aria-label="Contact Soham Desai"
                 role="button"
-                className="cursor-pointer inline-flex items-center rounded-2xl px-6 py-3 sm:px-8 sm:py-4 bg-orange-700 text-white font-semibold font-dinrounded text-base sm:text-lg transition-all duration-200 shadow-sm hover:bg-orange-600/90 hover:shadow-md active:translate-y-0.5 border-b-4 border-orange-900 active:border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+                className="cursor-pointer inline-flex items-center rounded-2xl px-6 py-3 sm:px-8 sm:py-4 bg-orange-700 text-white font-semibold font-dinrounded text-base sm:text-lg transition-all duration-200 shadow-xs hover:bg-orange-600/90 hover:shadow-md active:translate-y-0.5 border-b-4 border-orange-900 active:border-b-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
               >
                 <span>Let’s Work Together</span>
                 <i
@@ -94,10 +94,10 @@ const Hero = () => {
         </div>
       </header>
 
-      <section className="container mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+      <section className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 mt-6 sm:mt-8 border-2 border-gray-300 dark:border-[#37464f] space-y-8">
           <dl className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 font-dinrounded">
-            <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 text-center shadow-sm">
+            <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 text-center shadow-xs">
               <dd className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
                 15+
               </dd>
@@ -105,7 +105,7 @@ const Hero = () => {
                 Projects Completed
               </dt>
             </div>
-            <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 text-center shadow-sm">
+            <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 text-center shadow-xs">
               <dd className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
                 5+
               </dd>
@@ -113,7 +113,7 @@ const Hero = () => {
                 Technologies Mastered
               </dt>
             </div>
-            <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 text-center shadow-sm">
+            <div className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 text-center shadow-xs">
               <dd className="text-2xl sm:text-3xl font-bold text-green-600 dark:text-green-400 mb-1">
                 1+
               </dd>
@@ -123,7 +123,7 @@ const Hero = () => {
             </div>
           </dl>
 
-          <article className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-sm">
+          <article className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-xs">
             <h3 className="text-lg sm:text-xl font-bold font-dinrounded text-green-600 dark:text-green-400 mb-4 flex items-center">
               <i
                 className="fa-solid fa-graduation-cap mr-2"

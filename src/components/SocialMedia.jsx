@@ -63,7 +63,7 @@ const SocialMedia = ({ className = '', size = 'default', gap = 'gap-6' }) => {
             transition-all duration-150
             ${currentSize.text} 
             hover:translate-y-0 active:translate-y-1 
-            shadow-lg hover:shadow-md active:shadow-sm 
+            shadow-lg hover:shadow-md active:shadow-xs 
             transform rounded-xl 
             ${currentSize.padding} 
             ${currentSize.border} 

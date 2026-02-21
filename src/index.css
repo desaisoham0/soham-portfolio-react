@@ -1,29 +1,30 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Basic styling */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Poppins', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-dinrounded: 'DINRounded', sans-serif;
 }
 
-body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f1f7fb;
-}
+@layer base {
+  body {
+    font-family:
+      -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f1f7fb;
+  }
 
-.dark body {
-  background-color: #131f24;
-  color: #dce6ec;
-}
+  .dark body {
+    background-color: #131f24;
+    color: #dce6ec;
+  }
 
-#root {
-  min-height: 100vh;
+  #root {
+    min-height: 100vh;
+  }
 }
 
 @font-face {

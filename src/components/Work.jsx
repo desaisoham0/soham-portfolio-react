@@ -81,7 +81,7 @@ const Work = () => {
           {workHistory.map((job, index) => (
             <li key={index} className="relative">
               <article
-                className={`relative overflow-hidden rounded-2xl shadow-sm ${
+                className={`relative overflow-hidden rounded-2xl shadow-xs ${
                   job.current
                     ? 'bg-green-50 dark:bg-green-900/20 border-2 border-green-500 dark:border-green-400'
                     : 'bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600'
@@ -90,7 +90,7 @@ const Work = () => {
               >
                 <div className="p-5 sm:p-6 md:p-8">
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                    <div className="flex-shrink-0 mx-auto sm:mx-0">
+                    <div className="shrink-0 mx-auto sm:mx-0">
                       <div className="relative">
                         <img
                           src={job.logo}
@@ -98,7 +98,7 @@ const Work = () => {
                           className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl shadow-xl object-cover border-2 border-gray-200 dark:border-gray-600"
                         />
                         <div
-                          className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent"
+                          className="absolute inset-0 rounded-2xl bg-linear-to-br from-white/10 to-transparent"
                           aria-hidden="true"
                         ></div>
                       </div>
@@ -145,7 +145,7 @@ const Work = () => {
       </section>
 
       <section aria-labelledby="skills" className="px-4">
-        <div className="mx-auto max-w-6xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-5 sm:p-6 md:p-8 shadow-sm">
+        <div className="mx-auto max-w-6xl bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-5 sm:p-6 md:p-8 shadow-xs">
           <div className="text-center mb-6 sm:mb-8">
             <h3
               id="skills"
@@ -184,9 +184,9 @@ const Work = () => {
             ].map((skill, index) => (
               <li
                 key={index}
-                className="group relative rounded-xl px-3 py-3 sm:px-4 sm:py-4 text-center transition-all duration-200 hover:shadow-lg border-2 border-gray-200 dark:border-gray-600 hover:border-yellow-400 dark:hover:border-yellow-500 bg-gray-50 dark:bg-gray-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 flex items-center justify-center min-h-[50px] sm:min-h-[55px]"
+                className="group relative rounded-xl px-3 py-3 sm:px-4 sm:py-4 text-center transition-all duration-200 hover:shadow-lg border-2 border-gray-200 dark:border-gray-600 hover:border-yellow-400 dark:hover:border-yellow-500 bg-gray-50 dark:bg-gray-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 flex items-center justify-center min-h-12.5 sm:min-h-13.75"
               >
-                <span className="text-gray-900 dark:text-gray-100 font-medium text-xs sm:text-sm leading-tight break-words font-dinrounded">
+                <span className="text-gray-900 dark:text-gray-100 font-medium text-xs sm:text-sm leading-tight wrap-break-word font-dinrounded">
                   {skill}
                 </span>
               </li>
