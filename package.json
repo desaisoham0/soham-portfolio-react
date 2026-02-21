@@ -16,10 +16,10 @@
     "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
+    "dotenv": "^17.3.1",
     "express": "^4.21.2",
     "flat-cache": "^3.0.4",
-    "googleapis": "^144.0.0",
+    "googleapis": "^171.4.0",
     "nodemailer": "^7.0.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -38,11 +38,14 @@
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "type-check": "tsc --noEmit"
   },
+  "overrides": {
+    "minimatch": ">=10.2.1"
+  },
   "devDependencies": {
     "@babel/types": "^7.28.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^5.1.4",
     "audit-ci": "^7.1.0",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.0",
