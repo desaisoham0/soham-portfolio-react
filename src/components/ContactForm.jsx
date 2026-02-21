@@ -37,7 +37,7 @@ const ContactForm = () => {
   const messageHelpId = 'message-help';
 
   const inputBase =
-    'w-full px-4 py-3 font-dinrounded bg-white dark:bg-gray-800 border-2 rounded-2xl text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none transition-all duration-200';
+    'w-full px-4 py-3 font-dinrounded bg-white dark:bg-gray-800 border-2 rounded-2xl text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-hidden transition-all duration-200';
   const inputState = error
     ? 'border-red-500 focus:ring-2 focus:ring-red-500 focus:border-red-500'
     : 'border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-sky-500 focus:border-sky-500';
@@ -45,7 +45,7 @@ const ContactForm = () => {
   return (
     <section className="space-y-6 w-full max-w-2xl mx-auto px-4 sm:px-6">
       <header className="space-y-2 sm:space-y-3">
-        <h2 className="text-xl sm:text-2xl font-semibold bg-gradient-to-br text-amber-500 flex items-center font-dinrounded">
+        <h2 className="text-xl sm:text-2xl font-semibold bg-linear-to-br text-amber-500 flex items-center font-dinrounded">
           <i
             className="fa-solid fa-envelope mr-2 text-amber-500"
             aria-hidden="true"
@@ -110,7 +110,7 @@ const ContactForm = () => {
         </Transition>
       </div>
 
-      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm p-4 sm:p-6">
+      <div className="rounded-2xl border border-gray-200 dark:border-gray-700 shadow-xs p-4 sm:p-6">
         <form
           onSubmit={handleSubmit}
           className="space-y-6"
@@ -163,7 +163,7 @@ const ContactForm = () => {
             <button
               type="submit"
               disabled={loading}
-              className="cursor-pointer group w-full inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 bg-sky-500 hover:bg-sky-400 text-white rounded-2xl font-semibold font-dinrounded transition-all duration-150 hover:translate-y-0 active:translate-y-1 shadow-lg hover:shadow-md active:shadow-sm text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 border-b-4 border-sky-700 active:border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800"
+              className="cursor-pointer group w-full inline-flex items-center justify-center px-4 sm:px-6 py-3 sm:py-4 bg-sky-500 hover:bg-sky-400 text-white rounded-2xl font-semibold font-dinrounded transition-all duration-150 hover:translate-y-0 active:translate-y-1 shadow-lg hover:shadow-md active:shadow-xs text-sm sm:text-base disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 border-b-4 border-sky-700 active:border-b-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-800"
               aria-label={loading ? 'Sending message' : 'Send message'}
             >
               {loading ? (

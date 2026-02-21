@@ -12,7 +12,7 @@ const ThemeToggle = () => {
         rounded-full bg-white/80 hover:bg-white/90
         p-3 transition-all duration-300 
         border-2 border-gray-200 hover:border-gray-300
-        backdrop-blur-sm shadow-sm
+        backdrop-blur-xs shadow-xs
         hover:scale-105 active:scale-95
         dark:bg-gray-800/80 dark:hover:bg-gray-700/90
         dark:border-gray-600 dark:hover:border-gray-500

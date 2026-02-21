@@ -52,7 +52,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 w-screen bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md border-b-2 border-gray-300 dark:border-gray-700 shadow-sm"
+      className="fixed top-0 left-0 right-0 z-50 w-screen bg-[#f1f7fb] dark:bg-[#131f24] backdrop-blur-md border-b-2 border-gray-300 dark:border-gray-700 shadow-xs"
       aria-label="Primary"
     >
       <a
@@ -63,15 +63,15 @@ const Navbar = () => {
       </a>
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <a
               href="#home"
-              className="text-2xl sm:text-3xl font-black font-montserrat inline-flex items-baseline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#131f24] rounded-2xl px-1"
+              className="text-2xl sm:text-3xl font-black font-montserrat inline-flex items-baseline focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#131f24] rounded-2xl px-1"
             >
               <span className="text-gray-900 dark:text-gray-100 font-dinrounded">
                 SOHAM
               </span>
-              <span className="ml-1 sm:ml-2 bg-gradient-to-br from-indigo-500 to-sky-500 bg-clip-text text-transparent font-dinrounded">
+              <span className="ml-1 sm:ml-2 bg-linear-to-br from-indigo-500 to-sky-500 bg-clip-text text-transparent font-dinrounded">
                 DESAI
               </span>
             </a>
@@ -85,15 +85,15 @@ const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   aria-current={active ? 'page' : undefined}
-                  className={`relative inline-flex items-center rounded-2xl px-3.5 py-2 text-sm lg:text-base font-medium font-dinrounded transition-all duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#131f24] ${
+                  className={`relative inline-flex items-center rounded-2xl px-3.5 py-2 text-sm lg:text-base font-medium font-dinrounded transition-all duration-150 cursor-pointer focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#131f24] ${
                     active
-                      ? 'text-gray-900 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 shadow-sm'
+                      ? 'text-gray-900 dark:text-gray-100 bg-gray-200 dark:bg-gray-700 shadow-xs'
                       : 'text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100'
                   }`}
                 >
                   {link.label}
                   {active && (
-                    <span className="pointer-events-none absolute -bottom-1 left-3 right-3 h-0.5 rounded-full bg-gradient-to-r from-indigo-500 to-sky-500" />
+                    <span className="pointer-events-none absolute -bottom-1 left-3 right-3 h-0.5 rounded-full bg-linear-to-r from-indigo-500 to-sky-500" />
                   )}
                 </a>
               );
@@ -108,7 +108,7 @@ const Navbar = () => {
               aria-label="Toggle menu"
               aria-controls="mobile-nav"
               aria-expanded={isMenuOpen}
-              className="cursor-pointer inline-flex items-center justify-center rounded-2xl p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#131f24]"
+              className="cursor-pointer inline-flex items-center justify-center rounded-2xl p-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#131f24]"
             >
               <i
                 className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-lg sm:text-xl`}
@@ -140,7 +140,7 @@ const Navbar = () => {
                     href={link.href}
                     aria-current={active ? 'page' : undefined}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block rounded-2xl px-3 py-2 transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#131f24] ${
+                    className={`block rounded-2xl px-3 py-2 transition-colors duration-150 cursor-pointer focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-[#131f24] ${
                       active
                         ? 'text-gray-900 dark:text-gray-100 bg-gray-200 dark:bg-gray-700'
                         : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-100'

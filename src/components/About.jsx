@@ -15,9 +15,9 @@ function About() {
         </p>
       </header>
 
-      <div className="container mx-auto max-w-6xl px-4">
+      <div className="w-full mx-auto max-w-6xl px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
-          <article className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-sm transition-shadow hover:shadow-md focus-within:shadow-md">
+          <article className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-xs transition-shadow hover:shadow-md focus-within:shadow-md">
             <h3 className="text-xl font-bold font-dinrounded text-blue-600 dark:text-blue-400 mb-2 flex items-center gap-2">
               <i className="fas fa-rocket" aria-hidden="true" />
               <span>The Beginning</span>
@@ -30,7 +30,7 @@ function About() {
             </p>
           </article>
 
-          <article className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-sm transition-shadow hover:shadow-md focus-within:shadow-md">
+          <article className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-xs transition-shadow hover:shadow-md focus-within:shadow-md">
             <h3 className="text-xl font-bold font-dinrounded text-orange-600 dark:text-orange-400 mb-2 flex items-center gap-2">
               <i className="fas fa-chart-line" aria-hidden="true" />
               <span>Professional Growth</span>
@@ -43,7 +43,7 @@ function About() {
             </p>
           </article>
 
-          <article className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-sm transition-shadow hover:shadow-md focus-within:shadow-md">
+          <article className="bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-xs transition-shadow hover:shadow-md focus-within:shadow-md">
             <h3 className="text-xl font-bold font-dinrounded text-purple-600 dark:text-purple-400 mb-2 flex items-center gap-2">
               <i className="fas fa-heart" aria-hidden="true" />
               <span>Giving Back</span>
