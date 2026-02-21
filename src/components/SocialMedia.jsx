@@ -53,9 +53,9 @@ const SocialMedia = ({ className = '', size = 'default', gap = 'gap-6' }) => {
 
   return (
     <div className={`flex flex-wrap justify-center ${gap} ${className}`}>
-      {socialLinks.map((social, index) => (
+      {socialLinks.map(social => (
         <a
-          key={index}
+          key={social.label}
           href={social.href}
           className={`
             text-gray-700 dark:text-gray-300 

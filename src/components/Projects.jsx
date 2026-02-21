@@ -257,8 +257,6 @@ const Projects = () => {
           if (a.year !== b.year) return b.year - a.year;
           return a.priority - b.priority;
         });
-      case 'Priority Order':
-        return projectsCopy.sort((a, b) => a.priority - b.priority);
       case 'Alphabetical':
         return projectsCopy.sort((a, b) => a.title.localeCompare(b.title));
       default:
@@ -422,9 +420,9 @@ const Projects = () => {
               Featured Projects ({featuredProjects.length})
             </h2>
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 sm:gap-8">
-              {featuredProjects.map((project, index) => (
+              {featuredProjects.map(project => (
                 <article
-                  key={index}
+                  key={project.title}
                   className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 sm:p-8 shadow-xs hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex flex-col h-full">
@@ -493,9 +491,9 @@ const Projects = () => {
               Other Projects ({otherProjects.length})
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {otherProjects.map((project, index) => (
+              {otherProjects.map(project => (
                 <article
-                  key={index}
+                  key={project.title}
                   className="group bg-white/90 dark:bg-gray-800/90 border border-gray-200 dark:border-gray-600 rounded-2xl p-6 shadow-xs hover:shadow-lg transition-all duration-300"
                 >
                   <div className="flex flex-col h-full">

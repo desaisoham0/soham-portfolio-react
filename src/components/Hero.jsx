@@ -74,7 +74,7 @@ const Hero = () => {
                 href="#contact"
                 aria-label="Contact Soham Desai"
                 role="button"
-                className="cursor-pointer inline-flex items-center rounded-2xl px-6 py-3 sm:px-8 sm:py-4 bg-orange-700 text-white font-semibold font-dinrounded text-base sm:text-lg transition-all duration-200 shadow-xs hover:bg-orange-600/90 hover:shadow-md active:translate-y-0.5 border-b-4 border-orange-900 active:border-b-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+                className="cursor-pointer group inline-flex items-center rounded-2xl px-6 py-3 sm:px-8 sm:py-4 bg-orange-700 text-white font-semibold font-dinrounded text-base sm:text-lg transition-all duration-200 shadow-xs hover:bg-orange-600/90 hover:shadow-md active:translate-y-0.5 border-b-4 border-orange-900 active:border-b-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
               >
                 <span>Let’s Work Together</span>
                 <i

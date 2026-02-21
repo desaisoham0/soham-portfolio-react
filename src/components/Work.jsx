@@ -19,7 +19,7 @@ const workHistory = [
     company: 'Blue Cypress',
     logo: blueCypressLogo,
     role: 'AI, Software Engineering',
-    duration: 'Jan 2026 -  Present',
+    duration: 'Jan 2026 - Present',
     description: 'Creating cool AI agents and software solutions for clients',
     current: true,
   },
@@ -27,7 +27,7 @@ const workHistory = [
     company: 'CodePath',
     logo: codepathLogo,
     role: 'Tech Fellow',
-    duration: 'May 2024 -  Dec 2025',
+    duration: 'May 2024 - Dec 2025',
     description: 'Mentoring students in software engineering fundamentals',
     current: false,
   },
@@ -78,8 +78,8 @@ const Work = () => {
           Work History
         </h3>
         <ol className="mx-auto max-w-6xl space-y-6">
-          {workHistory.map((job, index) => (
-            <li key={index} className="relative">
+          {workHistory.map(job => (
+            <li key={job.company} className="relative">
               <article
                 className={`relative overflow-hidden rounded-2xl shadow-xs ${
                   job.current
@@ -181,9 +181,9 @@ const Work = () => {
               'MongoDB',
               'Express',
               'Tailwind CSS',
-            ].map((skill, index) => (
+            ].map(skill => (
               <li
-                key={index}
+                key={skill}
                 className="group relative rounded-xl px-3 py-3 sm:px-4 sm:py-4 text-center transition-all duration-200 hover:shadow-lg border-2 border-gray-200 dark:border-gray-600 hover:border-yellow-400 dark:hover:border-yellow-500 bg-gray-50 dark:bg-gray-700 hover:bg-yellow-50 dark:hover:bg-yellow-900/20 flex items-center justify-center min-h-12.5 sm:min-h-13.75"
               >
                 <span className="text-gray-900 dark:text-gray-100 font-medium text-xs sm:text-sm leading-tight wrap-break-word font-dinrounded">
