@@ -3,6 +3,7 @@ import jasfelLogo from '../assets/jasfel_logo.png';
 import h4Logo from '../assets/hfour_logo.png';
 import codepathLogo from '../assets/codepath_logo.png';
 import tThreeLogo from '../assets/tThree_logo.png';
+import blueCypressLogo from '../assets/BLUE CYPRESS LOGO TRANSP.jpeg';
 // import sohamLogo from '../assets/soham_icon.png';
 
 const workHistory = [
@@ -15,12 +16,20 @@ const workHistory = [
   //   current: true,
   // },
   {
+    company: 'Blue Cypress',
+    logo: blueCypressLogo,
+    role: 'AI, Software Engineering',
+    duration: 'Jan 2026 -  Present',
+    description: 'Creating cool AI agents and software solutions for clients',
+    current: true,
+  },
+  {
     company: 'CodePath',
     logo: codepathLogo,
     role: 'Tech Fellow',
-    duration: 'May 2024 -  Present',
+    duration: 'May 2024 -  Dec 2025',
     description: 'Mentoring students in software engineering fundamentals',
-    current: true,
+    current: false,
   },
   {
     company: '4-H Youth Development',
