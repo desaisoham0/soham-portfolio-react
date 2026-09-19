@@ -33,13 +33,15 @@
     "lint:fix": "eslint src --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test": "vitest run api"
   },
   "overrides": {
     "minimatch": ">=10.2.1"
   },
   "devDependencies": {
     "@babel/types": "^7.28.0",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/vite": "^4.2.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -53,6 +55,7 @@
     "prettier": "^3.6.2",
     "tailwindcss": "^4.2.0",
     "typescript": "^5.8.3",
-    "vite": "^7.0.2"
+    "vite": "^7.0.2",
+    "vitest": "^5.0.1"
   }
 }
