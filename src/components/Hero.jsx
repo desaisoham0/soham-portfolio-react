@@ -2,6 +2,7 @@ import React from 'react';
 import { Transition } from '@headlessui/react';
 import profilePicture from '../assets/soham-profile-picture.jpg';
 import SocialMedia from './SocialMedia';
+import { CONTACT_ENABLED } from '../config/features';
 
 const Hero = () => {
   return (
@@ -62,28 +63,30 @@ const Hero = () => {
             </div>
           </Transition>
 
-          <Transition
-            appear
-            show
-            enter="transition ease-out duration-300 delay-150"
-            enterFrom="opacity-0 translate-y-1"
-            enterTo="opacity-100 translate-y-0"
-          >
-            <div className="pt-6 sm:pt-8">
-              <a
-                href="#contact"
-                aria-label="Contact Soham Desai"
-                role="button"
-                className="cursor-pointer group inline-flex items-center rounded-2xl px-6 py-3 sm:px-8 sm:py-4 bg-orange-700 text-white font-semibold font-dinrounded text-base sm:text-lg transition-all duration-200 shadow-xs hover:bg-orange-600/90 hover:shadow-md active:translate-y-0.5 border-b-4 border-orange-900 active:border-b-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
-              >
-                <span>Let’s Work Together</span>
-                <i
-                  className="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"
-                  aria-hidden="true"
-                />
-              </a>
-            </div>
-          </Transition>
+          {CONTACT_ENABLED && (
+            <Transition
+              appear
+              show
+              enter="transition ease-out duration-300 delay-150"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+            >
+              <div className="pt-6 sm:pt-8">
+                <a
+                  href="#contact"
+                  aria-label="Contact Soham Desai"
+                  role="button"
+                  className="cursor-pointer group inline-flex items-center rounded-2xl px-6 py-3 sm:px-8 sm:py-4 bg-orange-700 text-white font-semibold font-dinrounded text-base sm:text-lg transition-all duration-200 shadow-xs hover:bg-orange-600/90 hover:shadow-md active:translate-y-0.5 border-b-4 border-orange-900 active:border-b-2 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+                >
+                  <span>Let’s Work Together</span>
+                  <i
+                    className="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+            </Transition>
+          )}
 
           <nav
             aria-label="Social media links"

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { Transition } from '@headlessui/react';
+import { CONTACT_ENABLED } from '../config/features';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,12 +13,13 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'work', 'contact'];
+      const sections = ['home', 'about', 'projects', 'work'];
+      if (CONTACT_ENABLED) sections.push('contact');
       const scrollPosition = window.scrollY + 100;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       if (scrollPosition + windowHeight >= documentHeight - 50) {
-        setActiveSection('contact');
+        setActiveSection(sections[sections.length - 1]);
         return;
       }
       for (const section of sections) {
@@ -42,7 +44,7 @@ const Navbar = () => {
     { href: '#about', label: 'About' },
     { href: '#projects', label: 'Projects' },
     { href: '#work', label: 'Work' },
-    { href: '#contact', label: 'Contact' },
+    ...(CONTACT_ENABLED ? [{ href: '#contact', label: 'Contact' }] : []),
   ];
 
   const getActiveClass = href => {

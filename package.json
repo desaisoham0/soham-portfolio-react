@@ -7,19 +7,12 @@
     "node": ">=24.x"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@fortawesome/fontawesome-free": "^7.2.0",
     "@headlessui/react": "^2.2.7",
     "@vercel/analytics": "^1.4.1",
-    "@vercel/edge-config": "^1.4.0",
     "@vercel/speed-insights": "^1.1.0",
     "axios": "^1.7.9",
-    "body-parser": "^2.2.2",
-    "cors": "^2.8.5",
     "dotenv": "^17.3.1",
-    "express": "^5.2.1",
-    "googleapis": "^171.4.0",
-    "nodemailer": "^8.0.1",
+    "nodemailer": "^10.0.10",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router-dom": "^7.7.1"
@@ -28,18 +21,19 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "node server.js",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test": "vitest run api"
   },
   "overrides": {
     "minimatch": ">=10.2.1"
   },
   "devDependencies": {
     "@babel/types": "^7.28.0",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/vite": "^4.2.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -53,6 +47,7 @@
     "prettier": "^3.6.2",
     "tailwindcss": "^4.2.0",
     "typescript": "^5.8.3",
-    "vite": "^7.0.2"
+    "vite": "^7.0.2",
+    "vitest": "^5.0.1"
   }
 }

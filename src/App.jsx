@@ -10,6 +10,7 @@ import About from './components/About';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeProvider';
+import { CONTACT_ENABLED } from './config/features';
 
 const HomePage = () => {
   useEffect(() => {
@@ -58,14 +59,16 @@ const HomePage = () => {
               <Work />
             </div>
           </section>
-          <section
-            id="contact"
-            className="py-12 sm:py-16 md:py-20 lg:py-24 pb-0"
-          >
-            <div className="backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-gray-300 dark:border-[#37464f]">
-              <ContactForm />
-            </div>
-          </section>
+          {CONTACT_ENABLED && (
+            <section
+              id="contact"
+              className="py-12 sm:py-16 md:py-20 lg:py-24 pb-0"
+            >
+              <div className="backdrop-blur-md rounded-2xl shadow-xl p-4 sm:p-6 md:p-8 lg:p-10 border-2 border-gray-300 dark:border-[#37464f]">
+                <ContactForm />
+              </div>
+            </section>
+          )}
           <Footer />
         </div>
       </main>
